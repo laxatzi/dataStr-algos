@@ -1,3 +1,6 @@
+//The function is supposed to return a new array made up of 'num' copies of 'arr'
+  // modify it using spread syntax so that is works
+
 function copyMachine(arr, num){
    let newArr = [];
    // iteration
