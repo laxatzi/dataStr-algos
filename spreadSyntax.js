@@ -2,9 +2,12 @@ function copyMachine(arr, num){
    let newArr = [];
    // iteration
    while(num >= 1) {
-      //code goes here
+      let spreadArg = [...arr];
+      newArr.push(spreadArg);
+      num--;
    }
    return newArr;
 }
 
-//console.log(copyMachine([true, false, 1, 0]), 3);
+//console.log(copyMachine([1,3,5],3));
+
