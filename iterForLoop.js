@@ -29,3 +29,16 @@ function filteredArray(arr, elem){
 let nestArr = [[4,5,78], [1,4,34], [2,34,8]];
 
 console.log(filteredArray(nestArr, 5)); // [[1,4,34], [2,34,8]];
+
+let nestedObject = {
+   id: 28802695164,
+   date: 'December 31, 2016',
+   data: {
+     totalUsers: 99,
+     online: 80,
+     onlineStatus: {
+       active: 67,
+       away: 13
+     }
+   }
+ };
