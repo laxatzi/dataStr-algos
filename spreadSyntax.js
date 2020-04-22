@@ -14,3 +14,4 @@ function copyMachine(arr, num){
 
 //console.log(copyMachine([1,3,5],3));
 
+
