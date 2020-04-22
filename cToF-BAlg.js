@@ -3,4 +3,4 @@ function convertToF(celsius) {
   return fahrenheit;
 }
 
-console.log(convertToF(30)); // 
+console.log(convertToF(30)); // 82

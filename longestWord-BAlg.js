@@ -8,4 +8,4 @@ function findLongestWordLength(str) {
 
 } // end of func
 
-console.log(findLongestWordLength("Hi my name is Lampros"));
+console.log(findLongestWordLength("Hi my name is Lampros")); //7
