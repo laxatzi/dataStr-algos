@@ -1,15 +1,11 @@
 function findLongestWordLength(str) {
    //return str.length;
    const words = str.split(" ");
+
+   const lengthOfMaxWord = words.map(word=> word.length ); // end of map
+   
+   return Math.max(...lengthOfMaxWord);
+
+ } // end of func
  
-   const lengthOfMaxWord=words.map(word=> {
-       let maxLength = 1;
- 
-     if(word.length > maxLength){
-       maxLength = word.length;
-     }
-     return maxLength;
-   });
-   return lengthOfMaxWord;
- }
- console.log(findLongestWordLength("A quick browny fox"));
+ console.log(findLongestWordLength("Hi my name is Lampros"));
