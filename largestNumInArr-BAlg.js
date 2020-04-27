@@ -171,8 +171,12 @@
   //Resolve exercise with the use of concat()
 
   {
-    
-  }
+    function largestOfFour(arr, finalArr = []) {
+  return !arr.length
+    ? finalArr
+    : largestOfFour(arr.slice(1), finalArr.concat(Math.max(...arr[0])))
+}
+  }// end of block
     
 
 
