@@ -1,12 +1,11 @@
-function largestOfFour(arr) {
-   return arr.map(item => Math.max(...item));
-   
- }
-
-largestOfFour([ [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); //. [27,39, 1001];
+{
+  function largestOfFour(arr) {
+    return arr.map(elem => Math.max(...elem));
+    }
+  largestOfFour([ [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); //. [27,39, 1001];
+}
 
 // FCC solution
-
 {
   function largestOfFour(arr){
     return arr.map(Function.prototype.apply.bind(Math.max, null));
@@ -84,37 +83,36 @@ largestOfFour([ [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); //. 
      //. It has entries for each argument the function was called within, with the first entry's index at 0
 
       //. For example:
-      {
-        arguments[0]; // first argument
-        arguments[1]; // second argument
-      }
+      //.    arguments[0]; // first argument
+      //.    arguments[1]; // second argument
+    
 
     //. Each argument can also be set or reassigned:
     //. arguments[0] = 'another value';
 
     //. The arguments object is not an Array. It is similar but it has no properties except length. For example it does not have the pop method. 
     //. However it can be converted to a real Array.
-    {
-      let args = Array.prototype.slice.call(arguments);
-      // using an array literal is shorter than above but it allocates an empty array.
-      let args1 = [].slice.call(arguments);
-    }
+    // {
+    //   let args = Array.prototype.slice.call(arguments);
+    //   // using an array literal is shorter than above but it allocates an empty array.
+    //   let args1 = [].slice.call(arguments);
+    // }
     //. As you can do with any Array-like object, you can use Array.from() method or spread operator to convert arguments to real array.
 
-    {
-      let args2 = Array.from(arguments);
-      let args3 = [...arguments];
-    }
+    // {
+    //   let args2 = Array.from(arguments);
+    //   let args3 = [...arguments];
+    // }
 
     //. Type of arguments
     //. The typeof operator return 'object' when used with 'arguments'
-      { 
-        console.log(typeof arguments) // object 
-      }
-    //. The typeof individual arguments can be determined by indexing 'arguments'
-      {
-        console.log(typeof arguments[0]); // type of the first argument
-      }    
+    //   { 
+    //     console.log(typeof arguments) // object 
+    //   }
+    // //. The typeof individual arguments can be determined by indexing 'arguments'
+    //   {
+    //     console.log(typeof arguments[0]); // type of the first argument
+    //   }    
 
     //. Example of rest, default and destructured parameters
     {
@@ -155,8 +153,26 @@ largestOfFour([ [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); //. 
           return Math.max(a,b)
         })
 
+      }// end of block
+
+    //Resolve exercise with the use of reduce()
+    
+      {
+        function largestOfFour(arr) {
+          return arr.map(function(elem){
+            return elem.reduce(function(prev, accum){
+              return accum > prev ? accum : prev;
+            })
+          })
+          }
+        console.log(largestOfFour([ [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])); //. [27,39, 1001];
       }
 
-    //
+  //Resolve exercise with the use of concat()
+
+  {
+    
+  }
+    
 
 
