@@ -14,7 +14,7 @@ largestOfFour([ [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); //. 
 }
 
 //. Code Explanation
-  //. We build a special callback function(using the Function.bind method), that works just like Math.max but also has Function.prototype.apply ability to take arrays as arguments.
+  //. We build a special callback function(using the Function.bind method), that works just like Math.max** but also has Function.prototype.apply ability to take arrays as arguments.
   //. We start mapping through the main arrays items (sub-arrays). 
   //. We need a callback function to use in map so we can find the max number in each subarray.
   //. So we want to create a function that does the work of Math.max accepting input as an array (Math.max doesn't accept arrays by default).
@@ -65,8 +65,98 @@ largestOfFour([ [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); //. 
         let maxNumber = Math.max.apply(null, numbers);
         // This is equal to Math.max  (numbers[0], ...);
         // OR equal to Math.max(1,3,5,7)
+      }
 
-        
+    //.  * arguments
+      //. arguments is an array-like object accessible inside functions that contains the values of the arguments passed to the function
+      //. array-like means that the 'arguments' has a length property and properties indexed zerobased but it doesn't have built-in methods like map and forEach. 
+
+    {
+      function func1(a,b,c){
+        console.log(arguments[0]);//1
+        console.log(arguments[1]);//3
+      }
+      func1(1,3,5); 
+    }
+
+     //. The 'arguments' object is local variable available within all NON-arrow functions. 
+     //. You can refer to a functions arguments inside that function by using its 'arguments' object.
+     //. It has entries for each argument the function was called within, with the first entry's index at 0
+
+      //. For example:
+      {
+        arguments[0]; // first argument
+        arguments[1]; // second argument
+      }
+
+    //. Each argument can also be set or reassigned:
+    //. arguments[0] = 'another value';
+
+    //. The arguments object is not an Array. It is similar but it has no properties except length. For example it does not have the pop method. 
+    //. However it can be converted to a real Array.
+    {
+      let args = Array.prototype.slice.call(arguments);
+      // using an array literal is shorter than above but it allocates an empty array.
+      let args1 = [].slice.call(arguments);
+    }
+    //. As you can do with any Array-like object, you can use Array.from() method or spread operator to convert arguments to real array.
+
+    {
+      let args2 = Array.from(arguments);
+      let args3 = [...arguments];
+    }
+
+    //. Type of arguments
+    //. The typeof operator return 'object' when used with 'arguments'
+      { 
+        console.log(typeof arguments) // object 
+      }
+    //. The typeof individual arguments can be determined by indexing 'arguments'
+      {
+        console.log(typeof arguments[0]); // type of the first argument
+      }    
+
+    //. Example of rest, default and destructured parameters
+    {
+      function foo(...args){
+        return args;
+      }
+      foo(1,3,5); // [1,3,5]
+    }
+    //. While the presence of rest, default, or destructured parameters does not alter the behavior of the arguments object in strict mode code, there is a subtle difference for non-strict code. When a non-strict function does contain rest, default, or destructured parameters, then the values in the arguments object do not track the values of the arguments. Instead, they reflect the arguments provided when the function was called.
+
+
+  //. ** Math.max()
+    //. It returns the largest of zero or more numbers
+     //. Syntax: Math.max([value1[, value2[, ...]]]);
+     //. value1, value2, ... (Numbers)
+     //. If at least one of the arguments cannot be converted to a number, NaN is returned.
+
+  //. Both spread(...) and apply will either fail or return the wrong result if the array has too many elements, because they try to pass the array elements as function parameters.
+  //. Using too many parameters run the risk of exceeding the javascript engine's argument length limit.
+  //. The consequence of applying a function with too many arguments(probably more that tens of thousands that is (probably close to  65500)), varies across engines.
+  //. This is bacause the limit is unspecified. Some engines will throw an exception. More harmfully, some engines will arbitrary limit the numbers of arguments actually passed to the function.
+  //. Example:
+  //. If an engine has a limit of four arguments, it would be as if having the array myArr=[1,2,3,4,5]
+  //. and only the arguments 1,2,3,4 had been passed to apply.
+
+  //. *** kyle simpson blog post
+    //. In both cases, passing either a or b to apply(..)'s second argument (or via the ... spread operator) means that the array is being spread out as arguments to the function.
+    //. The first major problem is that we're effectively doubling the size (temporarily, of course!) of the thing being appended by essentially copying its contents to the stack for the function call. Moreover, different JS engines have different implementation-dependent limitations to the number of arguments that can be passed.
+    //. So, if the array being added on has a million items in it, you'd almost certainly way exceed the size of the size of the stack allowed for that push(..) or unshift(..) call. Ugh. It'll work just fine for a few thousand elements, but you have to be careful not to exceed a reasonably safe limit.
+
+    //. REDUCE
+
+    //. Getting the maximum element of an array using the reduce method
+      //. Array.reduce() can be used. It works by comparing each value:
+      {
+        let arr = [1,3,5];
+        let max = arr.reduce(function(a,b){
+          return Math.max(a,b)
+        })
 
       }
-    
+
+    //
+
+
