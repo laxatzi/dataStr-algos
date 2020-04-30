@@ -50,6 +50,29 @@ let user = {
         })
     }
     
-  console.log(largestOfFour([[4, 5, 1], [13, 27, 18], [32, 35, 39], [1001, 857, 1]])); // [5, 27, 39, 1001]
+  //console.log(largestOfFour([[4, 5, 1], [13, 27, 18], [32, 35, 39], [1001, 857, 1]])); // [5, 27, 39, 1001]
     
+} // end of block
+
+{
+   'use strict';
+  
+ //Check if a string (first argument, str) ends with the given target string (second argument, target).
+ // using endsWith() method
+
+  const userName = "Bastian";
+  const targetLetter = "n";
+// testing 
+ // console.log(userName.endsWith(targetLetter)); // true
+
+// create a function for checking
+  function confirmEnding(str, target) {
+     let targetStrPart =   str.substring(str.length-target.length);
+     if (targetStrPart === target) return true;
+     return false;
+   }
+
+  console.log(confirmEnding("Nickolopoulos", "poulos")); //true
+  console.log(confirmEnding("Kazantzidis", "poulos")); // false
+
 } // end of block
