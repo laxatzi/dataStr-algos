@@ -9,7 +9,7 @@ function findElement(arr, func){
  
 }
 
-console.log(findElement([1,2,3,4], num=> num%2===0));
+console.log(findElement([1,2,3,4], num=> num%2===0)); //2
 
 }// end of block
 
@@ -22,5 +22,5 @@ console.log(findElement([1,2,3,4], num=> num%2===0));
       return arr[arr.map(func).indexOf(true)]; // we want to find a specific index of the arr so we pass index of true as an index of the arr
    }
 
-   console.log(findElement([1,2,3,4], num=>num%2===0));
+   console.log(findElement([1,2,3,4], num=>num%2===0)); // 2
 }// end of block
