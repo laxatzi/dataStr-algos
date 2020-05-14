@@ -1,3 +1,7 @@
+//. Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+//. Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+
 {
   function largestOfFour(arr) {
     return arr.map(elem => Math.max(...elem));
@@ -148,15 +152,13 @@
     //. Getting the maximum element of an array using the reduce method
       //. Array.reduce() can be used. It works by comparing each value:
       {
-        let arr = [1,3,5];
-        let max = arr.reduce(function(a,b){
-          return Math.max(a,b)
-        })
+        const largestOfFour = arr=>arr.map(elem=>{
+          return elem.reduce((a,b)=> Math.max(a,b)); // omit optional second arg in reduce (e.g 0) since want to include all neg nums
+    })
 
       }// end of block
 
-    //Resolve exercise with the use of reduce()
-    
+    //OR
       {
         function largestOfFour(arr) {
           return arr.map(function(elem){

@@ -1,23 +1,11 @@
+//EXERCISE #6
+  //.Check if a string (first argument, str) ends with the given target string (second argument, target).
 
-{
-  function findLongestWordLength(str) {
-
-    const lengthOfMaxWord = str.split(' ').map(word=> word.length ); // end of map
-    return Math.max(...lengthOfMaxWord);
-
-  }
-
-  console.log(findLongestWordLength("Hi my name is Lampros")); //7
-
-}// block
-
-{
-  function findLongestWordLength(str){
-    return str.split(' ').reduce((a,b)=> Math.max(a,b.length), 0);
-  }
-
-  console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); //6
-
-}//block
-
-
+  //.This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+  {
+    function confirmEnding(str, target) {
+       return str;
+     }
+     
+     confirmEnding("Bastian", "n");
+ }//block
