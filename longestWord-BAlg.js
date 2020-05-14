@@ -1,11 +1,21 @@
-function findLongestWordLength(str) {
-  //return str.length;
-  const words = str.split(" ");
+//.Return the length of the longest word in the provided sentence.Your response should be a number
+{
+  function findLongestWordLength(str) {
 
-  const lengthOfMaxWord = words.map(word=> word.length ); // end of map
-  
-  return Math.max(...lengthOfMaxWord);
+    const lengthOfMaxWord = str.split(' ').map(word=> word.length ); // end of map
+    return Math.max(...lengthOfMaxWord); // spread operator use rate 90%
 
-} // end of func
+  }
 
-console.log(findLongestWordLength("Hi my name is Lampros")); //7
+  console.log(findLongestWordLength("Hi my name is Lampros")); //7
+
+}// block
+{
+  function findLongestWordLength(str){
+    return str.split(' ').reduce((a,b)=> Math.max(a,b.length), 0); //. stackoverlow?
+  }
+
+  console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); //6
+
+}//block
+
