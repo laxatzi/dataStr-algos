@@ -12,10 +12,15 @@
 }// block
 {
   function findLongestWordLength(str){
-    return str.split(' ').reduce((a,b)=> Math.max(a,b.length), 0); //. stackoverlow?
+    return str.split(' ').reduce((a,b)=> Math.max(a,b.length), 0); //a = 0 second arg also a num so it works fine *
   }
 
   console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); //6
 
 }//block
+
+//. * const  theBigger = (str, num)=> Math.max(num , str.length); works
+
+
+
 
