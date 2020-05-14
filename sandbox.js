@@ -108,5 +108,15 @@ let funModule = (function(){
 }// end block
 
 {
-  
+  //.Remove all falsy values from an array.
+
+//.Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+//.Hint: Try converting each value to a Boolean.
+
+   // code here
+
+   const falsyBouncer = arr => arr.filter(elem => Boolean(elem));
+console.log(falsyBouncer([7, "ate", "", false, 9]));// [7,'ate',9]
+
 }// end block
