@@ -9,15 +9,16 @@
 
   //.Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
   //. Θέλω τα γράμματα που υπάρχουν στο δεύτερο element να υπάρχουν και στο πρώτο. Οχι το αντιθετο.
-  //. check JavaScript String.prototype.indexOf() 
+  //? check JavaScript String.prototype.indexOf() 
+
   {
       
 
    function mutation(arr) {
      return arr.map(el => el.toLowerCase().split('').sort().join(''));
-     //.reduce((a,b)=> {
-       if(a === b) return true;
-       return false;
+     //reduce((a,b)=> {
+     // if(a === b) return true;
+     //  return false;
     // })
     }
   

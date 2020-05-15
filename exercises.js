@@ -199,4 +199,4 @@ console.log(titleCase('sHoRt AnD sToUt')); // Short And Stout
   }//block
 
 //EXERCISE #16
-
+ //. 
