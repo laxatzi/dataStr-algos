@@ -8,12 +8,12 @@
 
 {
   function frankenSplice(arr1, arr2, n){
-    const copiedArr2 = arr2.slice();
-      copiedArr2.splice(n, 0, ...arr1);
-    return copiedArr2;
+    let arr2copy = arr2.slice();
+    arr2copy.splice(n, 0, ...arr1);
+    return arr2copy;
   }
   
-   console.log(frankenSplice([3,4,5], [7,8,9], 2)); // 
+  console.log(frankenSplice([1, 2, 3], [4, 5], 1));   // [4, 1, 2, 3, 5]
 
 }// end block
 

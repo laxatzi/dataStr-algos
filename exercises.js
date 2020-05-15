@@ -132,37 +132,53 @@ console.log(titleCase('sHoRt AnD sToUt')); // Short And Stout
 }// block
 
 //EXERCISE #12
+  //. You are given two arrays and an index.
+
+  //. Use the array methods slice and splice to copy each element of the first array into the second array, in order.
+
+  //. Begin inserting elements at index n of the second array. Return the resulting array. The input arrays should remain the same after the function runs.
+
+{
+   function frankenSplice(arr1, arr2, n) {
+      
+      return arr2;
+    }
+    
+  console.log(frankenSplice([1, 2, 3], [4, 5], 1));   // [4, 1, 2, 3, 5]
+
+}// end block
 
 //EXERCISE #13
+  //.Remove all falsy values from an array. Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+  //. Hint: Try converting each value to a Boolean
+{
+   function bouncer(arr) {
+      return arr;
+    }
+
+//test
+    console.log(bouncer([null, NaN, 1, 2, undefined])); // [1,2]
+
+}//block
+
 
 //EXERCISE #14
+  //. Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+  //.For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+
+  //.Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).
+{
+
+   function getIndexToIns(arr, num) {
+      return num;
+    }
+
+    console.log([10, 20, 30, 40, 50], 30); //2
+}//block
 
 //EXERCISE #15
 
 //EXERCISE #16
 
-// You are given two arrays and an index.
-
-// Use the array methods slice and splice to copy each element of the first array into the second array, in order.
-
-// Begin inserting elements at index n of the second array.
-
-// Return the resulting array. The input arrays should remain the same after the function runs.
-
-{
-   function frankenSplice(arr1, arr2, n) {
-      let newArr = arr2.slice();
-      newArr.splice(n, 0, ...arr1);
-      return newArr;
-    }
-    
-  console.log(frankenSplice([1, 2, 3], [4, 5, 6], 0));   // 
-}// end block
-
-{
-   const months = ['Jan', 'March', 'April', 'June'];
-   let someMonths = months.slice(1,3);
-   // console.log('new months: ' + someMonths);
-   // console.log('old monts: '+months);
-
-}
