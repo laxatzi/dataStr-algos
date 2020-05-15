@@ -94,8 +94,52 @@ function factorialize(num) {
 }//block
 
 //EXERCISE #9
+  //.Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined
+
+{
+   function findElement(arr, func) {
+      let num = 0;
+      return num;
+    }
+    
+   console.log(findElement([1, 3, 5, 8, 9, 10], num => num % 2 === 0)); // 
+    
+}//block
+
+//EXERCISE #10
+  //.Check if a value is classified as a boolean primitive. Return true or false.
+  //. Boolean primitives are true and false.
+{
+
+   function booWho(bool) {
+      return bool;
+    }
+    
+   console.log(booWho(false)); // true
+}// block
 
 
+//EXERCISE #11
+  //.Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+  //.For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+{
+   function titleCase(str){
+      return str;
+   }
+
+console.log(titleCase('sHoRt AnD sToUt')); // Short And Stout
+}// block
+
+//EXERCISE #12
+
+//EXERCISE #13
+
+//EXERCISE #14
+
+//EXERCISE #15
+
+//EXERCISE #16
 
 // You are given two arrays and an index.
 
