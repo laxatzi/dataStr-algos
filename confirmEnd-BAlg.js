@@ -38,5 +38,15 @@ console.log(confirmEnding("Bastian", "n")); // true
 
 }//end block
 
-// go to hint for regex solution
+// with the use of regExp
+  // we gonna use the constructor of the regular expression object 'new RegExp(pattern[, flags])
+  // we concatenate pattern to the $flag to match the end, and also with the i flag to ignore cases.
+{
+   function confirmEnding(str, target){
+      let regex = new RegExp(target+ '$', 'i');
+      return regex.test(str);
+   }
+   console.log(confirmEnding('Bastian', 'n'));//true
+}//block
+
 
