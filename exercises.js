@@ -186,7 +186,10 @@ console.log(titleCase('sHoRt AnD sToUt')); // Short And Stout
   //.The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
 
   //.Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+  //. Θέλω τα γράμματα που υπάρχουν στο δεύτερο element να υπάρχουν και στο πρώτο. Οχι το αντιθετο.
   //? check JavaScript String.prototype.indexOf() 
+  //? 0 doesn't evaluate to true and -1 doesn't evaluate to false. Therefore, when checking if a specific string exists within another string, the correct way to check would be:'Blue Whale'.indexOf('Blue') !== -1  // true
+  //? arr.every(callback(element[, index[, array]])[, thisArg])
 
   {
    function mutation(arr) {
