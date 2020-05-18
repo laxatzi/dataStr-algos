@@ -14,10 +14,6 @@
      return convert[1].indexOf(convert[0]) !== -1;
  }
   
-    //test
-
-    console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])); //false
-
     
   }//block
 //const intersection = array1.filter(element => array2.includes(element));
