@@ -10,7 +10,10 @@
 
   {
    function mutation(arr) {
-     let convert = arr.map(el => el.toLowerCase().split('').sort().join(''));
-     return convert[1].indexOf(convert[0]) !== -1;
+     return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().indexOf(el) !== -1? true : false);
  }
+
+ console.log(mutation(["hello", "Hello"])); // true
   }//block
+
+

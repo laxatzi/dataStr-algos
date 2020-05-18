@@ -10,16 +10,15 @@
   //.Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
   //. Θέλω τα γράμματα που υπάρχουν στο δεύτερο element να υπάρχουν και στο πρώτο. Οχι το αντιθετο.
   //? check JavaScript String.prototype.indexOf() 
+  //? 0 doesn't evaluate to true and -1 doesn't evaluate to false. Therefore, when checking if a specific string exists within another string, the correct way to check would be:'Blue Whale'.indexOf('Blue') !== -1  // true
+  //? arr.every(callback(element[, index[, array]])[, thisArg])
 
   {
       
 
    function mutation(arr) {
-     return arr.map(el => el.toLowerCase().split('').sort().join(''));
-     //reduce((a,b)=> {
-     // if(a === b) return true;
-     //  return false;
-    // })
+    return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().indexOf(el) !== -1? true : false);
+
     }
   
     //test
