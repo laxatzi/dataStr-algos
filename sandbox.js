@@ -13,10 +13,4 @@
      let convert = arr.map(el => el.toLowerCase().split('').sort().join(''));
      return convert[1].indexOf(convert[0]) !== -1;
  }
-  
-    //test
-
-    
-
   }//block
-//const intersection = array1.filter(element => array2.includes(element));
