@@ -220,3 +220,26 @@ console.log(titleCase('sHoRt AnD sToUt')); // Short And Stout
 
 
 }//block
+
+//EXERCISE #17
+//. We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.
+
+//. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+
+(function () {
+  'use strict';
+function sumAll([ a, b ] ) {
+  return;
+}
+
+console.log('sum is: ' + sumAll([5,1])) // 15
+console.log(sumAll([5, 10])); // should return 45.
+console.log(sumAll([10, 5])); // should return 45.
+})();
+
+//EXERCISE #18
+//. Q: Find the second largest number in a given array.
+//. Params: We are given an array of whole, positive integers (no negative numbers or floats). We are to write //. a function and return the second largest integer.
+{
+
+}// end block;
