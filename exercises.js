@@ -241,5 +241,6 @@ console.log(sumAll([10, 5])); // should return 45.
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). We are to write //. a function and return the second largest integer.
 {
+  function secondLargest(arr){};
 
 }// end block;
