@@ -3,9 +3,9 @@
 function quickCheck(arr, el){
    if(arr.indexOf(el) == -1){
       return false;
-   }else{
-      return true;
    }
+      return true;
+   
 }
 
 // console.log(quickCheck(['onions', 'leeks', 'lentils'], 'mushrooms'));

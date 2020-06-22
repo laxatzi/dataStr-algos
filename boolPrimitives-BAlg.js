@@ -1,4 +1,5 @@
-//Check if a value is classified as a boolean primitive. Return true or false. Boolean primitives are true and false.
+//Check if a value is classified as a boolean primitive. 
+//Return true or false. Boolean primitives are true and false.
 
 // A cleaner solution
 {
