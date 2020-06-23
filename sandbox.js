@@ -25,4 +25,28 @@
      console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)); //should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
 
 
-    }
+    }//end block
+
+  
+//Check if a string (first argument, str) ends with the given target string (second argument, target).
+// With the use of substring method
+{
+  function confirmEnding(str, target) {
+        if (str.substring(str.length - target.length) === target) return true;
+        return false;
+     }
+   
+   console.log(confirmEnding("Bastian", "astian")); // true
+  }// end block
+  
+  // use of slice
+  {
+  function confirmEnding(str,target){
+     if(str.slice(str.length-target.length) === target) return true;
+     return false;
+  }
+  console.log(confirmEnding("Lambros", "bos")); // false
+  
+  
+  }//end block
+
