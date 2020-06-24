@@ -1,11 +1,11 @@
 
 //.Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
-//.Our goal for this Algorithm is to split arr (first argument) into smaller chunks of arrays with the length provided by size (second argument). There are 4 green checks (objectives) our code needs to pass in order to complete this Algorithm:
+//.Our goal for this Algorithm is to split arr (first argument) into smaller chunks of arrays with the length provided by size (second argument). 
   //? bear in mind slice method
   //? bear in mind concat method
   {
     function chunkArrayInGroups(arr, size) {
-       
+
      }
  
      //test
@@ -23,13 +23,19 @@
 
 //Remove Dups from an Array
  
-function removeDups(arr){
+function removeDuplicates(arr){
   //return;  
 }
 
     console.log(cities.sort());
     console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 
-}// end block
+ //OR with the Set() object method
+    function noDuplicates(arr){
+      return [...new Set(arr)];
+    }
+    console.log(noDuplicates(cities)); //  ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+    }// end block
+
 
 
