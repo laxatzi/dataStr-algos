@@ -1,18 +1,4 @@
 
-
-//. Q: Find the second largest number in a given array.
-//. Params: We are given an array of whole, positive integers (no negative numbers or floats). We are to write //. a function and return the second largest integer.
-{
-  function secondLargest(arr){
-    let sortedOut = arr.sort((a,b)=> (a-b));
-     sortedOut = sortedOut.slice(arr.length - 2);
-    return Math.min(...sortedOut);
-  };
-  console.log(secondLargest([2,1,5,3,45,23,34])); // 34
-}// end block;
-
-
-
 //.Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
 //.Our goal for this Algorithm is to split arr (first argument) into smaller chunks of arrays with the length provided by size (second argument). There are 4 green checks (objectives) our code needs to pass in order to complete this Algorithm:
   //? bear in mind slice method
@@ -31,6 +17,19 @@
 
     }//end block
 
-  
+//. Q: Remove Duplicate Elements from an Array
+{
+  let cities = ["Athens","Athens", "Thessaloniki", "Iraklion", "Drama", "Thessaloniki"];
+
+//Remove Dups from an Array
+ 
+function removeDups(arr){
+  //return;  
+}
+
+    console.log(cities.sort());
+    console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+
+}// end block
 
 
