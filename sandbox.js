@@ -5,18 +5,14 @@
   //? bear in mind concat method
   {
     function chunkArray(arr, size) {
-      if(arr.length <= size) return [arr];
-      return [arr.slice(0,size)].concat([chunkArray(arr.slice(size), size)]);
+      
      }
  
      //test
      console.log(chunkArray([0, 1, 2, 3, 4, 5, 6], 2)); //should return [[0, 1], [2, 3], [4, 5],[6]].
-     console.log(chunkArray([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
-     console.log(chunkArray([0, 1, 2, 3, 4, 5, 6], 3)); //should return [[0, 1, 2], [3, 4, 5], [6]].
-     console.log(chunkArray([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)); //should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
-
 
     }//end block
+
 
 //. Q: Remove Duplicate Elements from an Array
 {
@@ -36,7 +32,20 @@ function removeDuplicates(arr){
       return;
     }
     console.log(noDuplicates(cities)); //  ["Athens", "Drama", "Iraklion", "Thessaloniki"]
-    }// end block
+
+}// end block
 
 
+//.Return the factorial of the provided integer.
 
+//.If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+//.Only integers greater than or equal to zero will be supplied to the function.
+{
+    function factorialize(n) {
+      if(n <= 0 ) return 1;
+      return n * factorialize(n-1);
+    }
+
+    console.log(factorialize(5)); // 120
+
+}//end block
