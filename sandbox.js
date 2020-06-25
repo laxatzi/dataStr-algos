@@ -4,15 +4,15 @@
   //? bear in mind slice method
   //? bear in mind concat method
   {
-    function chunkArrayInGroups(arr, size) {
-
+    function chunkArray(arr, size) {
+      
      }
  
      //test
-     console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)); //should return [[0, 1], [2, 3], [4, 5]].
-     console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
-     console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)); //should return [[0, 1, 2], [3, 4, 5], [6]].
-     console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)); //should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
+     console.log(chunkArray([0, 1, 2, 3, 4, 5, 6], 2)); //should return [[0, 1], [2, 3], [4, 5],[6]].
+     console.log(chunkArray([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
+     console.log(chunkArray([0, 1, 2, 3, 4, 5, 6], 3)); //should return [[0, 1, 2], [3, 4, 5], [6]].
+     console.log(chunkArray([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)); //should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
 
 
     }//end block
@@ -24,7 +24,7 @@
 //Remove Dups from an Array
  
 function removeDuplicates(arr){
-  //return;  
+  return ;
 }
 
     console.log(cities.sort());
@@ -32,7 +32,7 @@ function removeDuplicates(arr){
 
  //OR with the Set() object method
     function noDuplicates(arr){
-      return [...new Set(arr)];
+      return;
     }
     console.log(noDuplicates(cities)); //  ["Athens", "Drama", "Iraklion", "Thessaloniki"]
     }// end block
