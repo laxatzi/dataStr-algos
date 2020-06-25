@@ -36,16 +36,26 @@ function removeDuplicates(arr){
 }// end block
 
 
-//.Return the factorial of the provided integer.
+//.Remove all falsy values from an array.
 
-//.If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
-//.Only integers greater than or equal to zero will be supplied to the function.
+//.Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
 {
-    function factorialize(n) {
-      if(n <= 0 ) return 1;
-      return n * factorialize(n-1);
-    }
+  
+   
+  console.log(falsyBouncer([7, "ate", "", false, 9]));
+  
+  }//block
 
-    console.log(factorialize(5)); // 120
+ // Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.
 
-}//end block
+    // use the find method
+      // find method is a way to 'find and return' the FIRST occurrence of an element in an array under a defined TESTING FUNCTION 
+      // It only returns a SINGLE element. If more elements are required use filter method. If if no element satisfies testing function 'undefined' is returned.
+      // Support for find method exceeds 95% (IE is the only major browser that do not support it)
+
+//OR
+
+    // Use the Array.indexOf() method
+
+
