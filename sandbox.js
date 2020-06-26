@@ -1,7 +1,4 @@
 
-
-
-
 //. Q: Remove Duplicate Elements from an Array
 {
   let cities = ["Athens","Athens", "Thessaloniki", "Iraklion", "Drama", "Thessaloniki"];
@@ -9,7 +6,10 @@
 //Remove Dups from an Array
  
 function removeDuplicates(arr){
-  return ;
+     return arr.sort().reduce(function(acc, current){
+        if(current !== acc[acc.length-1]) acc.push(current);
+        return acc;
+     }, []);
 }
 
     console.log(cities.sort());
@@ -17,7 +17,7 @@ function removeDuplicates(arr){
 
  //OR with the Set() object method
     function noDuplicates(arr){
-      return;
+      return [...new Set(arr)];
     }
     console.log(noDuplicates(cities)); //  ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 
