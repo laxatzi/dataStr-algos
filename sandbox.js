@@ -1,38 +1,19 @@
 
-//. Q: Remove Duplicate Elements from an Array
-{
-  let cities = ["Athens","Athens", "Thessaloniki", "Iraklion", "Drama", "Thessaloniki"];
-
-//Remove Dups from an Array
- 
-function removeDuplicates(arr){
-     return arr.sort().reduce(function(acc, current){
-        if(current !== acc[acc.length-1]) acc.push(current);
-        return acc;
-     }, []);
-}
-
-    console.log(cities.sort());
-    console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
-
- //OR with the Set() object method
-    function noDuplicates(arr){
-      return [...new Set(arr)];
-    }
-    console.log(noDuplicates(cities)); //  ["Athens", "Drama", "Iraklion", "Thessaloniki"]
-
-}// end block
-
 
 //.Remove all falsy values from an array.
 
 //.Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 
 {
-  
+      const falsyBouncer = function(arr){
+        return arr.filter(el =>  !!el); // show only truthy values
+      }
+      const truthyBouncer = function(arr){
+        return arr.filter(el => !el); // show only falsy values
+      }
    
-  //console.log(falsyBouncer([7, "ate", "", false, 9]));
-  
+  console.log(falsyBouncer([7, "ate", "", false, 9]));
+  console.log(truthyBouncer([7, "ate", "", false, 9]));
   }//block
 
  // Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.
