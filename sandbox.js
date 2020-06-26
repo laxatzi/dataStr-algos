@@ -1,17 +1,5 @@
 
-//.Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
-//.Our goal for this Algorithm is to split arr (first argument) into smaller chunks of arrays with the length provided by size (second argument). 
-  //? bear in mind slice method
-  //? bear in mind concat method
-  {
-    function chunkArray(arr, size) {
-      
-     }
- 
-     //test
-     console.log(chunkArray([0, 1, 2, 3, 4, 5, 6], 2)); //should return [[0, 1], [2, 3], [4, 5],[6]].
 
-    }//end block
 
 
 //. Q: Remove Duplicate Elements from an Array
@@ -43,7 +31,7 @@ function removeDuplicates(arr){
 {
   
    
-  console.log(falsyBouncer([7, "ate", "", false, 9]));
+  //console.log(falsyBouncer([7, "ate", "", false, 9]));
   
   }//block
 
