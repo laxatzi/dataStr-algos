@@ -6,10 +6,14 @@
 
 {
     
-      
-   
-    //console.log(falsyBouncer([7, "ate", "", false, 9]));
-    //console.log(truthyBouncer([7, "ate", "", false, 9]));
+      function falsyBouncer(arr){
+        return arr.filter(el=> !!el);
+      }
+     function truthyBouncer(arr) {
+       return arr.filter(el => !el);
+     }
+    console.log(falsyBouncer([7, "ate", "", false, 9]));
+    console.log(truthyBouncer([7, "ate", "", false, 9]));
 }//block
 
 //.Return the length of the longest word in the provided sentence.Your response should be a number
