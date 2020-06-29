@@ -1,27 +1,13 @@
 
-
-//.Remove all falsy values from an array.
-
-//.Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
-
-{
-    
-      function falsyBouncer(arr){
-        return arr.filter(el=> !!el);
-      }
-     function truthyBouncer(arr) {
-       return arr.filter(el => !el);
-     }
-    console.log(falsyBouncer([7, "ate", "", false, 9]));
-    console.log(truthyBouncer([7, "ate", "", false, 9]));
-}//block
-
 //.Return the length of the longest word in the provided sentence.Your response should be a number
 {
   function findLongestWordLength(str) {
-
-   
-
+    let splitted = str.split(" ");
+    return splitted.map(el => {
+      return el.length;
+    }).reduce((acc, current)=> {
+      return current >= acc ? current : acc;
+    })
   }
 
   console.log(findLongestWordLength("Hi my name is Lampros")); //7
