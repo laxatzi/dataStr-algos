@@ -28,3 +28,13 @@
      console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
  
   }
+
+  //% BOTH above solutions work like this: First filter and then concat the arrays...the following thinking works reversely...thus first concat and then filter
+  {
+     function diffArray(arr1, arr2){
+        return arr1.concat(arr2).filter(el => !arr1.includes(el) || !arr2.includes(el));
+     }
+
+     console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+
+  }
