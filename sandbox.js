@@ -14,10 +14,12 @@
   //? arr.every(callback(element[, index[, array]])[, thisArg])
 
   {
-
+    
      function mutation(arr){
-   
-        }
+       let converted = arr.map(el => el.toLowerCase().split(''));
+       return converted[1].every(el => converted[0].indexOf(el) !== -1);
+      };     
+  
      //test
 
      console.log(mutation(["voodoo", "no"])); //false
