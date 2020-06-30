@@ -1,31 +1,19 @@
+//. Intermediate Algorithm Scripting: Diff Two Arrays
+//. Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
 
+//. Note
+//. You can return the array with its elements in any order.
 
-//EXERCISE #15
-  //.Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+{
 
-  //.For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+   function diffArray(arr1, arr2) {
+      let filterFirst =  arr1.filter(el => arr2.indexOf(el) == -1);
+      let filterSecond = arr2.filter(el => arr1.indexOf(el) == -1);
+      return filterFirst.concat(filterSecond);
+    }
 
-  //.The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
-
-  //.Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
-  //. Θέλω τα γράμματα που υπάρχουν στο δεύτερο element να υπάρχουν και στο πρώτο. Οχι το αντιθετο.
-  //? check JavaScript String.prototype.indexOf() 
-  //? 0 doesn't evaluate to true and -1 doesn't evaluate to false. Therefore, when checking if a specific string exists within another string, the correct way to check would be:'Blue Whale'.indexOf('Blue') !== -1  // true
-  //? arr.every(callback(element[, index[, array]])[, thisArg])
-
-  {
-    
-     function mutation(arr){
-       let converted = arr.map(el => el.toLowerCase().split(''));
-       return converted[1].every(el => converted[0].indexOf(el) !== -1);
-      };     
-  
-     //test
-
-     console.log(mutation(["voodoo", "no"])); //false
-     console.log(mutation(["Mary", "Army"])); //true
-     console.log(mutation(["Mary", "Aarmy"])); //true
-     console.log(mutation(["Alien", "line"])); // true  
+  console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+   //. should return ["diorite", "pink wool"].
  }//block
 
 
