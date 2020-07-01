@@ -9,7 +9,7 @@
 
    function destroyer(arr) {
        let args = [...arguments];
-       return arr.concat(args).filter(el => !args.includes(el));
+       return arr.filter(el => !args.includes(el));
       }
 
   console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
