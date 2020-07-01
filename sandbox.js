@@ -1,40 +1,17 @@
 // EXERCISE #20
-//. Intermediate Algorithm Scripting: Diff Two Arrays
-//. Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+// Intermediate Algorithm Scripting: Seek and Destroy
+// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
 
-//. Note
-//. You can return the array with its elements in any order.
+// Note
+// You have to use the arguments object.
 
 {
-   //% My own solution (with filter and indexOf)
-    function diffArray(arr1, arr2) {
-       let filterFirst =  arr1.filter(el => arr2.indexOf(el) === -1);
-       let filterSecond = arr2.filter(el => arr1.indexOf(el) === -1);
-       return [...filterFirst, ...filterSecond];
-     }
-  
-   console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
-    //. should return ["diorite", "pink wool"].
-  }//block
-  {
-     //% FCC first solution (with filter and indexOf)
-     function diffArray(arr1, arr2){
-       return [...diff(arr1,arr2), ...diff(arr2,arr1)];
-       // nested function
-       function diff(a,b){
-          return a.filter(el => b.indexOf(el) === -1);
-       }
-     }
-     console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
- 
-  }
 
-  //% BOTH above solutions work like this: First filter and then concat the arrays...the following thinking works reversely...thus first concat and then filter
-  {
-     function diffArray(arr1, arr2){
-        return arr1.concat(arr2).filter(el => !arr1.includes(el) || !arr2.includes(el));
-     }
+   function destroyer(arr) {
+       let args = [...arguments];
+       return arr.concat(args).filter(el => !args.includes(el));
+      }
 
-     console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+  console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
 
-  }
+}//end block
