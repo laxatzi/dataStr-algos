@@ -15,3 +15,13 @@
   console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
 
 }//end block
+
+//% second method
+{
+  function destroyer(arr, ...arguments) {
+     let valsToExclude = [...arguments];
+     return arr.filter(el => !valsToExclude.includes(el));
+    }
+
+console.log(destroyer(["tree", "hamburger", 53, "extra"], "tree", 53)); // should return ["hamburger", "extra"]
+}// end block
