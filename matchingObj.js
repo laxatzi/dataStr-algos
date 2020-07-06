@@ -7,7 +7,11 @@
 {
    function whatIsInAName(collection, source) {
     let sourceKey = Object.keys(source);
-    console.log(sourceKey);
+    return collection.filter(obj => {
+       return sourceKey.every(key => {
+          return obj[key] === source[key];
+       })
+    })
    }
   
    console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
