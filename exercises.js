@@ -303,6 +303,7 @@ function removeDups(arr){
 
 {
   function whatIsInAName(collection, source) {
+   let sourceKey = Object.keys(source);
    
   }
  
