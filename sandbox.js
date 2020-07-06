@@ -6,15 +6,12 @@
 
 {
    function whatIsInAName(collection, source) {
-      let sourceKey = Object.keys(source); // ['last']
-    
-      return collection.filter(el => {
-        return sourceKey.every(key=> {
-          return el.hasOwnProperty(key) && el[key] === source[key];
-        });
-      })
+      
+    let sourceKeys = Object.keys(source);
+    return collection.filter(obj => {
+      return sourceKeys.every(key => obj.hasOwnProperty(key) && obj[key] === source[key]) ;
+    })
    }
-  
    console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" },{first: 'Lambros'}], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
  
  }//end block
