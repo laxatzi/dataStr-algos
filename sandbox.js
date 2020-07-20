@@ -1,8 +1,18 @@
 //EXERCISE #18
 //. Q: Find the second largest number in a given array.
-//. Params: We are given an array of whole, positive integers (no negative numbers or floats). We are to write //. a function and return the second largest integer.
+//. Params: We are given an array of whole, positive integers (no negative numbers or floats). We are to write
+//. a function and return the second largest integer.
 {
-  function secondLargest(arr){};
+  function secondLargest(arr){
+    let sorted = arr.sort((a,b)=> a-b);
+    sorted.pop();
+    return sorted.reduce((acc, current)=> {
+      return current >= acc ? current : acc;
+    }, 0)
+
+  };
+
+  console.log(secondLargest([2,5,6,67,109])); // 67
 
 }// end block;
 
@@ -21,8 +31,8 @@ function removeDups(arr){
   //return;  
 }
 
-    console.log(cities.sort());
-    console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+ //   console.log(cities.sort());
+//  console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 
 }// end block
 
@@ -43,7 +53,7 @@ function removeDups(arr){
     
    }
 
- console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+// console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
   //. should return ["diorite", "pink wool"].
 }//block
 
@@ -62,7 +72,7 @@ function removeDups(arr){
       return something 
       }
 
-  console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
+//  console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
 
 }//end block
 
@@ -81,7 +91,7 @@ function removeDups(arr){
    
   }
  
-  console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
+ // console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
 
 }//end block
 
@@ -99,7 +109,7 @@ function sumAll([ a, b ] ) {
   
 }
 
-console.log('sum is: ' + sumAll([5,1])) // 10
+// console.log('sum is: ' + sumAll([5,1])) // 10
 
 })();
 
@@ -114,6 +124,6 @@ console.log('sum is: ' + sumAll([5,1])) // 10
  
   }
  
-  console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
+ // console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
 
 }//end block
