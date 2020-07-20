@@ -6,14 +6,12 @@
   function secondLargest(arr){
     let sorted = arr.sort((a,b)=> a-b);
     sorted.pop();
-    return sorted.reduce((acc, current)=> {
+    return arr.reduce((acc, current)=>{
       return current >= acc ? current : acc;
-    }, 0)
-
+    });
   };
 
-  console.log(secondLargest([2,5,6,67,109])); // 67
-
+  console.log(secondLargest([1,11, 222, 1034])); // 222
 }// end block;
 
 
