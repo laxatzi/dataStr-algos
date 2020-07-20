@@ -2,8 +2,16 @@
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). We are to write //. a function and return the second largest integer.
 {
-  function secondLargest(arr){};
+  function secondLargest(arr){
+    let sorted = arr.sort((a,b)=> a-b);
+    sorted.pop();
+    return arr.reduce((acc, current)=>{
+      return current >= acc ? current : acc;
+    })
 
+  };
+
+  console.log(secondLargest([1,11, 222, 1034])); // 222
 }// end block;
 
 
