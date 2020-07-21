@@ -1,22 +1,3 @@
-//EXERCISE #18
-//. Q: Find the second largest number in a given array.
-//. Params: We are given an array of whole, positive integers (no negative numbers or floats). We are to write
-//. a function and return the second largest integer.
-{
-  function secondLargest(arr){
-    let sorted = arr.sort((a,b)=> a-b);
-    sorted.pop();
-    return arr.reduce((acc, current)=>{
-      return current >= acc ? current : acc;
-    });
-  };
-
-  console.log(secondLargest([1,11, 222, 1034])); // 222
-}// end block;
-
-
-
-
 
 // EXERCISE #19
 //. Q: Remove Duplicate Elements from an Array
@@ -26,11 +7,11 @@
 //Remove Dups from an Array
  
 function removeDups(arr){
-  //return;  
-}
+  return new Set(arr);
+  
+  }
 
- //   console.log(cities.sort());
-//  console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+  console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 
 }// end block
 
