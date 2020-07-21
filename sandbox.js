@@ -11,7 +11,7 @@ function removeDups(arr){
   
   }
 
-  console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+ // console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 
 }// end block
 
@@ -29,11 +29,12 @@ function removeDups(arr){
 {
 
   function diffArray(arr1, arr2) {
-    
-   }
+    //return;
+  }  
 
 // console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
-  //. should return ["diorite", "pink wool"].
+ //. should return ["diorite", "pink wool"].
+
 }//block
 
 
