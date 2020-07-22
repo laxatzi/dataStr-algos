@@ -7,11 +7,11 @@
 //Remove Dups from an Array
  
 function removeDups(arr){
-  return new Set(arr);
-  
+ let noDups = [...new Set(arr)];
+ return noDups;
   }
 
- // console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+  console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 
 }// end block
 
