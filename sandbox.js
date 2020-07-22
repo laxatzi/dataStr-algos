@@ -28,11 +28,12 @@ function removeDups(arr){
 
 {
 
-  function diffArray(arr1, arr2) {
-    //return;
+  function symetricDiff(arr1, arr2) {
+    let concatenated = arr1.concat(arr2);
+    return concatenated.filter(el => !arr1.includes(el) || !arr2.includes(el));
   }  
 
-// console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+ console.log(symetricDiff(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
  //. should return ["diorite", "pink wool"].
 
 }//block
