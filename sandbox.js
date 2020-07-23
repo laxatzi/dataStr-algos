@@ -25,13 +25,14 @@ function removeDups(arr){
 // The lowest number will not always come first.
 
 //. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
-function sumAll([ a, b ] ) {
-  
-  //return;
+function sumAll([ a, b ]) {
+  let modifier = a > b ? 1 : -1;
+  if(a === b) return b;
+  return b + sumAll([a, b + modifier]);
 }
 
- //console.log('sum is: ' + sumAll([5,1])); // 15
- //console.log('sum is: ' + sumAll([1,5])); // 15
+ console.log('sum is: ' + sumAll([5,1])); // 15
+ console.log('sum is: ' + sumAll([1,5])); // 15
 
 
 })();
@@ -50,17 +51,11 @@ function sumAll([ a, b ] ) {
 
 {
   function whatIsInAName(objArray, ref) {
-    let refKeys = Object.keys(ref); // 'last'
-    return  objArray.filter(el => {
-      // both the key and its corresponding value must exist within the object we are filtering through
-      return refKeys.map(key => el.hasOwnProperty(key) && el[key]=== ref[key])
-      // we reduce the mapped Boolean values to a single Boolean that indicates whether all srcKeys pass the conditions checked above.
-      .reduce((a,b)=> a || b);
-    });
+   
     
   }
  
- console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],
-  { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
+ //console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],
+  //{ last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
 
 }//end block
