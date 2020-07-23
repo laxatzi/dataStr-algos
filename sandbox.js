@@ -1,41 +1,5 @@
 
-// EXERCISE #19
-//. Q: Remove Duplicate Elements from an Array
 {
-  let cities = ["Athens","Athens", "Thessaloniki", "Iraklion", "Drama", "Thessaloniki"];
-
-//Remove Dups from an Array
- 
-function removeDups(arr){
-      // return ;
-  }
-
- // console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
-
-}// end block
-
-
-
-//. EXERCISE #22
-// SumAllNums
-(function () {
-  'use strict';
-
-//. We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
-// The lowest number will not always come first.
-
-//. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
-function sumAll([ a, b ]) {
-  let modifier = a > b ? 1 : -1;
-  if(a === b) return b;
-  return b + sumAll([a, b + modifier]);
-}
-
- console.log('sum is: ' + sumAll([5,1])); // 15
- console.log('sum is: ' + sumAll([1,5])); // 15
-
-
-})();
 
 //. EXERCISE #23
 // Intermediate Algorithm Scripting: Wherefore art thou
@@ -49,13 +13,15 @@ function sumAll([ a, b ]) {
 // then you must return the third object from the array (in the first argument), 
 // because it contains the name and its value, that was passed on as the second argument.
 
-{
+
   function whatIsInAName(objArray, ref) {
-   
-    
+    let refKey = Object.keys(ref);
+    return objArray.filter(el => {
+      return refKey.map(key => el[key] === ref[key]).reduce((a,b)=> b);
+    });
   }
  
- //console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],
-  //{ last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
+ console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],
+  { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
 
 }//end block
