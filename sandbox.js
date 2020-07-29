@@ -14,10 +14,8 @@
 {
 
   function spinalCase(str) {
-   
-    const regex = /\s|_/g;
-    const s = str.replace(/([a-z])([A-Z])/g, '$1 $2'); // Whenever low is followed by upper we create a gap
-    return s.replace(regex, '-').toLowerCase();
+    let regex = /\s|_|(?=[A-Z])/g;
+    return str.split(regex).join("-").toLowerCase();
   }
  
 console.log(spinalCase("thisIsSpinalTap")); //   return "this-is-spinal-tap".
