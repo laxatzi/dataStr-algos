@@ -24,5 +24,16 @@ console.log(spinalCase('The_Andy_Griffith_Show')); // return "the-andy-griffith-
 
 console.log(spinalCase('This Is Spinal Tap')); // return "this-is-spinal-tap"
 
+function spinalCaseAlgo(str){
+   let regex = /\s|_/g;
+   let re = str.replace(/([a-z])([A-Z])/g, '$1 $2')
+   return re.replace(regex, '-').toLowerCase();
+}
+
+console.log(spinalCaseAlgo("thisIsSpinalTap")); //   return "this-is-spinal-tap".
+
+console.log(spinalCaseAlgo('The_Andy_Griffith_Show')); // return "the-andy-griffith-show"
+
+console.log(spinalCaseAlgo('This Is Spinal Tap')); // return "this-is-spinal-tap"
 
 }//end block
