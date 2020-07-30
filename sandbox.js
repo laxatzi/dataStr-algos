@@ -39,14 +39,10 @@ console.log(sumAll([10, 5])); // should return 45.
 //Remove Dups from an Array
  
 function removeDups(arr){
-  let sorted = arr.sort();
-  return sorted.filter(el => {
-    return el.reduce((acc, cur)=>cur === acc ? acc : cur)
-  },[]);
+  //return;
 }
-
-   console.log(cities.sort());
-  console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+  //  console.log(cities.sort());
+  // console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 
 }// end block
 
@@ -63,11 +59,14 @@ function removeDups(arr){
 {
 
   function diffArray(arr1, arr2) {
-    
+    let concatenated = arr1.concat(arr2);
+    return concatenated.filter(el => {
+      return !arr1.includes(el) || !arr2.includes(el);
+    });
    }
 
-// console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
-  //. should return ["diorite", "pink wool"].
+console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+  // should return ["diorite", "pink wool"].
 }//block
 
 
