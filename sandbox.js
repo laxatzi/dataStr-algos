@@ -76,11 +76,13 @@ function removeDups(arr){
 
    function destroyer(arr) {
     let args = [...arguments];
-   
+    return arr.filter(el => {
+      return !args.includes(el);
+    });
     
   }
 
- //console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
+ console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
 
 }//end block
 
@@ -97,16 +99,12 @@ function removeDups(arr){
 
 {
   function whatIsInAName(collection, source) {
-    let refKeys = Object.keys(source);
-    return collection.filter(obj => {
-      return refKeys.every(key => {
-        return obj.hasOwnProperty(key) &&  obj[key] === source[key];
-      });
-    });
+    
+   // return;
    
   }
  
- console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
+ // console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })); // should return [{ first: "Tybalt", last: "Capulet" }].
 
 }//end block
 
@@ -119,8 +117,11 @@ function removeDups(arr){
 
 {
   function spinalCase(str) {
-    return str;
+    return;
   }
  
- // console.log(spinalCase("thisIsSpinalTap")); //   return "this-is-spinal-tap".
+  // console.log(spinalCase("this Is Spinal Tap")); //   return "this-is-spinal-tap".
+  // console.log(spinalCase("this_Is_Spinal_Tap")); //   return "this-is-spinal-tap".
+  // console.log(spinalCase("thisIsSpinalTap")); //   return "this-is-spinal-tap".
+
 }//end block
