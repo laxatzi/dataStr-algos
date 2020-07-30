@@ -144,3 +144,19 @@ console.log(pigLatin("grreen"));
 console.log(pigLatin('aubergine'));
 
 }//end block
+
+// Alt way
+{
+  function translatePigLatin(str) {
+    return str
+      .replace(/^[aeiou]\w*/, "$&way")
+      .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+  }
+  
+  // test here
+  console.log(translatePigLatin("consonant"));
+  console.log(pigLatin("grreen"));
+console.log(pigLatin('aubergine'));
+
+
+} // end block
