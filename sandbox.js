@@ -21,31 +21,16 @@
 
     // - If a word begins with a vowel, just add "way" at the end.
 
-{
 
-function pigLatin(str) {
-  let consonantCluster = str.match(/^[^aeiou]+/);
-
- return consonantCluster !== null ? str.replace(consonantCluster, '').concat(consonantCluster + 'ay') : str.concat('way');
-}
-console.log('PIG LATIN');
-console.log(pigLatin("grreen"));
-console.log(pigLatin('aubergine'));
-
-}//end block
-
-// Alt way
 {
   function translatePigLatin(str) {
-    return str
-      .replace(/^[aeiou]\w*/, "$&way")
-      .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+    //return ;
   }
   
   // test here
-  console.log(translatePigLatin("consonant"));
-  console.log(pigLatin("grreen"));
-console.log(pigLatin('aubergine'));
+  // console.log(translatePigLatin("consonant"));
+  // console.log(pigLatin("grreen"));
+  // console.log(pigLatin('aubergine'));
 
 
 } // end block
