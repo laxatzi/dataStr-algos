@@ -9,10 +9,10 @@
 
 {
     function pigLatin(str) {
-        return str;
+        return str.replace(/(^[aeiou])(\w*)/, '$1$2way').replace(/(^[^aeiou]+)(\w*)/, '$2$1ay');
       }
       
-      console.log(pigLatin("california")); // aliforniacay
+      console.log(pigLatin("transilvania")); // aliforniacay
       console.log(pigLatin("algorithm")); // algorithmway
 
 }// end block
