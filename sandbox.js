@@ -16,28 +16,6 @@
 }//end block
 
 
-// PIG LATIN
-    // Pig Latin is a way of altering English Words. The rules are as follows:
-
-    // - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
-
-    // - If a word begins with a vowel, just add "way" at the end.
-
-
-{
-  function translatePigLatin(str) {
-    //return ;
-  }
-  
-  // test here
-  // console.log(translatePigLatin("consonant"));
-  // console.log(pigLatin("grreen"));
-  // console.log(pigLatin('aubergine'));
-
-
-} // end block
-
-
 // EXERCISE #19
     //. Q: Remove Duplicate Elements from an Array
     // first algorithm 
@@ -70,3 +48,23 @@
     }// end block
     
     
+// PIG LATIN
+    // Pig Latin is a way of altering English Words. The rules are as follows:
+
+    // - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+
+    // - If a word begins with a vowel, just add "way" at the end.
+
+
+{
+  function translatePigLatin(str) {
+    return str.replace(/(^[aeiou])(\w*)/, '$1$2way').replace(/(^[^aeiou]+)(\w*)/, '$2$1ay');
+  }
+  
+  // test here
+  console.log(translatePigLatin("consonant"));  // onsonantcay
+  console.log(translatePigLatin("grreen"));  // eengrray
+  console.log(translatePigLatin('aubergine')); // aubergineway
+
+
+} // end block
