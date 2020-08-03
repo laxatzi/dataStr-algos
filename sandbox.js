@@ -57,8 +57,13 @@
         let cities = ["London", "Paris", "Florence", "Valencia", "London", "Valencia"];
 
        function removeDups(arr){
-
+          return arr.sort().reduce((acc, cur)=> {
+            if(cur !== acc[0]) acc.unshift(cur);
+            return acc;
+          },[]);
        }
+
+       console.log(removeDups(cities));
 
     }// end block
     
