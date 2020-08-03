@@ -5,11 +5,13 @@
 
 {
   function spinalCase(str) {
-    //return;  
+    let regex = /\s+|_+/g;
+    let re = /([a-z])([A-Z])/g;
+    return str.replace(re, '$1 $2').replace(regex, '-').toLowerCase();
   }
-  //  console.log(spinalCase("this Is Spinal Tap")); //   return "this-is-spinal-tap".
-  // console.log(spinalCase("this_Is_Spinal_Tap")); //   return "this-is-spinal-tap".
-  //  console.log(spinalCase("thisIsSpinalTap")); //   return "this-is-spinal-tap".
+   console.log(spinalCase("this Is Spinal Tap")); //   return "this-is-spinal-tap".
+   console.log(spinalCase("this_Is_Spinal_Tap")); //   return "this-is-spinal-tap".
+   console.log(spinalCase("thisIsSpinalTap")); //   return "this-is-spinal-tap".
 
 }//end block
 
