@@ -38,17 +38,28 @@
 
 // EXERCISE #19
     //. Q: Remove Duplicate Elements from an Array
+    // first algorithm 
     {
       let cities = ["Athens","Athens", "Thessaloniki", "Iraklion", "Drama", "Thessaloniki"];
     
     //Remove Dups from an Array
      
     function removeDups(arr){
-      //return;
+      return [...new Set(arr)];
     }
       //  console.log(cities.sort());
-      // console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+       console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
     
+    }// end block
+
+    // second algorithm
+    {
+        let cities = ["London", "Paris", "Florence", "Valencia", "London", "Valencia"];
+
+       function removeDups(arr){
+
+       }
+
     }// end block
     
     
