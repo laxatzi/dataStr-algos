@@ -13,13 +13,14 @@
 
     {
         function myReplace(str, before, after) {
-           let regex = /^[A-Z]/;
-            if(regex.test(before)) after= after[0].toUpperCase()+ after.substring(1);
-            else after = after[0].toLowerCase() + after.substring(1);
-            return str.replace(before, after);
+          let regex = /^[A-Z]/;
+          if(regex.test(before)) after = after.charAt(0).toUpperCase().concat(after.substring(1));
+          else after = after.charAt(0).toLowerCase().concat(after.substring(1));
+          return str.replace(before, after);
           }
     
      console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
      console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
+     console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
 
     }//end block

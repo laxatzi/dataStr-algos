@@ -9,13 +9,13 @@
 
 {
   function translatePigLatin(str) {
-    return str.replace(/(^[aeiou])(\w*)/, '$1$2way').replace(/(^[^aeiou]+)(\w*)/, '$2$1ay');
+    return str.replace(/(^[aeoui])(\w*)/, '$1$2way').replace(/(^[^aeoui]+)(\w*)/, '$2$1ay')
   }
   
   // test here
-  // console.log(translatePigLatin("consonant"));  // onsonantcay
-  // console.log(translatePigLatin("grreen"));  // eengrray
-  // console.log(translatePigLatin('aubergine')); // aubergineway
+   console.log(translatePigLatin("consonant"));  // onsonantcay
+   console.log(translatePigLatin("grreen"));  // eengrray
+   console.log(translatePigLatin('aubergine')); // aubergineway
 
 
 } // end block
@@ -34,12 +34,18 @@
     // Preserve the case of the first character in the original word when you are replacing it.
     // For example if you mean to replace the word "Book" with the word "dog", it should be replaced as "Dog"
 
+    // Use Test() method
+
     {
 
       function myReplace(str, before, after) {
-        
+       let regex = /^[A-Z]/;
+       if(regex.test(before)) after = after.charAt(0).toUpperCase().concat(after.substring(1));
+       else after = after.charAt(0).toLowerCase().concat(after.substring(1));
+       return str.replace(before, after);
       }
    console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
    console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
+   console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
 
   }//end block
