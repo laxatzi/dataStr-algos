@@ -9,7 +9,6 @@
 
 {
   function translatePigLatin(str) {
-    return str.replace(/(^[aeoui])(\w*)/, '$1$2way').replace(/(^[^aeoui]+)(\w*)/, '$2$1ay')
   }
   
   // test here
@@ -39,16 +38,12 @@
     {
 
       function myReplace(str, before, after) {
-        
-       let regex = /^[A-Z]/;
-       if(regex.test(before)) after = after.charAt(0).toUpperCase().concat(after.substring(1));
-       else after = after.charAt(0).toLowerCase().concat(after.substring(1));
-       return str.replace(before, after);
+     
       
       }
-   console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
-   console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
-   console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
+  //  console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
+  //  console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
+  //  console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
 
   }//end block
 
@@ -62,8 +57,30 @@
       return str.replace(before, after);
     
     }
- console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
- console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
- console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
+//  console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
+//  console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
+//  console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
+
+}//end block
+
+// Pair Elements
+
+{
+
+  function pairElement(str) {
+    let dnaObj = {
+      A : 'T',
+      T : 'A',
+      C : 'G',
+      G : 'C'
+    };
+
+  let splited = str.split(''); 
+  return splited.map(key =>[key, dnaObj[key]]);
+  
+
+  }
+  
+  console.log(pairElement("ATCGA")); // should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
 
 }//end block
