@@ -11,10 +11,10 @@
   function translatePigLatin(str) {
   }
   
-  // test here
-   console.log(translatePigLatin("consonant"));  // onsonantcay
-   console.log(translatePigLatin("grreen"));  // eengrray
-   console.log(translatePigLatin('aubergine')); // aubergineway
+// test here
+   //  console.log(translatePigLatin("consonant"));  // onsonantcay
+   // console.log(translatePigLatin("grreen"));  // eengrray
+   // console.log(translatePigLatin('aubergine')); // aubergineway
 
 
 } // end block
@@ -65,22 +65,33 @@
 
 // Pair Elements
 
+    // {
+
+    //   function pairElement(str) {
+    //     let dnaObj = {
+    //       A : 'T',
+    //       T : 'A',
+    //       C : 'G',
+    //       G : 'C'
+    //     };
+
+    //   let splited = str.split(''); 
+    //   return splited.map(key =>[key, dnaObj[key]]);
+      
+
+    //   }
+      
+    //   console.log(pairElement("ATCGA")); // should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
+
+    // }//end block
+
+// #################################################################################
+
 {
-
-  function pairElement(str) {
-    let dnaObj = {
-      A : 'T',
-      T : 'A',
-      C : 'G',
-      G : 'C'
-    };
-
-  let splited = str.split(''); 
-  return splited.map(key =>[key, dnaObj[key]]);
-  
-
+  function reverseStr(str){
+    let arr = str.split('');
+    return arr.reverse().join('');
   }
-  
-  console.log(pairElement("ATCGA")); // should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
 
+  console.log(reverseStr('Hellas'));
 }//end block
