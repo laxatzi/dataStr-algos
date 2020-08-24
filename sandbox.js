@@ -97,7 +97,10 @@
 
 {
   function longestWordLength(str){
-    return str.length;
+    let splitStr = str.split(' ');
+    return splitStr.map(el => {
+      return el.length;
+    }).reduce((acc, cur)=> cur > acc?cur : acc, []);
   }
-  console.log(longestWordLength('Google do a barrel roll')); //6
+  console.log(longestWordLength('There is a fox in the alleys')); //6
 }
