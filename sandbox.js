@@ -88,15 +88,22 @@
 // #################################################################################
 
 
-// Reverse the provided string.
-// You may need to turn the string into an array before you can reverse it.
- // Your result must be a string./ 
+
+
+// Return the factorial of the provided integer.
+
+// If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+
+// Factorials are often represented with the shorthand notation n!
+
+// For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+// Only integers greater than or equal to zero will be supplied to the function.
 
 {
-  function reverseStr(str){
-    let arr = str.split('');
-    return arr.reverse().join('');
+  function factorialize(num){
+    if(num === 1) return 1;
+    return num * factorialize(num - 1);
   }
-
-  console.log(reverseStr('Hellas'));
+  console.log(factorialize(7)); // 5040
 }//end block
