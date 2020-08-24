@@ -87,23 +87,17 @@
 
 // #################################################################################
 
+//Longest Word in a String
 
 
 
-// Return the factorial of the provided integer.
+// Return the length of the longest word in the provided sentence.
 
-// If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
-
-// Factorials are often represented with the shorthand notation n!
-
-// For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
-
-// Only integers greater than or equal to zero will be supplied to the function.
+// Your response should be a number.
 
 {
-  function factorialize(num){
-    if(num === 0) return 1;
-    return num * factorialize(num -1);
+  function longestWordLength(str){
+    return str.length;
   }
-  console.log(factorialize(7)); // 5040
-}//end block
+  console.log(longestWordLength('Google do a barrel roll')); //6
+}
