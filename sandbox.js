@@ -103,7 +103,7 @@
   }
 
 
-//Slice and SplicePassed
+//Slice and Splice
 
     // You are given two arrays and an index.
 
@@ -115,12 +115,30 @@
 
     {
       function frankenSplice(arr1, arr2, num) {
-        let secondArr = arr2.slice();
-        let firstArr = arr1.slice();
-        secondArr.splice(num, 0, ...firstArr);
-        return secondArr;
+       console.log('slice and splice')
       }
 
       console.log(frankenSplice([1, 2, 3], [4, 5], 1)); // [4, 1, 2, 3, 5]
       console.log(frankenSplice([1, 2], ["a", "b"], 1)); // ["a", 1, 2, "b"]
+    }
+
+
+
+// Falsy Bouncer
+
+    // Remove all falsy values from an array.
+
+    // Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+    // Hint: Try converting each value to a Boolean.
+
+    {
+
+      function bouncer(arr){
+        return arr.filter(el => (!!el));
+      }
+
+      console.log(bouncer([false, null, 0, NaN, undefined, ""])); // []
+      console.log(bouncer([null, NaN, 1, 2, undefined])); // [1,2]
+
     }
