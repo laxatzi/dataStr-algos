@@ -103,20 +103,19 @@
   }
 
 
-//Boo who
+//Title Case a Sentence
 
-  // Check if a value is classified as a boolean primitive. Return true or false.
+  //Return the provided string with the first letter of each word capitalized. 
+  //Make sure the rest of the word is in lower case.
 
-// Boolean primitives are true and false.
+  //For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
 
-{
-  function booWho(bool){
-    if(typeof bool === 'boolean') return true;
-    return false;
+  {
+    function titleCase(str){
+      let convert = str.toLowerCase().split(" ");
+      return convert.map(el => el.substring(0,1).toUpperCase().concat(el.substring(1))).join(" ");
+    }
+
+    console.log(titleCase("I'm a little tea pot")); // I'm A Little Tea Pot
+    console.log(titleCase("sHoRt AnD sToUt")); // Short and Stout
   }
-    
-
-  console.log(booWho(false)); // true
-  console.log(booWho(true)); // true
-  console.log(booWho([1, 2, 3])); // false
-}
