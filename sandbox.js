@@ -87,17 +87,20 @@
 
 // #################################################################################
 
-//Repeat a String 
 
-  //Repeat a given string str (first argument) for num times (second argument). 
-  //Return an empty string if num is not a positive number.
+// Truncate a String
 
-  {
-    function repeatStringNumTimes(str, num){
-      if(num <= 0) return "";
-      return str + repeatStringNumTimes(str, num-1);
-    }
+//Truncate a string (first argument) if it is longer than the given maximum string length (second argument). 
+//Return the truncated string with a ... ending.
 
-    console.log("abc", 3); // abcabcabc
-    console.log("$", 5); // $$$$$
+{
+
+  function truncateStr(str, num){
+    if(str.length>num)return str.slice(0, num).concat("...");
+    return str;
   }
+
+  console.log(truncateStr("A-tisket a-tasket A green and yellow basket", 8)); //A-tisket...
+  console.log(truncateStr("Absolutely Longer", 2)); //Ab...
+  console.log(truncateStr("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length));
+}
