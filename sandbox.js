@@ -87,18 +87,17 @@
 
 // #################################################################################
 
-// Confirm the EndingPassed
+//Repeat a String 
 
-  //Check if a string (first argument, str) ends with the given target string (second argument, target).
-
-  //This challenge can be solved with the .endsWith() method, which was introduced in ES2015. 
-  //But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+  //Repeat a given string str (first argument) for num times (second argument). 
+  //Return an empty string if num is not a positive number.
 
   {
-    function confirmEnding(str, target){
-      if(str.substring(str.length - target.length) === target) return true;
-      return false;
+    function repeatStringNumTimes(str, num){
+      if(num <= 0) return "";
+      return str + repeatStringNumTimes(str, num-1);
     }
-    console.log(confirmEnding("Bastian", "n")); //true
-    console.log(confirmEnding("Connor", "n")); // false
+
+    console.log("abc", 3); // abcabcabc
+    console.log("$", 5); // $$$$$
   }
