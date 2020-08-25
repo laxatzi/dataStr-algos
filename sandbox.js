@@ -94,10 +94,29 @@
   // This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
 
   {
-    function findElement(arr, func) {
-      return arr.find(func);
+    // function findElement(arr, func) {
+    //   return;
 
-    }
-    console.log(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }) ); //8
-    console.log(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })); // undefined
+    // }
+    // console.log(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }) ); //8
+    // console.log(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })); // undefined
   }
+
+
+//Boo who
+
+  // Check if a value is classified as a boolean primitive. Return true or false.
+
+// Boolean primitives are true and false.
+
+{
+  function booWho(bool){
+    if(typeof bool === 'boolean') return true;
+    return false;
+  }
+    
+
+  console.log(booWho(false)); // true
+  console.log(booWho(true)); // true
+  console.log(booWho([1, 2, 3])); // false
+}
