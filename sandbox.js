@@ -103,19 +103,24 @@
   }
 
 
-//Title Case a Sentence
+//Slice and SplicePassed
 
-  //Return the provided string with the first letter of each word capitalized. 
-  //Make sure the rest of the word is in lower case.
+    // You are given two arrays and an index.
 
-  //For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+    // Copy each element of the first array into the second array, in order.
 
-  {
-    function titleCase(str){
-      let convert = str.toLowerCase().split(" ");
-      return convert.map(el => el.substring(0,1).toUpperCase().concat(el.substring(1))).join(" ");
+    // Begin inserting elements at index n of the second array.
+
+    // Return the resulting array. The input arrays should remain the same after the function runs.
+
+    {
+      function frankenSplice(arr1, arr2, num) {
+        let secondArr = arr2.slice();
+        let firstArr = arr1.slice();
+        secondArr.splice(num, 0, ...firstArr);
+        return secondArr;
+      }
+
+      console.log(frankenSplice([1, 2, 3], [4, 5], 1)); // [4, 1, 2, 3, 5]
+      console.log(frankenSplice([1, 2], ["a", "b"], 1)); // ["a", 1, 2, "b"]
     }
-
-    console.log(titleCase("I'm a little tea pot")); // I'm A Little Tea Pot
-    console.log(titleCase("sHoRt AnD sToUt")); // Short and Stout
-  }
