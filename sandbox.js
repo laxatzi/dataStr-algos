@@ -135,7 +135,7 @@
     {
 
       function bouncer(arr){
-        return arr.filter(el => (!!el));
+        console.log('something');
       }
 
       console.log(bouncer([false, null, 0, NaN, undefined, ""])); // []
