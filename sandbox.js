@@ -96,13 +96,12 @@
 
   {
     function mutation([str, str1]){
-     
-     return str1.toLowerCase().split("").every(el => str.toLowerCase().indexOf(el) !== -1);
+       return str;
     }
     //Test
-      console.log(mutation(["hello", "hey"])); // false
-      console.log(mutation(["floor", "for"])); // true
-      console.log(mutation(["hello", "Hello"])); // true
+      // console.log(mutation(["hello", "hey"])); // false
+      // console.log(mutation(["floor", "for"])); // true
+      // console.log(mutation(["hello", "Hello"])); // true
   }
 
 
