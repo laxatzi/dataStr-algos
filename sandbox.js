@@ -87,4 +87,50 @@
 
 // #################################################################################
 
+ // #Title Case a Sentence  
 
+    // Return the provided string with the first letter of each word capitalized. 
+    // Make sure the rest of the word is in lower case.
+
+    // For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+    {
+
+      function titleCase(str) {
+        return str;
+      }
+      
+      console.log(titleCase("I'm a little tea pot"));
+      console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")); 
+      
+    }
+
+
+// #Mutations
+
+  // Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+  // For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+  // The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
+  // Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+
+  {
+    function mutation(arr){
+      return arr;
+    }
+    console.log(mutation("hello", "hey")); // false
+    console.log(mutation("floor", "for")); // true
+  }
+
+
+// Chunky MonkeyPassed
+
+  // Write a function that splits an array (first argument) into groups the length of size (second argument) 
+  // and returns them as a two-dimensional array.
+
+{
+  function chunkArrayInGroups(arr, size){
+    return arr;
+  }
+
+  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
+  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
+}
