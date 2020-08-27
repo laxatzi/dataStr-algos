@@ -112,9 +112,10 @@
 
 {
   function chunkArrayInGroups(arr, size){
-    return;
+    if(arr.length <= size) return [arr];
+    return [arr.slice(0, size)].concat(chunkArrayInGroups(arr.slice(size), size));
   }
 
-  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
-  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
+   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
+   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
  }
