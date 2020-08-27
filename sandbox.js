@@ -96,12 +96,12 @@
 
   {
     function mutation(arr){
-      return arr[1].toLowerCase().split('').every(letter=>arr[0].toLowerCase().indexOf(letter) !== -1);
+      return;
     }
     //Test
-      console.log(mutation(["hello", "hey"])); // false
-      console.log(mutation(["floor", "for"])); // true
-      console.log(mutation(["hello", "Hello"])); // true
+      // console.log(mutation(["hello", "hey"])); // false
+      // console.log(mutation(["floor", "for"])); // true
+      // console.log(mutation(["hello", "Hello"])); // true
   }
 
 
@@ -112,10 +112,27 @@
 
 {
   function chunkArrayInGroups(arr, size){
-    if(arr.length <= size) return [arr];
-    return [arr.slice(0, size)].concat(chunkArrayInGroups(arr.slice(size), size));
+    
   }
 
-   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
-   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
+  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
+  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
  }
+
+ // Sum All Numbers in a RangePassed
+
+    // We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
+    // The lowest number will not always come first.
+
+    // For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+
+    {
+      function sumAll([a,b]){
+        let modifier = a<b ?-1 :1;
+       if(a === b) return b;
+       return b + sumAll([a, b + modifier]);
+      }
+
+      console.log(sumAll([1,4])); // 10
+      console.log(sumAll([4,1])); // 10
+    }
