@@ -95,13 +95,13 @@
   // Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
 
   {
-    function mutation([str, str1]){
-       return str;
+    function mutation(arr){
+      return arr[1].toLowerCase().split('').every(letter=>arr[0].toLowerCase().indexOf(letter) !== -1);
     }
     //Test
-      // console.log(mutation(["hello", "hey"])); // false
-      // console.log(mutation(["floor", "for"])); // true
-      // console.log(mutation(["hello", "Hello"])); // true
+      console.log(mutation(["hello", "hey"])); // false
+      console.log(mutation(["floor", "for"])); // true
+      console.log(mutation(["hello", "Hello"])); // true
   }
 
 
@@ -112,9 +112,9 @@
 
 {
   function chunkArrayInGroups(arr, size){
-    return arr;
+    return;
   }
 
-  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
-  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
-}
+  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
+  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
+ }
