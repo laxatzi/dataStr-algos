@@ -119,20 +119,20 @@
   //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
  }
 
- // Sum All Numbers in a RangePassed
+//Diff Two Arrays
 
-    // We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
-    // The lowest number will not always come first.
+    // Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. 
+    // In other words, return the symmetric difference of the two arrays.
 
-    // For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
-
+    // Note
+    // You can return the array with its elements in any order.
     {
-      function sumAll([a,b]){
-        let modifier = a<b ?-1 :1;
-       if(a === b) return b;
-       return b + sumAll([a, b + modifier]);
+
+      function diffArray(arr1, arr2){
+        let concatArrays = arr1.concat(arr2);
+        return concatArrays.filter(el => !arr1.includes(el) || !arr2.includes(el));
       }
 
-      console.log(sumAll([1,4])); // 10
-      console.log(sumAll([4,1])); // 10
+      console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])); // ["piglet", 4]
+      console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); // [4];
     }
