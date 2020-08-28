@@ -137,13 +137,14 @@
     {
       function whatIsInAName(collection, source){
         let srcKeys = Object.keys(source);
-        return collection.filter(obj => srcKeys.map(key => obj[key]===source[key]).reduce((a,b)=> a));
-        
-        
+        return collection.filter(obj => srcKeys.every(key => obj[key] === source[key]));
         }
       
-      console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null },
-       { first: "Tybalt", last: "Capulet" },{first: "Lambros"}] // end of collection
-      , { last: "Capulet" }));  //[{ first: "Tybalt", last: "Capulet" }]
+        //TEST
+          console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null },
+          { first: "Tybalt", last: "Capulet" },{first: "Lambros"}] // end of collection
+          , { last: "Capulet" }));  //[{ first: "Tybalt", last: "Capulet" }]
+
+          console.log(whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})); // []
     }
   
