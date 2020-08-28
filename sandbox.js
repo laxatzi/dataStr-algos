@@ -121,19 +121,29 @@
 
  // ##################################################################################################
 
-  // Seek and Destroy
+  
+  // Wherefore art thouPassed
 
-    // You will be provided with an initial array (the first argument in the destroyer function), 
-    // followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+    // Make a function that looks through an array of objects (first argument) and returns 
+    // an array of all objects that have matching name and value pairs (second argument). 
+    // Each name and value pair of the source object has to be present in the object from the collection 
+    // if it is to be included in the returned array.
 
-    // Note
-    // You have to use the arguments object.
-{
-    function destroyer(arr){
-      let args = [...arguments];
-      return arr.filter(el=> !args.includes(el));
+    // For example, if the first argument is [{ first: "Romeo", last: "Montague" }, 
+    // { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], and the second argument is { last: "Capulet" }, 
+    // then you must return the third object from the array (the first argument),
+    // because it contains the name and its value, that was passed on as the second argument.
+
+    {
+      function whatIsInAName(collection, source){
+        let srcKeys = Object.keys(source);
+        return collection.filter(obj => srcKeys.map(key => obj[key]===source[key]).reduce((a,b)=> a));
+        
+        
+        }
+      
+      console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null },
+       { first: "Tybalt", last: "Capulet" },{first: "Lambros"}] // end of collection
+      , { last: "Capulet" }));  //[{ first: "Tybalt", last: "Capulet" }]
     }
-
-    console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // ["hamburger"]
-    console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5)); // [1]
-  }
+  
