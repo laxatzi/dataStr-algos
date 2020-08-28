@@ -136,8 +136,8 @@
 
     {
       function whatIsInAName(collection, source){
-        let srcKeys = Object.keys(source);
-        return collection.filter(obj => srcKeys.every(key => obj[key] === source[key]));
+        //HINT the source key is the 'key' to the solution
+        return source;
         }
       
         //TEST
@@ -148,3 +148,18 @@
           console.log(whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})); // []
     }
   
+
+    //Spinal Tap Case
+
+// Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+{
+  function spinalCase(str){
+   return str.split(/\s|_|(?=[A-Z])/g).join('-').toLowerCase();
+  }
+
+  console.log(spinalCase("The_Andy_Griffith_Show")); //"this-is-spinal-tap"
+  console.log(spinalCase("The Andy Griffith Show")); // //"this-is-spinal-tap"
+  console.log(spinalCase("theAndyGriffithShow")); // "this-is-spinal-tap"
+  console.log(spinalCase("TheAndy-Griffith_Show"))
+}
