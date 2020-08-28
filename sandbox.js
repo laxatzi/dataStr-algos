@@ -96,12 +96,12 @@
 
   {
     function mutation(arr){
-      return;
+      return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().indexOf(el) !== -1);
     }
     //Test
-      // console.log(mutation(["hello", "hey"])); // false
-      // console.log(mutation(["floor", "for"])); // true
-      // console.log(mutation(["hello", "Hello"])); // true
+      console.log(mutation(["hello", "hey"])); // false
+      console.log(mutation(["floor", "for"])); // true
+      console.log(mutation(["hello", "Hello"])); // true
   }
 
 
@@ -112,27 +112,12 @@
 
 {
   function chunkArrayInGroups(arr, size){
-    
+    if(arr.length <= size) return [arr];
+    return [arr.slice(0, size)].concat(chunkArrayInGroups(arr.slice(size), size));
   }
 
-  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));  //[[0, 1, 2], [3, 4, 5]]
-  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
+   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5,6,7,8,9], 3));  //[[0, 1, 2], [3, 4, 5]]
+   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
  }
 
-//Diff Two Arrays
-
-    // Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. 
-    // In other words, return the symmetric difference of the two arrays.
-
-    // Note
-    // You can return the array with its elements in any order.
-    {
-
-      function diffArray(arr1, arr2){
-        let concatArrays = arr1.concat(arr2);
-        return concatArrays.filter(el => !arr1.includes(el) || !arr2.includes(el));
-      }
-
-      console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])); // ["piglet", 4]
-      console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); // [4];
-    }
+// 
