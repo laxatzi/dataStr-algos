@@ -9,6 +9,7 @@
 
 {
   function translatePigLatin(str) {
+    return str;
   }
   
 // test here
@@ -38,7 +39,7 @@
     {
 
       function myReplace(str, before, after) {
-     
+        return str;
       
       }
   //  console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
@@ -52,9 +53,7 @@
 
     function myReplace(str, before, after) {
       
-      let indexBefore = str.indexOf(before);
-      if(str[indexBefore] === str[indexBefore].toUpperCase()) after = after.charAt(0).toUpperCase().concat(after.substring(1));
-      return str.replace(before, after);
+      return str;
     
     }
 //  console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
@@ -96,12 +95,12 @@
 
   {
     function mutation(arr){
-      return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().indexOf(el) !== -1);
+      return arr;
     }
     //Test
-      console.log(mutation(["hello", "hey"])); // false
-      console.log(mutation(["floor", "for"])); // true
-      console.log(mutation(["hello", "Hello"])); // true
+      // console.log(mutation(["hello", "hey"])); // false
+      // console.log(mutation(["floor", "for"])); // true
+      // console.log(mutation(["hello", "Hello"])); // true
   }
 
 
@@ -112,12 +111,29 @@
 
 {
   function chunkArrayInGroups(arr, size){
-    if(arr.length <= size) return [arr];
-    return [arr.slice(0, size)].concat(chunkArrayInGroups(arr.slice(size), size));
+   
+    return arr;
   }
 
-   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5,6,7,8,9], 3));  //[[0, 1, 2], [3, 4, 5]]
-   console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
+  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5,6,7,8,9], 3));  //[[0, 1, 2], [3, 4, 5]]
+  //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
  }
 
-// 
+ // ##################################################################################################
+
+  // Seek and Destroy
+
+    // You will be provided with an initial array (the first argument in the destroyer function), 
+    // followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+    // Note
+    // You have to use the arguments object.
+{
+    function destroyer(arr){
+      let args = [...arguments];
+      return arr.filter(el=> !args.includes(el));
+    }
+
+    console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // ["hamburger"]
+    console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5)); // [1]
+  }
