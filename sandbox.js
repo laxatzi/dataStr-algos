@@ -155,7 +155,7 @@
 
 {
   function spinalCase(str){
-   return str.split(/\s|_|(?=[A-Z])/g).join('-').toLowerCase();
+   return str;
   }
 
   console.log(spinalCase("The_Andy_Griffith_Show")); //"this-is-spinal-tap"
@@ -163,3 +163,6 @@
   console.log(spinalCase("theAndyGriffithShow")); // "this-is-spinal-tap"
   console.log(spinalCase("TheAndy-Griffith_Show"))
 }
+
+//###########################################################################################################
+
