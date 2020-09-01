@@ -1,26 +1,4 @@
     
-// PIG LATIN
-    // Pig Latin is a way of altering English Words. The rules are as follows:
-
-    // - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
-
-    // - If a word begins with a vowel, just add "way" at the end.
-
-
-{
-  function translatePigLatin(str) {
-    return str.replace(/(^[aeiou])(\w*)/, '$1$2way').replace(/(^[^aeiou]+)(\w*)/, '$2$1ay');
-  }
-  
-
-    console.log(translatePigLatin("consonant"));  // onsonantcay
-   console.log(translatePigLatin("grreen"));  // eengrray
-   console.log(translatePigLatin('aubergine')); // aubergineway
-
-
-} // end block
-
-
 // Search and Replace
     // Perform a search and replace on the sentence using the arguments provided and return the new sentence.
 
@@ -39,51 +17,47 @@
     {
 
       function myReplace(str, before, after) {
-        return str.replace(before, after);
+       
+
+        return str;
       
       }
       //TEST
-   console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
-   console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
-   console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
+  //  console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
+  //  console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
+  //  console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
 
   }//end block
 
-  // Alternative algo (without test() method and regex)
-  {
-
-    function myReplace(str, before, after) {
-      
-      return str;
-    
-    }
-//  console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
-//  console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
-//  console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
-
-}//end block
+ 
 
 // Pair Elements
 
-    // {
+   // The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+   // Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+   // Return the provided character as the first element in each array.
+   //  For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
+   // The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
 
-    //   function pairElement(str) {
-    //     let dnaObj = {
-    //       A : 'T',
-    //       T : 'A',
-    //       C : 'G',
-    //       G : 'C'
-    //     };
+    {
 
-    //   let splited = str.split(''); 
-    //   return splited.map(key =>[key, dnaObj[key]]);
+      function pairElement(str) {
+        let dnaObj = {
+          A : 'T',
+          T : 'A',
+          C : 'G',
+          G : 'C'
+        };
+
+     
+      return str;
       
 
-    //   }
+      }
       
-    //   console.log(pairElement("ATCGA")); // should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
+      console.log(pairElement("ATCGA")); // should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
 
-    // }//end block
+     }//end block
 
 // #################################################################################
 
