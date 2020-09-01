@@ -17,15 +17,19 @@
     {
 
       function myReplace(str, before, after) {
-       
-
-        return str;
+        
+        if(before[0].match(/[A-Z]/)){
+          after = after[0].toUpperCase().concat(after.substr(1));
+        } else {
+          after = after[0].toLowerCase().concat(after.substr(1));
+        }
+        return str.replace(before, after);
       
       }
       //TEST
-  //  console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
-  //  console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
-  //  console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
+   console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
+   console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
+   console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
 
   }//end block
 
@@ -50,7 +54,7 @@
         };
 
      
-      return str;
+      return str.split('').map(key => [key, dnaObj[key]]);
       
 
       }
@@ -59,6 +63,30 @@
 
      }//end block
 
+
+
+// Missing Letters
+    // Find the missing letter in the passed letter range and return it.
+    // If all letters are present in the range, return undefined.
+  {
+    function fearNoLetter(str){
+      let control = str.charCodeAt(0); // 97
+      let missing;
+      str.split('').map((el, index)=> { // loop through arr after we created it by splitting 
+        if(str.charCodeAt(index) === control ){ // if control and index are the same the sequence is all right
+          ++control; // align with the next index
+        }
+        else {
+          missing = String.fromCharCode(control);  // the sequence is lost, lets check where we are (its 100 = 'd') -- it returns a new string: "d"
+        }
+      })
+      if(missing == undefined) return 'All letters are here!'; // if no missing (no gap in sequence) value is undefined so we order to return 
+      // a message
+      return missing; // d 
+    }
+    console.log(fearNoLetter('abce')); // "d" 
+    console.log(fearNoLetter('abcdefghijklmnopqrstuvwxyz')); // undefined
+  }
 // #################################################################################
 
 // #Mutations
