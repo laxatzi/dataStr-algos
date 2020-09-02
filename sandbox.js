@@ -1,34 +1,4 @@
     
-// Pair Elements
-
-   // The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
-   // Base pairs are a pair of AT and CG. Match the missing element to the provided character.
-   // Return the provided character as the first element in each array.
-   //  For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
-   // The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
-
-    {
-
-      function pairElement(str) {
-        let dnaObj = {
-          A : 'T',
-          T : 'A',
-          C : 'G',
-          G : 'C'
-        };
-
-     
-      return str.split('').map(key => [key, dnaObj[key]]);
-      
-
-      }
-      
-      console.log(pairElement("ATCGA")); // should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
-
-     }//end block
-
-
-
 // Missing Letters
     // Find the missing letter in the passed letter range and return it.
     // If all letters are present in the range, return undefined.
@@ -88,5 +58,31 @@
 
  // ##################################################################################################
 
+// Missing Letters
+    // Find the missing letter in the passed letter range and return it.
+    // If all letters are present in the range, return undefined.
+    {
+      function fearNoLetter(str){
+       let current = str.charCodeAt(0);
+       let missing;
+       str.split('').map((el, index)=> {
+         if(str.charCodeAt(index) === current) ++current;
+         else missing = String.fromCharCode(current);
+       })
+       if(missing === undefined) return 'No letter is missing from the row!';
+        return missing; // d 
+      }
+      console.log(fearNoLetter('abce')); // "d" 
+      console.log(fearNoLetter('abcdefghijklmnopqrstuvwxyz')); // undefined
+    }
 
-
+// algorithm 
+  
+  // store current
+  // store missing  (empty)
+  // make array
+  // map array
+  // compare index to charCode
+  // conditions : if equal ascend by one
+  // if not  ask for the string (fromCharCode) and store it in missing
+  // return missing
