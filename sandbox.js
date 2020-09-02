@@ -18,7 +18,7 @@
         };
 
      
-      return
+      return str.split('').map(key => [key, dnaObj[key]]);
       
 
       }
