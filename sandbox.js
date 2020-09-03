@@ -1,28 +1,4 @@
     
-// Missing Letters
-    // Find the missing letter in the passed letter range and return it.
-    // If all letters are present in the range, return undefined.
-  {
-    function fearNoLetter(str){
-      let control = str.charCodeAt(0); // 97
-      let missing;
-      str.split('').map((el, index)=> { // loop through arr after we created it by splitting 
-        if(str.charCodeAt(index) === control ){ // if control and index are the same the sequence is all right
-          ++control; // align with the next index
-        }
-        else {
-          missing = String.fromCharCode(control);  // the sequence is lost, lets check where we are (its 100 = 'd') -- it returns a new string: "d"
-        }
-      })
-      if(missing == undefined) return 'All letters are here!'; // if no missing (no gap in sequence) value is undefined so we order to return 
-      // a message
-      return missing; // d 
-    }
-    console.log(fearNoLetter('abce')); // "d" 
-    console.log(fearNoLetter('abcdefghijklmnopqrstuvwxyz')); // undefined
-  }
-// #################################################################################
-
 // #Mutations
 
   // Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
@@ -86,3 +62,29 @@
   // conditions : if equal ascend by one
   // if not  ask for the string (fromCharCode) and store it in missing
   // return missing
+
+{
+  
+  // function uniteUnique(arr) {
+  //   let args = [...arguments];
+  //   let merged = args.reduce((acc, cur)=> acc.concat(cur));
+  //   let sortMerged = merged.sort((a,b)=> a -b);
+  //      sortMerged.reduce((acc,cur)=> {
+  //       if(cur !== acc[0]) acc.unshift(cur);
+  //       return acc;
+  //     }, [])
+  //   }
+
+  function uniteUnique(arr){
+     let args = [...arguments];
+     let newArr = args.reduce((acc, cur)=> {
+       return acc.concat(
+         cur.filter(el=> acc.indexOf(el)=== -1)
+       )
+     });
+     return newArr;
+  }
+    
+    console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //
+
+  }
