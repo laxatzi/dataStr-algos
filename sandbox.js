@@ -118,37 +118,30 @@
 
   
     
-  //Spinal Tap Case
-
-    //Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
-{
-  function spinalCase(str){
-    let re = /([a-z])([A-Z])/g;
-    let regex = /\s|_/g;
-    let gapped = str.replace(re, '$1 $2');
-    return gapped.replace(regex, '-').toLowerCase();
-
-  }
-
-  console.log(spinalCase("The_Andy_Griffith_Show"));
-  console.log(spinalCase("The Andy Griffith Show"));
-  console.log(spinalCase("TheAndyGriffithShow"));
-}
 
 
+// The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
 
-// Pig Latin is a way of altering English Words. The rules are as follows:
+// Base pairs are a pair of AT and CG. Match the missing element to the provided character.
 
-// - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+// Return the provided character as the first element in each array.
 
-// - If a word begins with a vowel, just add "way" at the end.
+// For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
+
+// The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
 
 {
-  function pigLatin(str){
-    if(str.match(/^[aeiou]/)) return str.concat('way') ;
-    else return str.replace(/^([^aeiou]+)(\w*)/, '$2$1ay')
+  function pairElems(str){
+    let dnaObject = {
+      A:'T',
+      T:'A',
+      C:'G',
+      G:"C"
+    }
+    
+
+    return str.split('').map(key => [key, dnaObject[key]]);
   }
 
-  console.log(pigLatin('algorithm')); // algorithmway
-  console.log(pigLatin("schwartz")); // artzschway
+  console.log(pairElems("TTGAG")); // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
 }
