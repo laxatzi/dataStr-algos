@@ -64,17 +64,6 @@
   // return missing
 
 {
-  
-  // function uniteUnique(arr) {
-  //   let args = [...arguments];
-  //   let merged = args.reduce((acc, cur)=> acc.concat(cur));
-  //   let sortMerged = merged.sort((a,b)=> a -b);
-  //      sortMerged.reduce((acc,cur)=> {
-  //       if(cur !== acc[0]) acc.unshift(cur);
-  //       return acc;
-  //     }, [])
-  //   }
-
   function uniteUnique(arr){
     
   }
@@ -83,45 +72,11 @@
 
   }
 
-  // Intermediate Algorithm Scripting: Sorted Union
-
-// Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
-
-// In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
-
-// The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
-
-// Check the assertion tests for examples.
+ 
 
 //#################################################################################
-//Missing letters
 
-// Find the missing letter in the passed letter range and return it.
-
-// If all letters are present in the range, return undefined.
-// store current
-  // store missing  (empty)
-  // make array
-  // map array
-  // compare index to charCode
-  // conditions : if equal ascend by one
-  // if not  ask for the string (fromCharCode) and store it in missing
-  // return missing
-  {
-    function fearNotLetter(str) {
-      let curLetter = str.charCodeAt(0); //97
-      let missing;
-      str.split('').map((el, index)=> {
-        if(str.charCodeAt(index) === curLetter) ++curLetter;
-        else missing =  String.fromCharCode(curLetter);
-      })
-      if(missing === undefined) return "No letter is missing!";
-      return `The missing letter is ${missing}`;
-    }
-    
-    console.log(fearNotLetter("abce")); // "d"
-    console.log(fearNotLetter("abcde")); // undefined
-  }
+  
 
   
     
