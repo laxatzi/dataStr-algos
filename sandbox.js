@@ -37,20 +37,20 @@
 // Missing Letters
     // Find the missing letter in the passed letter range and return it.
     // If all letters are present in the range, return undefined.
-    {
-      function fearNoLetter(str){
-       let current = str.charCodeAt(0);
-       let missing;
-       str.split('').map((el, index)=> {
-         if(str.charCodeAt(index) === current) ++current;
-         else missing = String.fromCharCode(current);
-       })
-       if(missing === undefined) return 'No letter is missing from the row!';
-        return missing; // d 
-      }
-      console.log(fearNoLetter('abce')); // "d" 
-      console.log(fearNoLetter('abcdefghijklmnopqrstuvwxyz')); // undefined
-    }
+    // {
+    //   function fearNoLetter(str){
+    //    let current = str.charCodeAt(0); //97
+    //    let missing;
+    //    str.split('').map((el, index)=> {
+    //      if(str.charCodeAt(index) === current) ++current;
+    //      else missing = String.fromCharCode(current);
+    //    })
+    //    if(missing === undefined) return 'No letter is missing from the row!';
+    //     return missing; // d 
+    //   }
+    //   console.log(fearNoLetter('abce')); // "d" 
+    //   console.log(fearNoLetter('abcdefghijklmnopqrstuvwxyz')); // undefined
+    // }
 
 // algorithm 
   
@@ -76,7 +76,9 @@
   //   }
 
   function uniteUnique(arr){
-     let args = [...arguments];
+     let args = [...arguments];{
+
+     }
      let mergedArrays = args.reduce((acc, cur)=> {
        return acc.concat(
          cur.filter(el=> acc.indexOf(el)=== -1)
@@ -100,21 +102,31 @@
 // Check the assertion tests for examples.
 
 //#################################################################################
+//Missing letters
 
-  // 1. We don't know the number of arr we gonna use as params => one arr as param and arguments
-  // 2. Return a new array from a vague number of arrays => reduce
-  // 3. No dups 
-  // 4. No sorting 
-  
+// Find the missing letter in the passed letter range and return it.
+
+// If all letters are present in the range, return undefined.
+// store current
+  // store missing  (empty)
+  // make array
+  // map array
+  // compare index to charCode
+  // conditions : if equal ascend by one
+  // if not  ask for the string (fromCharCode) and store it in missing
+  // return missing
   {
-    
-    function uniteUnique(arr){
-     let args = [...arguments];
-     let mergedArrays = args.reduce((acc, cur)=> {
-       return acc.concat(cur.filter(el => acc.indexOf(el) === -1));
-     },[])
-     return mergedArrays;
+    function fearNotLetter(str) {
+      let current = str.charCodeAt(0);
+      let missingLetter;
+      str.split('').map((el, index)=> {
+        if(str.charCodeAt(index) === current) ++current;
+        else missingLetter = String.fromCharCode(current);
+      })
+      if(missingLetter === undefined) return "No letter is missing! Really!";
+      else return "The letter missing from the row is "+ missingLetter;
     }
-
-    console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
+    
+    console.log(fearNotLetter("abce")); // "d"
+    console.log(fearNotLetter("abcde")); // undefined
   }
