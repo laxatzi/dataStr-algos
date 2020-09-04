@@ -76,15 +76,7 @@
   //   }
 
   function uniteUnique(arr){
-     let args = [...arguments];{
-
-     }
-     let mergedArrays = args.reduce((acc, cur)=> {
-       return acc.concat(
-         cur.filter(el=> acc.indexOf(el)=== -1)
-       )
-     });
-     return mergedArrays;
+    
   }
     
     console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //
@@ -117,16 +109,46 @@
   // return missing
   {
     function fearNotLetter(str) {
-      let current = str.charCodeAt(0);
-      let missingLetter;
-      str.split('').map((el, index)=> {
-        if(str.charCodeAt(index) === current) ++current;
-        else missingLetter = String.fromCharCode(current);
-      })
-      if(missingLetter === undefined) return "No letter is missing! Really!";
-      else return "The letter missing from the row is "+ missingLetter;
+      
     }
     
     console.log(fearNotLetter("abce")); // "d"
     console.log(fearNotLetter("abcde")); // undefined
   }
+
+  
+    
+  //Spinal Tap Case
+
+    //Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+{
+  function spinalCase(str){
+    let re = /([a-z])([A-Z])/g;
+    let regex = /\s|_/g;
+    let gapped = str.replace(re, '$1 $2');
+    return gapped.replace(regex, '-').toLowerCase();
+
+  }
+
+  console.log(spinalCase("The_Andy_Griffith_Show"));
+  console.log(spinalCase("The Andy Griffith Show"));
+  console.log(spinalCase("TheAndyGriffithShow"));
+}
+
+
+
+// Pig Latin is a way of altering English Words. The rules are as follows:
+
+// - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+
+// - If a word begins with a vowel, just add "way" at the end.
+
+{
+  function pigLatin(str){
+    if(str.match(/^[aeiou]/)) return str.concat('way') ;
+    else return str.replace(/^([^aeiou]+)(\w*)/, '$2$1ay')
+  }
+
+  console.log(pigLatin('algorithm')); // algorithmway
+  console.log(pigLatin("schwartz")); // artzschway
+}
