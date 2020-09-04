@@ -77,14 +77,44 @@
 
   function uniteUnique(arr){
      let args = [...arguments];
-     let newArr = args.reduce((acc, cur)=> {
+     let mergedArrays = args.reduce((acc, cur)=> {
        return acc.concat(
          cur.filter(el=> acc.indexOf(el)=== -1)
        )
      });
-     return newArr;
+     return mergedArrays;
   }
     
     console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //
 
+  }
+
+  // Intermediate Algorithm Scripting: Sorted Union
+
+// Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+// In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+
+// The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
+// Check the assertion tests for examples.
+
+//#################################################################################
+
+  // 1. We don't know the number of arr we gonna use as params => one arr as param and arguments
+  // 2. Return a new array from a vague number of arrays => reduce
+  // 3. No dups 
+  // 4. No sorting 
+  
+  {
+    
+    function uniteUnique(arr){
+     let args = [...arguments];
+     let mergedArrays = args.reduce((acc, cur)=> {
+       return acc.concat(cur.filter(el => acc.indexOf(el) === -1));
+     },[])
+     return mergedArrays;
+    }
+
+    console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
   }
