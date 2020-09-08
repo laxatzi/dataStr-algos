@@ -35,40 +35,37 @@
 {
   function uniteUnique(arr){
     let args = [...arguments];
-    let mergedArray = args.reduce((acc, cur)=> {
+    return args.reduce((acc, cur)=> {
+      
       return acc.concat(cur.filter(el=> acc.indexOf(el) === -1));
-    }, []);
-    return mergedArray;
+    },[]);
   }
     
-   // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
+   console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
 
   }
 
- // #Mutations
 
-    // Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
-    // For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
-    // The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
-    // Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+//Convert HTML Entities
 
-    {
-      function mutation(arr){
-        return arr[1].toLowerCase().split('').map(el => arr[0].toLowerCase().indexOf(el) !== -1).reduce((a,b)=>a&&b);
-      }
+    // Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+{
+  function convertHTML(str) {
+    let htmlEntities = {
+     "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&apos;"
     }
-
-// Chunky Monkey
-
-  // Write a function that splits an array (first argument) into groups the length of size (second argument) 
-  // and returns them as a two-dimensional array.
-
-  {
-    function chunkArrayInGroups(arr, size){
-      if(arr.length <= size) return [arr];
-      return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size), size));
-    }
+   return str.replace(/[&,<,>,"",'']/g, key=> htmlEntities[key]);
   }
+  
+   console.log(convertHTML("Dolce & Gabbana"));
+   console.log(convertHTML("<>")); 
+}
+
 //#################################################################################
 
 // SORTED UNION
@@ -90,7 +87,7 @@
      }, []);
     }
       
-       console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
+      // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
 
 }
 
@@ -110,9 +107,9 @@
       }).reduce((a,b)=> a && b);
     }
     //Test
-       console.log(mutation(["hello", "hey"])); // false
-       console.log(mutation(["Floor", "for"])); // true
-      console.log(mutation(["hello", "Hello"])); // true
+      //  console.log(mutation(["hello", "hey"])); // false
+      //  console.log(mutation(["Floor", "for"])); // true
+      // console.log(mutation(["hello", "Hello"])); // true
   }
 
 // Chunky Monkey
@@ -123,11 +120,11 @@
 {
   function chunkArrayInGroups(arr, size){
     if(arr.length < size) return [arr];
-    return [arr.slice(0,3)].concat(chunkArrayInGroups(arr.slice(size), size));
+    return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size), size));
   }
 
-    console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5,6,7,8,9], 3));  //[[0, 1, 2], [3, 4, 5],[6,7,8],[9]];
-    console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
+    // console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5,6,7,8,9], 3));  //[[0, 1, 2], [3, 4, 5],[6,7,8],[9]];
+    // console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
  }
 
 
