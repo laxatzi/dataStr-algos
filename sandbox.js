@@ -66,6 +66,28 @@
    console.log(convertHTML("<>")); 
 }
 
+// Missing lettersPassed
+
+      // Find the missing letter in the passed letter range and return it.
+      
+      // If all letters are present in the range, return undefined.
+
+      {
+        function fearNoLetter(str){
+          let control = str.charCodeAt(0); // 97;
+          let missingLetter;
+          str.split('').map((el,index) => {
+            if(str.charCodeAt(index) === control)  ++control; 
+            else missingLetter = String.fromCharCode(control);
+          });
+          if(missingLetter === undefined) return "No letter is missing!";
+          return "The missing letter is "+ missingLetter;
+        }
+    
+        console.log(fearNoLetter('abcde')); undefined
+        console.log(fearNoLetter('abce')); // d
+      }
+
 //#################################################################################
 
 // SORTED UNION
@@ -81,52 +103,40 @@
 
 {
     function uniteUnique(arr){
-     let args = [...arguments];
-     return args.reduce((acc, cur) => {
-       return acc.concat(cur.filter(el => acc.indexOf(el) === -1));
-     }, []);
+     
     }
       
       // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
 
 }
 
+//Convert HTML Entities
+
+    // Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+    {
+      function convertHTML(str) {
+      }
+      
+       console.log(convertHTML("Dolce & Gabbana"));
+       console.log(convertHTML("<>")); 
+    }
 
 
- // #Mutations
+    // Missing lettersPassed
 
-    // Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
-    // For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
-    // The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
-    // Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+      // Find the missing letter in the passed letter range and return it.
+      
+      // If all letters are present in the range, return undefined.
 
   {
-    function mutation(arr){
-      return arr[1].toLowerCase().split('').map(el => {
-        return arr[0].toLowerCase().split('').indexOf(el) !== -1;
-      }).reduce((a,b)=> a && b);
+    function fearNoLetter(str){
+      return str;
     }
-    //Test
-      //  console.log(mutation(["hello", "hey"])); // false
-      //  console.log(mutation(["Floor", "for"])); // true
-      // console.log(mutation(["hello", "Hello"])); // true
+
+    console.log(fearNoLetter('abcde')); undefined
+    console.log(fearNoLetter('abce')); // d
   }
-
-// Chunky Monkey
-
-  // Write a function that splits an array (first argument) into groups the length of size (second argument) 
-  // and returns them as a two-dimensional array.
-
-{
-  function chunkArrayInGroups(arr, size){
-    if(arr.length < size) return [arr];
-    return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size), size));
-  }
-
-    // console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5,6,7,8,9], 3));  //[[0, 1, 2], [3, 4, 5],[6,7,8],[9]];
-    // console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));  //[[0, 1, 2, 3], [4, 5]]
- }
-
 
 
 
