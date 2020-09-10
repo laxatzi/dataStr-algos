@@ -41,7 +41,7 @@
     },[]);
   }
     
-   console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
+  // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
 
   }
 
@@ -62,8 +62,8 @@
    return str.replace(/[&,<,>,"",'']/g, key=> htmlEntities[key]);
   }
   
-   console.log(convertHTML("Dolce & Gabbana"));
-   console.log(convertHTML("<>")); 
+  //  console.log(convertHTML("Dolce & Gabbana"));
+  //  console.log(convertHTML("<>")); 
 }
 
 // Missing lettersPassed
@@ -84,8 +84,8 @@
           return "The missing letter is "+ missingLetter;
         }
     
-        console.log(fearNoLetter('abcde')); undefined
-        console.log(fearNoLetter('abce')); // d
+        // console.log(fearNoLetter('abcde')); undefined
+        // console.log(fearNoLetter('abce')); // d
       }
 
 //#################################################################################
@@ -116,14 +116,15 @@
 
     {
       function convertHTML(str) {
+
       }
       
-       console.log(convertHTML("Dolce & Gabbana"));
-       console.log(convertHTML("<>")); 
+      //  console.log(convertHTML("Dolce & Gabbana"));
+      //  console.log(convertHTML("<>")); 
     }
 
 
-    // Missing lettersPassed
+    // Missing letters
 
       // Find the missing letter in the passed letter range and return it.
       
@@ -131,9 +132,16 @@
 
   {
     function fearNoLetter(str){
-      return str;
+      let control = str.charCodeAt(0); //control = 97
+      let missing;
+      str.split('').map((el, index)=>{
+        if(str.charCodeAt(index)===control) ++control;
+        else missing = String.fromCharCode(control);
+     });
+     if(missing === undefined) return "No letter is missing!";
+     return `The missing letter is ${missing}!`;
     }
-
+ 
     console.log(fearNoLetter('abcde')); undefined
     console.log(fearNoLetter('abce')); // d
   }
