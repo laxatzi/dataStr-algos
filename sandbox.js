@@ -116,11 +116,19 @@
 
     {
       function convertHTML(str) {
+        let htmlEntities = {
+          "&":"&amp;",
+          "<":"&let;",
+          ">":"&gt;",
+          "\"":"&quot;",
+          "'":"&apos;"
+        }
 
+        return str.replace(/[&,>,<,",']/g, key=>htmlEntities[key] );
       }
       
-      //  console.log(convertHTML("Dolce & Gabbana"));
-      //  console.log(convertHTML("<>")); 
+        console.log(convertHTML("Dolce & Gabbana"));
+        console.log(convertHTML("<>")); 
     }
 
 
@@ -132,14 +140,7 @@
 
   {
     function fearNoLetter(str){
-      let control = str.charCodeAt(0); //control = 97
-      let missing;
-      str.split('').map((el, index)=>{
-        if(str.charCodeAt(index)===control) ++control;
-        else missing = String.fromCharCode(control);
-     });
-     if(missing === undefined) return "No letter is missing!";
-     return `The missing letter is ${missing}!`;
+     return 'Not solved yet!';
     }
  
     console.log(fearNoLetter('abcde')); undefined
