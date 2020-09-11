@@ -201,15 +201,17 @@ console.log("Sorted Union above")
 {
 
   function sumFibs(num) {
-    // check validity
-   if(num <= 0) return 0; // the exercise assumes a positive integer num - hence we check
-   let fibonacciArray = [1,1];
-   let sumOfNums;
+   if(num <= 0) return 0; // check if the given number is a positive integer one.
+   const fibsArray = [1,1];
+   let result; 
 
-   while((sumOfNums  = fibonacciArray[0] + fibonacciArray[1])<= num){
-     fibonacciArray.unshift(sumOfNums);
+   while((result = fibsArray[0] + fibsArray[1]) <= num){
+     fibsArray.unshift(result); // only indexes 0 and 1 will be counted this way. 
+
    }
-   return fibonacciArray.filter(num => num%2 != 0).reduce((a,b)=> a+b);
+
+   return fibsArray.filter(el=> el % 2 !== 0).reduce((a,b)=> a + b);
+    
   }
   console.log(sumFibs( 10)); //10  1 1 2 3, 5, 8
   console.log(sumFibs(75024)); // 60696
