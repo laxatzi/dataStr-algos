@@ -136,21 +136,25 @@
   // The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
 
   // Check the assertion tests for examples.
-
+console.log('Sorted Union below');
 
 {
     function uniteUnique(arr){
-     
+      let args = [...arguments];
+      return args.reduce((acc, cur) => {
+        return acc.concat(cur.filter(el=> acc.indexOf(el) === -1));
+      },[]);
+  
     }
       
-      // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
+       console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
 
 }
 
 //Convert HTML Entities
 
     // Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
-
+console.log("Sorted Union above")
     {
       function convertHTML(str) {
         let htmlEntities = {
