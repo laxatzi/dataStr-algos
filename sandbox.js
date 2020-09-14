@@ -116,29 +116,21 @@
 
       function sumPrimes(num){
         // generate a sequence of numbers based on parameter number (num)
-         let numArr = Array.from({length: num + 1}, (v, i) => i);
+         let numArr = Array.from({length: num + 1}, (value, index) => index); //Since the array is initialized with `undefined` on each position,
+         // the value will be `undefined`
         
         // create a callback for boolean checking primality in the filtering process  
-          function isPrime (n)
-                    {
-                        if (n < 2) return false;
-
-                        /**
-                         * An integer is prime if it is not divisible by any prime less than or equal to its square root
-                         **/
-
-                        let  squareRoot = Math.floor(Math.sqrt(n));
-
-                        for (let i = 2; i <= squareRoot; i++)
-                        {
-                            if (n % i == 0)
-                            {
-                                return false;
-                            }
-                        }
-
-                        return true;
-                    }
+          function isPrime (n){
+            if(n<2) return false;
+          let  squareRoot = Math.floor(Math.sqrt(n));
+          let i = 2;
+          while(i<=squareRoot){
+            if(n % i == 0) return false;
+            i++;
+          }
+          return true;    
+             
+       } // end isPrime function
         
         // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
          return numArr.filter(el => isPrime(el)).reduce((a,b)=> a + b);
@@ -165,11 +157,11 @@ console.log('Sorted Union below');
     function uniteUnique(arr){
       let args = [...arguments];
       return args.reduce((acc, cur) => {
-        return acc.concat(cur.filter(el=> acc.indexOf(el) === -1));
+        return acc.concat(cur.filter(el => acc.indexOf(el) === -1));
       },[]);
   
     }
-      
+       console.log('unite unique!');
        console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
 
 }
@@ -182,7 +174,14 @@ console.log('Sorted Union below');
 
   {
     function fearNoLetter(str){
-     return 'Not solved yet!';
+     let control = str.charCodeAt(0);
+     let missingLetter;
+     str.split('').map((v,i)=> {
+       if(str.charCodeAt(i)=== control) return ++control;
+       else missingLetter = String.fromCharCode(i);
+     });
+     if(control === undefined) return "No letter is missing!";
+     return "The missing letter is: "+missingLetter;
     }
  
     console.log(fearNoLetter('abcde')); undefined
@@ -202,22 +201,24 @@ console.log('Sorted Union below');
 {
 
   function sumFibs(num) {
-   if(num <= 0) return 0; // check if the given number is a positive integer one.
-   const fibsArray = [1,1];
-   let result; 
+    if(num <= 0) return 0;
+    let fibArr = [1, 1];
+    let control=0;
 
-   while((result = fibsArray[0] + fibsArray[1]) <= num){
-     fibsArray.unshift(result); // only indexes 0 and 1 will be counted this way. 
-
-   }
-
-   return fibsArray.filter(el=> el % 2 !== 0).reduce((a,b)=> a + b);
+    while((control = fibArr[0] + fibArr[1] )<= num){
+       fibArr.unshift(control);
+      
+    }
+    return fibArr.filter(el => el % 2 !== 0).reduce((a,b)=> a + b);
     
   }
+  console.log('fibonacci')
   console.log(sumFibs( 10)); //10  1 1 2 3, 5, 8
   console.log(sumFibs(75024)); // 60696
   console.log(sumFibs(75025)); // 135721
 }
+
+
 
 
 // Intermediate Algorithm Scripting: Sum All Primes
@@ -226,16 +227,26 @@ console.log('Sorted Union below');
     // For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
 
     // Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num.
+{
 
-    {
-
-      function sumPrimes(num){
-        return num;
+  function sumPrimes(num){
+    // generate a sequence of numbers based on parameter number (num)
+    let numSequence = Array.from({length:num +1}, (v,i)=> i);
+    // create callback checking primality 
+    function callback(n){
+      if(n<2) return false;
+      let sqrt = Math.floor(Math.sqrt(n));
+      let i = 2;
+      while(i <= sqrt){
+        if(n % i == 0) return false;
+        i++;
       }
-    
-      console.log(sumPrimes(10)); // 17
-      console.log(sumPrimes(977)); // 73156
+      return true;
     }
-    
+    // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
+     return numSequence.filter(el => callback(el)).reduce((a,b)=> a + b) ;
+  }
 
- 
+  console.log(sumPrimes(11)); // 28    
+
+}
