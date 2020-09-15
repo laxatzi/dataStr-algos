@@ -139,7 +139,32 @@
       console.log(sumPrimes(11)); // 28    
 
     }
-
+// second method
+{
+  function sumPrimes(num){
+    // generate a sequence of numbers based on parameter number (num)
+     let numArr = Array.from({length: num + 1}, (value, index) => index); //Since the array is initialized with `undefined` on each position,
+     // the value will be `undefined`
+    
+    // create a callback for boolean checking primality in the filtering process  
+      function isPrime (n){
+        if(n<2) return false;
+      let  squareRoot = Math.floor(Math.sqrt(n));
+      let i = 2;
+      while(i<=squareRoot){
+        if(n % i == 0) return false;
+        i++;
+      }
+      return true;    
+         
+   } // end isPrime function
+    
+    // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
+     return numArr.filter(el => isPrime(el)).reduce((a,b)=> a + b);
+  }
+  console.log('Second method');
+  console.log(sumPrimes(11)); // 28  
+}
 //#################################################################################
 
 // SORTED UNION
@@ -232,12 +257,23 @@ console.log('Sorted Union below');
 
   function sumPrimes(num){
     // generate a sequence of numbers based on parameter number (num)
-    
+    let numSequence = Array.from({length: num +1}, (v,i)=>i);
     // create callback checking primality 
-    
-    // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
-  }
+    function checkPrime(n){
+      let square = Math.floor(Math.sqrt(n));
+      if(n<2) return false;
 
+      let i = 2;
+      while(i <= square){
+        if(n % i == 0) return false;
+        i++;
+      }
+      return true;
+    }
+    // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
+    return numSequence.filter(el => checkPrime(el)).reduce((a,b)=> a+b);
+  }
+  console.log("Check primality!");
   console.log(sumPrimes(11)); // 28    
 
 }
