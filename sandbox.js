@@ -165,30 +165,31 @@ console.log('Sorted Union below');
        console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
 
 }
-
+{
     // Missing letters
 
       // Find the missing letter in the passed letter range and return it.
       
       // If all letters are present in the range, return undefined.
 
-  {
-    function fearNoLetter(str){
-     let control = str.charCodeAt(0);
-     let missingLetter;
-     str.split('').map((v,i)=> {
-       if(str.charCodeAt(i)=== control) return ++control;
-       else missingLetter = String.fromCharCode(i);
-     });
-     if(control === undefined) return "No letter is missing!";
-     return "The missing letter is: "+missingLetter;
-    }
- 
-    console.log(fearNoLetter('abcde')); undefined
-    console.log(fearNoLetter('abce')); // d
+  function fearNotLetter(str) {
+    var compare = str.charCodeAt(0),
+      missing;
+  
+    str.split("").map(function(letter, index) {
+      if (str.charCodeAt(index) == compare) {
+        ++compare;
+      } else {
+        missing = String.fromCharCode(compare);
+      }
+    });
+  
+    return missing;
   }
-
-
+  console.log('fearNot');
+  console.log(fearNotLetter('abcde')); undefined
+  console.log(fearNotLetter('abce')); // d
+}
   // Sum All Odd Fibonacci Numbers
 
     // Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
@@ -231,20 +232,10 @@ console.log('Sorted Union below');
 
   function sumPrimes(num){
     // generate a sequence of numbers based on parameter number (num)
-    let numSequence = Array.from({length:num +1}, (v,i)=> i);
+    
     // create callback checking primality 
-    function callback(n){
-      if(n<2) return false;
-      let sqrt = Math.floor(Math.sqrt(n));
-      let i = 2;
-      while(i <= sqrt){
-        if(n % i == 0) return false;
-        i++;
-      }
-      return true;
-    }
+    
     // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
-     return numSequence.filter(el => callback(el)).reduce((a,b)=> a + b) ;
   }
 
   console.log(sumPrimes(11)); // 28    
