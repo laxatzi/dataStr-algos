@@ -198,18 +198,14 @@ console.log('Sorted Union below');
       // If all letters are present in the range, return undefined.
 
   function fearNotLetter(str) {
-    var compare = str.charCodeAt(0),
-      missing;
-  
-    str.split("").map(function(letter, index) {
-      if (str.charCodeAt(index) == compare) {
-        ++compare;
-      } else {
-        missing = String.fromCharCode(compare);
-      }
+    let control = str.charCodeAt(0); //97
+    let missingLetter;
+    str.split('').map((v,i)=> {
+      if(control == str.charCodeAt(i)) return ++control;
+      else missingLetter = String.fromCharCode(control);
     });
-  
-    return missing;
+    if(missingLetter == undefined) return 'No letter is missing!';
+    return 'The missing letter is: ' + missingLetter + "!";
   }
   console.log('fearNot');
   console.log(fearNotLetter('abcde')); undefined
@@ -229,10 +225,10 @@ console.log('Sorted Union below');
   function sumFibs(num) {
     if(num <= 0) return 0;
     let fibArr = [1, 1];
-    let control=0;
+    let i =0;
 
-    while((control = fibArr[0] + fibArr[1] )<= num){
-       fibArr.unshift(control);
+    while((i = fibArr[0] + fibArr[1] )<= num){
+       fibArr.unshift(i);
       
     }
     return fibArr.filter(el => el % 2 !== 0).reduce((a,b)=> a + b);
