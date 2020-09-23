@@ -32,13 +32,8 @@
         {
 
             function sumFibs(num) {
-             if(num <= 0) return 0;
-             let fibonacciNumbs = [1,1];
-             let currentFibNumb;
-             while((currentFibNumb=fibonacciNumbs[0] + fibonacciNumbs[1])<=num){
-                 fibonacciNumbs.unshift(currentFibNumb);
-             }
-             return fibonacciNumbs.filter(el => el%2!==0).reduce((a,b)=> a + b );
+              
+                return fibonacciNumbs;
             }
             console.log('fibonacci EXERCISE')
             console.log(sumFibs( 10)); //10  1 1 2 3, 5, 8
