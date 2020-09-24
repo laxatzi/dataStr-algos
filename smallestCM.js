@@ -14,9 +14,11 @@ console.log('Smallest Common Multiple');
 
     function smallestCommons(arr){
     // construct the array of numbers
-        arr = arr.sort((a,b)=> a - b);
-        let numDisplayed = Array.from({length: arr[1] + 1}, (v, i) => i);
-         let numDisplayedSliced =  numDisplayed.slice(arr[0]);         
+        arr = arr.sort((a,b)=> a + b);
+        arr = Array.from({length: arr[1] + 1}, (v, i) => i);
+        return arr;
+         let arrReversed =  arr.slice(arr[0]);
+         return arrReversed.sort((a,b)=> a + b);
     //loop through each of them and check for prime factorization 
     // concat each finding in an array
        function primeFactors(n){
@@ -52,10 +54,25 @@ console.log('Smallest Common Multiple');
   }
     
 
-    console.log(smallestCommons([1, 5])); // 60
-    console.log(smallestCommons([5, 1])); // 60
-    console.log(smallestCommons([2, 10])); //2520
-    console.log(smallestCommons([30, 45, 56])); // 2520
+    // console.log(smallestCommons([1, 5])); // 60
+    // console.log(smallestCommons([5, 1])); // 60
+    // console.log(smallestCommons([2, 10])); //2520
+    // console.log(smallestCommons([30, 45, 56])); // 2520
 }
 
 //https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-132.php
+
+// Second attempt 
+
+{
+    function leastCommon(arr){
+        let max = Math.max(arr[0], arr[1]);
+        let min = Math.min(arr[0], arr[1]);
+        let mltple = max;
+        return max;
+    }
+    console.log("SECOND ATTEMPT");
+    console.log(leastCommon([1, 5])); // 60
+    console.log(leastCommon([5, 1])); // 60
+    console.log(leastCommon([2, 10])); //2520
+}
