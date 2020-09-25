@@ -6,21 +6,17 @@ console.log('Smallest Common Multiple');
 // For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly 
 // divisible by all numbers between 1 and 3. The answer here would be 6.
 
-// Another way to calculate the least common multiple of any set of numbers 
-// is to first break the numbers down into their prime factors.
-//  Prime Factorization is => finding which prime numbers multiply together to make the original number
-//  to calculate the lowest common multiple (lcm) for these  numbers, we just multiply them all out
+// NOTES
+  // ...
 
-//https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-132.php
 
 {
     function leastCommon(arr) {
   // Range between arr elements
       let max = Math.max(...arr);
       let min = Math.min(...arr);
-      var range = [];
       for (var i = min; i <= max; i++) {
-        range.unshift(i);
+        [min, max].unshift(i);
       }
   // The Math   
     // Euclidean algorithm for Greatest Common divisor 
@@ -31,9 +27,9 @@ console.log('Smallest Common Multiple');
   // Initially the solution is assigned to the highest value of the array
       let currentLcm = max; 
 
-  // Loop to check each element
+  // implement the Euclidean algorithm to each array's element
       while(min<max){
-        currentLcm = lcm(currentLcm, min); // implement the Euclidean algorithm
+        currentLcm = lcm(currentLcm, min); 
         min++; 
       }
 
