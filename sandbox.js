@@ -282,7 +282,7 @@ function leastCommon(arr) {
     let max = Math.max(...arr);
     let min = Math.min(...arr);
     let range = Array(max-min+1).fill().map((v,i)=> i + min);
-      return range;
+      
   // The Math   
     // Euclidean algorithm for Greatest Common divisor 
 

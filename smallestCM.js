@@ -40,6 +40,40 @@ console.log('Smallest Common Multiple');
     console.log(leastCommon([5, 1])); // 60
     console.log(leastCommon([2, 10])); //2520
 }
+console.log('Again');
+
+
+{
+  // The Math   
+    // Euclidean algorithm for Greatest Common divisor 
+
+    //const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+
+    // Least Common Multiple for two numbers based on Euclidean algorithm
+
+      // const lcm = (a,b)=> (a * b)/ gcd(a, b);
+
+  function smallestCommons(arr) {
+   let min = Math.min(...arr);
+   let max = Math.max(...arr);
+   let range = Array(max-min+1).fill().map((v,i)=>i+min);
+   
+    const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+    const lcm = (a,b)=> (a * b)/gcd(a,b);
+
+    let leastCommon = max;
+
+    while(min<max){
+      leastCommon = lcm(leastCommon, min);
+      min++;
+    }
+    return leastCommon;
+  }
+  
+  
+ console.log(smallestCommons([1,5]));
+ console.log(smallestCommons([5,12])); // [5,6,7,8,9,10,11,12]
+}
 
 
     
