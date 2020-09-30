@@ -4,8 +4,16 @@
 
 {
 
-    function htmlEntities(str){
-        return str;
+    function convertHTML(str){
+    let entities = {
+        "<":"&lt;",
+        ">":"&gt;",
+        "&":"&amp;",
+        "\"":"&quot;",
+        "'":"&apos;"
+    }
+     
+        return str.replace(/[&,<,>,',"]/g, key => entities[key]);
     }
  
 

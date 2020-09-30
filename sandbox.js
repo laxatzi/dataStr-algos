@@ -310,3 +310,7 @@ function leastCommon(arr) {
     console.log(leastCommon([2, 10])); //2520
 
 }
+
+{
+  
+}
