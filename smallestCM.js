@@ -64,7 +64,7 @@ console.log('Again');
     const lcm = (a,b)=> (a * b)/gcd(a,b);
   // control
     let leastCommon = max;
-  // loop manipulating control
+  // loop through all the sequential numbers (range)
     while(min<max){
       leastCommon = lcm(leastCommon, min);
       min++;
