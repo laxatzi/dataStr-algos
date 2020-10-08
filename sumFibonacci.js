@@ -33,7 +33,9 @@
        
  } // end block
 
+
  console.log("FIND SUM OF FIBONACCI NUMBERS IN RANGE");
+ 
  // Fibonacci numbers in range
  {
 

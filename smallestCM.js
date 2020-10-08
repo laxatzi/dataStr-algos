@@ -55,22 +55,7 @@ console.log('Again');
 
   function smallestCommons(arr) {
 
-    // Range between the two element numbers
-   let min = Math.min(...arr);
-   let max = Math.max(...arr);
-   let range = Array(max-min+1).fill().map((v,i)=>i+min);
-   // Math
-    const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
-    const lcm = (a,b)=> (a * b)/gcd(a,b);
-  // control
-    let leastCommon = max;
-  // loop through all the sequential numbers (range)
-    while(min<max){
-      leastCommon = lcm(leastCommon, min);
-      min++;
-    }
-    // is the least common multiple 
-    return leastCommon;
+   
   }
   
   
