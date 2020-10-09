@@ -330,3 +330,22 @@ console.log(dropElements([1,2,3,4], n=> n>=3)); // [3,4]
 console.log(dropElements([1,2,3,4] ,n=>  n>5));   // []
 console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;})); // [1, 0, 1] --0 is returned since we care only about index position
 }
+
+
+{
+// STEAM ROLLER
+
+//Flatten a nested array. You must account for varying levels of nesting.
+
+function steamrollArray(arr){
+       
+  // we are gonna use recursion reducing the array => if element is NOT an array, will be shifted to new array,
+  // else recursion will go one level deep
+  // Bear in mind empty array doesn't affect concatenation
+}
+
+
+console.log(steamrollArray([1, [], [3, [[4]]]])); // [1, 3, 4];
+console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4];
+
+}
