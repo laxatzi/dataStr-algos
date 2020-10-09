@@ -323,9 +323,7 @@ function leastCommon(arr) {
 // We basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
 console.log('DROPIT')
 function dropElements(arr, func){
-   const argIdx = arr.findIndex(func);
-  if(argIdx == -1) return [];
-  else return arr.slice(argIdx);
+  return arr;
 }
 
 console.log(dropElements([1,2,3,4], n=> n>=3)); // [3,4]
@@ -340,13 +338,7 @@ console.log("STEAM ROLLER");
 //Flatten a nested array. You must account for varying levels of nesting.
 
 function steamrollArray(arr){
-       
-  // we are gonna use recursion reducing the array => if element is NOT an array, will be shifted to new array,
-  // else recursion will go one level deep
-  // Bear in mind empty array doesn't affect concatenation
-  return arr.reduce((acc, val)=> {
-    return acc.concat(Array.isArray(val)? steamrollArray(val) : val)
-  },[]);
+  return arr;
 }
 
 
