@@ -320,10 +320,12 @@ function leastCommon(arr) {
 // until the function func returns true when the iterated element is passed through it.
 
 // Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
-// we basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
-
+// We basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
+console.log('DROPIT')
 function dropElements(arr, func){
-   return arr;
+   const argIdx = arr.findIndex(func);
+  if(argIdx == -1) return [];
+  else return arr.slice(argIdx);
 }
 
 console.log(dropElements([1,2,3,4], n=> n>=3)); // [3,4]
@@ -333,7 +335,7 @@ console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;})); // [1, 0
 
 
 {
-// STEAM ROLLER
+console.log("STEAM ROLLER");
 
 //Flatten a nested array. You must account for varying levels of nesting.
 
@@ -345,7 +347,7 @@ function steamrollArray(arr){
 }
 
 
-console.log(steamrollArray([1, [], [3, [[4]]]])); // [1, 3, 4];
-console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4];
+//console.log(steamrollArray([1, [], [3, [[4]]]])); // [1, 3, 4];
+//console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4];
 
 }
