@@ -1,4 +1,6 @@
-//We have defined a function "countOnline" which accepts one argument (a users object). Use a for...in statement within this function to loop through the users object passed into the function and return the number of users whose "online" property is a "true" value.
+//We have defined a function "countOnline" which accepts one argument (a users object).
+// Use a for...in statement within this function to loop through the users object passed into the function and return the number of
+// users whose "online" property is a "true" value.
 
 let users = {
    Alan: {
