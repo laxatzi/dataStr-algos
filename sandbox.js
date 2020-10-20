@@ -323,7 +323,9 @@ function leastCommon(arr) {
 // We basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
 console.log('DROPIT')
 function dropElements(arr, func){
-  return arr;
+  const idxFound = arr.findIndex(func);
+  if(arr.indexOf(idxFound) == -1) return [];
+  return arr.slice(idxFound);
 }
 
 console.log(dropElements([1,2,3,4], n=> n>=3)); // [3,4]
@@ -338,7 +340,7 @@ console.log("STEAM ROLLER");
 //Flatten a nested array. You must account for varying levels of nesting.
 
 function steamrollArray(arr){
-  return arr;
+  return arr.reduce((acc, val)=> acc.concat(Array.isArray(val)?steamrollArray(val):val), []);
 }
 
 
@@ -346,3 +348,25 @@ console.log(steamrollArray([1, [], [3, [[4]]]])); // [1, 3, 4];
 console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4];
 
 }
+ console.log('WHAT IS IN A NAME');
+ 
+ function whatIsInAName(collection, source) {
+  // define the source key
+  const objKey = Object.keys(source);
+  return collection.filter(el => {
+    return objKey.map(key=> el.hasOwnProperty(key) && el[key] == source[key]).reduce((a,b)=> a && b);
+  });
+}
+
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],
+ { last: "Capulet" }));
+
+ // Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+ function spinalCase(str){
+   return str;
+ }
+
+ console.log(spinalCase('This Is Spinal Tap'));
+ console.log(spinalCase('This_Is_Spinal_Tap'));
+ console.log(spinalCase('ThisIsSpinalTap'))
