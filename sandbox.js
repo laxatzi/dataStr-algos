@@ -372,30 +372,27 @@ console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercu
  console.log(spinalCase('ThisIsSpinalTap'))
 
  
-console.log('SEARCH AND REPLACE!');
+console.log('DNA Pairing!');
  {
-// Search and Replace
-    // Perform a search and replace on the sentence using the arguments provided and return the new sentence.
 
-    // First argument is the sentence to perform the search and replace on.
 
-    // Second argument is the word that you will be replacing (before).
+// The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
 
-    // Third argument is what you will be replacing the second argument with (after).
+// Base pairs are a pair of AT and CG. Match the missing element to the provided character.
 
-    // Note
-    // Preserve the case of the first character in the original word when you are replacing it.
-    // For example if you mean to replace the word "Book" with the word "dog", it should be replaced as "Dog"
+// Return the provided character as the first element in each array.
 
-    {
-      function myReplace(str, before, after) {
-       
-        }
-  
-   console.log(myReplace("His name is Tom", "Tom", "john")); // should return "His name is John".
-   console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms")); // should return "Let us get back to more Algorithms".
-   console.log(myReplace("What a nice dog!", "dog", "Fox")); // What a nice fox
+// For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
 
-  }//end block
+// The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+let dnaObj = {
+  A : 'T',
+  T : 'A',
+  C : 'G',
+  G : 'C'
+};
+
+
+console.log(pairElement("ATCGA", dnaObj)); //[["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
 
  }
