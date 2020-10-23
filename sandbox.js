@@ -349,6 +349,12 @@ console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4];
 
 }
 
+console.log('Fear No Letter!');
 
-
+ {
+  function fearNotLetter(str) {
  
+  }//end function
+  
+ console.log(fearNotLetter("abcde")); // d
+ }

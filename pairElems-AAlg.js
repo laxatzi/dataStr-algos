@@ -19,9 +19,9 @@
             G : 'C'
         };
 
-        let splited = str.split('');
+        let splitted = str.split('');
 
-        return splited.map(key => [key, dnaObj[key]]); // * property accessors
+        return splitted.map(key => [key, dnaObj[key]]); // * property accessors
   
     }
     
