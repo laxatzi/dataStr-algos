@@ -312,49 +312,88 @@ function leastCommon(arr) {
 }
 
 
-// DROP IT
-{
-  // DROP IT
-
-//Given the array arr, iterate through and remove each element starting from the first element (the 0 index) 
-// until the function func returns true when the iterated element is passed through it.
-
-// Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
-// We basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
-console.log('DROPIT')
-function dropElements(arr, func){
-  const idxFound = arr.findIndex(func);
-  if(arr.indexOf(idxFound) == -1) return [];
-  return arr.slice(idxFound);
-}
-
-console.log(dropElements([1,2,3,4], n=> n>=3)); // [3,4]
-console.log(dropElements([1,2,3,4] ,n=>  n>5));   // []
-console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;})); // [1, 0, 1] --0 is returned since we care only about index position
-}
-
-
-{
-console.log("STEAM ROLLER");
-
-//Flatten a nested array. You must account for varying levels of nesting.
-
-function steamrollArray(arr){
-  return arr.reduce((acc, val)=> acc.concat(Array.isArray(val)?steamrollArray(val):val), []);
-}
-
-
-console.log(steamrollArray([1, [], [3, [[4]]]])); // [1, 3, 4];
-console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4];
-
-}
 
 console.log('Fear No Letter!');
 
- {
-  function fearNotLetter(str) {
- 
-  }//end function
+
+// Find the missing letter in the passed letter range and return it.
+
+// If all letters are present in the range, return undefined.
+
+{ 
+
+function fearNotLetter(str) {
   
- console.log(fearNotLetter("abcde")); // d
- }
+}
+
+console.log(fearNotLetter("abce")); // d
+
+}
+
+console.log('Sorted Union!');
+{
+  //Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+// In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+
+// The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
+function uniteUnique(arr){
+
+  return arr;
+}
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // should return [1, 3, 2, 5, 4]
+
+}
+ 
+console.log("Convert HTML entities!");
+{
+  // Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+  // Html entities
+  /*
+      < : &lt;
+      > : &gt;
+      & : &amp;
+      ' : &apos;
+      " : &quot;
+  */
+
+  function convertHTML(str){
+    return str;
+  }
+
+  console.log(convertHTML("Dolce & Cabbana")); // Dolce &amp; Cabbana
+}
+
+console.log("BINARY STRING");
+
+{
+  //Return an English translated sentence of the passed binary string.
+  //The binary string will be space separated.
+
+   function binaryAgent(str){
+     return String.fromCharCode(...str.split(' ').map(char => parseInt(char, 2)));
+   }
+
+   console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
+   // should return "I love FreeCodeCamp!"
+}
+
+{
+  function binaryAgent(str){
+   // create an array out of the string to iterate through
+
+     const binaryStr = str.split(' ');
+     return binaryStr.reduce((acc, char)=> {
+
+        // convert each element to decimal and from decimal (ASCII) to UTF simultaneously
+       return acc.concat(String.fromCharCode(parseInt(char, 2))) }, 
+       
+       []).join('');
+  }
+
+  console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
+
+}
