@@ -331,42 +331,13 @@ console.log(fearNotLetter("abcdeg")); // d
 }
 
 
- 
-console.log("Convert HTML entities!");
-{
-  // Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
-
-  // Html entities
-  /*
-      < : &lt;
-      > : &gt;
-      & : &amp;
-      ' : &apos;
-      " : &quot;
-  */
-  const HTMLentities = {
-   "<" : "&lt;",
-    ">": "&gt;",
-    "&" : "&amp;",
-    "'" : "&apos;",
-    "\"" : "&quot;",
-  }
-  const regex = /[<,>,&,',"]/g
-  function convertHTML(str){
-    return str.replace(regex, key=> HTMLentities[key]);
-  }
-
-  console.log(convertHTML("Dolce & Cabbana")); // Dolce &amp; Cabbana
-}
-
 console.log("BINARY STRING");
 
 {
   //Return an English translated sentence of the passed binary string.
   //The binary string will be space separated.
 
-   function binaryAgent(str){
-     return str;
+   function binaryAgent(str){ 
    }
    console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
    // should return "I love FreeCodeCamp!"
