@@ -326,26 +326,11 @@ function fearNotLetter(str) {
   
 }
 
-console.log(fearNotLetter("abce")); // d
+console.log(fearNotLetter("abcdeg")); // d
 
 }
 
-console.log('Sorted Union!');
-{
-  //Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
 
-// In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
-
-// The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
-
-function uniteUnique(arr){
-
-  return arr;
-}
-
-console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // should return [1, 3, 2, 5, 4]
-
-}
  
 console.log("Convert HTML entities!");
 {
@@ -359,9 +344,16 @@ console.log("Convert HTML entities!");
       ' : &apos;
       " : &quot;
   */
-
+  const HTMLentities = {
+   "<" : "&lt;",
+    ">": "&gt;",
+    "&" : "&amp;",
+    "'" : "&apos;",
+    "\"" : "&quot;",
+  }
+  const regex = /[<,>,&,',"]/g
   function convertHTML(str){
-    return str;
+    return str.replace(regex, key=> HTMLentities[key]);
   }
 
   console.log(convertHTML("Dolce & Cabbana")); // Dolce &amp; Cabbana
@@ -374,26 +366,9 @@ console.log("BINARY STRING");
   //The binary string will be space separated.
 
    function binaryAgent(str){
-     return String.fromCharCode(...str.split(' ').map(char => parseInt(char, 2)));
+     return str;
    }
-
    console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
    // should return "I love FreeCodeCamp!"
 }
 
-{
-  function binaryAgent(str){
-   // create an array out of the string to iterate through
-
-     const binaryStr = str.split(' ');
-     return binaryStr.reduce((acc, char)=> {
-
-        // convert each element to decimal and from decimal (ASCII) to UTF simultaneously
-       return acc.concat(String.fromCharCode(parseInt(char, 2))) }, 
-       
-       []).join('');
-  }
-
-  console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
-
-}
