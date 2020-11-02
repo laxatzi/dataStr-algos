@@ -323,10 +323,27 @@ console.log('Fear No Letter!');
 { 
 
 function fearNotLetter(str) {
+  // locate first letter ASCI number, meant to be used as control
+  let control = str.charCodeAt(0);
+  let missingLetter;
+  // iterate through the letters (converting in array first) and check if control and index differ
+ str.split('').map((_,index)=>{
+  if(control === str.charCodeAt(index)){
+    ++control;
+  }
+ // if this is the case, store value as a string to the missingLetter variable
+ else{
+      missingLetter = String.fromCharCode(control);
+  }
+
+ });
+  // return this variable
+  if(!missingLetter) return "No letter is missing!";
+  return "The missing letter is: "+ missingLetter +"!";
   
 }
 
-console.log(fearNotLetter("abcdeg")); // d
+console.log(fearNotLetter("abcdeg")); // f
 
 }
 
