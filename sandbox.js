@@ -312,42 +312,6 @@ function leastCommon(arr) {
 }
 
 
-
-console.log('Fear No Letter!');
-
-
-// Find the missing letter in the passed letter range and return it.
-
-// If all letters are present in the range, return undefined.
-
-{ 
-
-function fearNotLetter(str) {
-  // locate first letter ASCI number, meant to be used as control
-  let control = str.charCodeAt(0);
-  let missingLetter;
-  // iterate through the letters (converting in array first) and check if control and index differ
- str.split('').map((_,index)=>{
-  if(control === str.charCodeAt(index)){
-    ++control;
-  }
- // if this is the case, store value as a string to the missingLetter variable
- else{
-      missingLetter = String.fromCharCode(control);
-  }
-
- });
-  // return this variable
-  if(!missingLetter) return "No letter is missing!";
-  return "The missing letter is: "+ missingLetter +"!";
-  
-}
-
-console.log(fearNotLetter("abcdeg")); // f
-
-}
-
-
 console.log("BINARY STRING");
 
 {
@@ -355,8 +319,44 @@ console.log("BINARY STRING");
   //The binary string will be space separated.
 
    function binaryAgent(str){ 
+     
+
    }
    console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
    // should return "I love FreeCodeCamp!"
 }
 
+
+console.log("DROP IT");
+
+{
+
+//Intermediate Algorithm Scripting: Drop itPassed
+
+// Given the array arr, iterate through and remove each element starting from the first element (the 0 index) 
+//until the function func returns true when the iterated element is passed through it.
+
+// Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
+//// we basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
+
+  function dropElements(arr, func) {
+    if(arr.findIndex(func)=== -1) return [];
+    return arr.slice(arr.findIndex(func));
+  }
+  
+  console.log(dropElements([0, 1, 0, 1], function(n) {return  n === 1; })); //[1,0,1]
+  console.log(dropElements([1,2,3,4], n=> n>5));
+}
+
+
+console.log("STREAM ROLLER");
+{
+//Flatten a nested array. You must account for varying levels of nesting.
+
+  function steamrollArray(arr) {
+    return arr;
+  }
+  
+console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1,2,3,4]
+  
+}
