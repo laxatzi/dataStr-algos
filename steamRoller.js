@@ -13,3 +13,13 @@
   console.log(steamrollArray([1, [], [3, [[4]]]])); // [1, 3, 4];
   console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4];
 
+//OR
+
+{
+    function steamrollArray(arr){
+            // we flat one deep nest arr
+        let flat = arr.flat(); 
+            // then if no more arrays return .. else .. flat again (recursion) the already flattened array until no more arrays exist
+        return flat.some(Array.isArray)?steamrollArray(flat):flat;
+    }
+}
