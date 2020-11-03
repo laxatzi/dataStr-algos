@@ -277,53 +277,38 @@ console.log('Sorted Union below');
 
 {
 
-function leastCommon(arr) {
-  // Range between arr elements
-    let max = Math.max(...arr);
-    let min = Math.min(...arr);
-    let range = Array(max-min+1).fill().map((v,i)=> i + min);
-      
-  // The Math   
-    // Euclidean algorithm for Greatest Common divisor 
+  function leastCommon(arr) {
+    // Range between arr elements
+      let max = Math.max(...arr);
+      let min = Math.min(...arr);
+      let range = Array(max-min+1).fill().map((v,i)=> i + min);
+        
+    // The Math   
+      // Euclidean algorithm for Greatest Common divisor 
 
-        const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+          const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 
-    // Least Common Multiple for two numbers based on Euclidean algorithm
+      // Least Common Multiple for two numbers based on Euclidean algorithm
 
-        const lcm = (a,b)=> (a * b)/ gcd(a, b);
+          const lcm = (a,b)=> (a * b)/ gcd(a, b);
 
-  // Initially the solution is assigned to the highest value of the array
+    // Initially the solution is assigned to the highest value of the array
 
-      let currentLcm = max; 
+        let currentLcm = max; 
 
-  // implement the Euclidean algorithm to each array's element
+    // implement the Euclidean algorithm to each array's element
 
-      while(min<max){
-        currentLcm = lcm(currentLcm, min); 
-        min++; 
-      }
+        while(min<max){
+          currentLcm = lcm(currentLcm, min); 
+          min++; 
+        }
 
-      return currentLcm;
-}
-    console.log(leastCommon([1, 5])); // 60
-    console.log(leastCommon([5, 1])); // 60
-    console.log(leastCommon([2, 10])); //2520
+        return currentLcm;
+  }
+      console.log(leastCommon([1, 5])); // 60
+      console.log(leastCommon([5, 1])); // 60
+      console.log(leastCommon([2, 10])); //2520
 
-}
-
-
-console.log("BINARY STRING");
-
-{
-  //Return an English translated sentence of the passed binary string.
-  //The binary string will be space separated.
-
-   function binaryAgent(str){ 
-     
-
-   }
-   console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
-   // should return "I love FreeCodeCamp!"
 }
 
 
@@ -331,33 +316,44 @@ console.log("DROP IT");
 
 {
 
-//Intermediate Algorithm Scripting: Drop itPassed
+//Intermediate Algorithm Scripting: Drop it
 
 // Given the array arr, iterate through and remove each element starting from the first element (the 0 index) 
 //until the function func returns true when the iterated element is passed through it.
 
 // Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
+
 //// we basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
 
-  function dropElements(arr, func) {
-   
-  }
-  
-  console.log(dropElements([0, 1, 0, 1], function(n) {return  n === 1; })); //[1,0,1]
-  console.log(dropElements([1,2,3,4], n=> n>5));
+    function dropElements(arr, func) {
+     
+    
+    console.log(dropElements([0, 1, 0, 1], function(n) {return  n === 1; })); //[1,0,1]
+    console.log(dropElements([1,2,3,4], n=> n>5)); //[]
 }
 
+}
 
 console.log("STREAM ROLLER");
 {
 //Flatten a nested array. You must account for varying levels of nesting.
 
-  function steamrollArray(arr) {
+    function steamrollArray(arr) {
+      return arr.reduce((acc, val)=>{
+        return acc.concat(Array.isArray(val)?steamrollArray(val):val)
+      },[]);
+    }
     
-    
-   }
-  
   
 console.log(steamrollArray([1, 2, [2], [3, [[4]]]])); // [1,2,2,3,[4]]
   
+}
+
+{
+  function steamrollArray(arr){
+    let flattened = [].concat(...arr);
+    return flattened.some(Array.isArray)?steamrollArray(flattened):flattened;
+  }
+  console.log(steamrollArray([1, {}, [2], [3, [[4]]]])); // [1,2,2,3,[4]]
+
 }
