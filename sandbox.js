@@ -349,3 +349,30 @@ console.log(steamrollArray([1, 2, [2], [3, [[4,[5,[6]]]]]])); // [1,2,2,3,4,5,6]
   
 }
 
+
+console.log('Everything Be True');
+{
+  //Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
+  // In other words, you are given an array collection of objects. 
+  //The predicate pre will be an object property and you need to return true if its value is truthy. Otherwise, return false.
+
+  function truthCheck(collection, pre) {
+   
+    return collection.map(obj => obj.hasOwnProperty(pre) && Boolean(obj[pre])).reduce((a,b)=> a && b);
+    
+
+  }//end func
+
+  console.log(truthCheck([{"single": "yes"}], "single")); // truth
+
+  console.log(
+    truthCheck(
+    [ 
+      {"single": ""}, 
+      {"single": "double"},
+      {"name":"Mark"},
+    ], 
+
+      "single"
+     )); // false
+}
