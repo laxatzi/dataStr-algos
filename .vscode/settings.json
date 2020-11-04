@@ -4,6 +4,9 @@
    ],
    "editor.codeActionsOnSave": null,
    "cSpell.ignoreWords": [
-      "primality"
+      "arrays",
+      "primality",
+      "unnesting",
+      "unnesting arrays"
    ]
 }

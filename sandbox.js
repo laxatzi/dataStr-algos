@@ -326,11 +326,12 @@ console.log("DROP IT");
 //// we basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
 
     function dropElements(arr, func) {
-     
+      if(arr.findIndex(func) === -1) return [];
+     return arr.slice(arr.findIndex(func));
     
-    console.log(dropElements([0, 1, 0, 1], function(n) {return  n === 1; })); //[1,0,1]
-    console.log(dropElements([1,2,3,4], n=> n>5)); //[]
 }
+console.log(dropElements([0, 1, 0, 1], function(n) {return  n === 1; })); //[1,0,1]
+console.log(dropElements([1,2,3,4], n=> n>5)); //[]
 
 }
 
@@ -339,21 +340,12 @@ console.log("STREAM ROLLER");
 //Flatten a nested array. You must account for varying levels of nesting.
 
     function steamrollArray(arr) {
-      return arr.reduce((acc, val)=>{
-        return acc.concat(Array.isArray(val)?steamrollArray(val):val)
-      },[]);
+      let flatter = [].concat(...arr);
+      return flatter.some(Array.isArray)?steamrollArray(flatter):flatter;
     }
     
   
-console.log(steamrollArray([1, 2, [2], [3, [[4]]]])); // [1,2,2,3,[4]]
+console.log(steamrollArray([1, 2, [2], [3, [[4,[5,[6]]]]]])); // [1,2,2,3,4,5,6]
   
 }
 
-{
-  function steamrollArray(arr){
-    let flattened = [].concat(...arr);
-    return flattened.some(Array.isArray)?steamrollArray(flattened):flattened;
-  }
-  console.log(steamrollArray([1, {}, [2], [3, [[4]]]])); // [1,2,2,3,[4]]
-
-}
