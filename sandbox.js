@@ -312,35 +312,12 @@ console.log('Sorted Union below');
 }
 
 
-console.log("DROP IT");
-
-{
-
-//Intermediate Algorithm Scripting: Drop it
-
-// Given the array arr, iterate through and remove each element starting from the first element (the 0 index) 
-//until the function func returns true when the iterated element is passed through it.
-
-// Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
-
-//// we basically want to keep the elements that are placed after  funcs' argument number's index, and drop the rest. 
-
-    function dropElements(arr, func) {
-      if(arr.findIndex(func) === -1) return [];
-     return arr.slice(arr.findIndex(func));
-    
-}
-console.log(dropElements([0, 1, 0, 1], function(n) {return  n === 1; })); //[1,0,1]
-console.log(dropElements([1,2,3,4], n=> n>5)); //[]
-
-}
-
 console.log("STREAM ROLLER");
 {
 //Flatten a nested array. You must account for varying levels of nesting.
 
     function steamrollArray(arr) {
-      let flatter = [].concat(...arr);
+      let flatter = arr.flat();
       return flatter.some(Array.isArray)?steamrollArray(flatter):flatter;
     }
     
@@ -350,6 +327,7 @@ console.log(steamrollArray([1, 2, [2], [3, [[4,[5,[6]]]]]])); // [1,2,2,3,4,5,6]
 }
 
 
+
 console.log('Everything Be True');
 {
   //Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
@@ -357,13 +335,12 @@ console.log('Everything Be True');
   //The predicate pre will be an object property and you need to return true if its value is truthy. Otherwise, return false.
 
   function truthCheck(collection, pre) {
-   
-    return collection.map(obj => obj.hasOwnProperty(pre) && Boolean(obj[pre])).reduce((a,b)=> a && b);
-    
+   //hasOwnProperty Boolean(object[])
+    return collection.every(obj=> obj.hasOwnProperty(pre) && Boolean(obj[pre]));
 
   }//end func
 
-  console.log(truthCheck([{"single": "yes"}], "single")); // truth
+  console.log(truthCheck([{"single": "yes"}], "single")); // true
 
   console.log(
     truthCheck(
@@ -376,3 +353,31 @@ console.log('Everything Be True');
       "single"
      )); // false
 }
+
+
+
+console.log('Add Arguments Optional');
+
+//Add Arguments Optional
+
+  // Create a function that sums two arguments together. 
+  // If only one argument is provided, then return a function that expects one argument and returns the sum.
+
+  // For example, addTogether(2, 3) should return 5, and addTogether(2) should return a function.
+
+  // Calling this returned function with a single argument will then return the sum:
+
+  // var sumTwoAnd = addTogether(2);
+
+  // sumTwoAnd(3) returns 5.
+
+  // If either argument isn't a valid number, return undefined.
+
+  function addTogether(){
+    
+  }
+  
+
+   console.log(addTogether(2,3)); // 5
+  //console.log(addTogether(5)(7)); // 12
+   console.log(addTogether(2,'3')); // undefined
