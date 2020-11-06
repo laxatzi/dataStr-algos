@@ -312,21 +312,6 @@ console.log('Sorted Union below');
 }
 
 
-console.log("STREAM ROLLER");
-{
-//Flatten a nested array. You must account for varying levels of nesting.
-
-    function steamrollArray(arr) {
-      let flatter = arr.flat();
-      return flatter.some(Array.isArray)?steamrollArray(flatter):flatter;
-    }
-    
-  
-console.log(steamrollArray([1, 2, [2], [3, [[4,[5,[6]]]]]])); // [1,2,2,3,4,5,6]
-  
-}
-
-
 
 console.log('Everything Be True');
 {
@@ -335,8 +320,7 @@ console.log('Everything Be True');
   //The predicate pre will be an object property and you need to return true if its value is truthy. Otherwise, return false.
 
   function truthCheck(collection, pre) {
-   //hasOwnProperty Boolean(object[])
-    return collection.every(obj=> obj.hasOwnProperty(pre) && Boolean(obj[pre]));
+  
 
   }//end func
 
@@ -374,10 +358,12 @@ console.log('Add Arguments Optional');
   // If either argument isn't a valid number, return undefined.
 
   function addTogether(){
-    
+    let args = [...arguments];
+   return args.some(el => typeof el !== 'number') ?undefined :args.length >1 ? args.reduce((acc,val)=> acc + val,0) 
+   : n => n + args[0] ;
   }
   
 
    console.log(addTogether(2,3)); // 5
-  //console.log(addTogether(5)(7)); // 12
+  console.log(addTogether(5)(7)); // 12
    console.log(addTogether(2,'3')); // undefined
