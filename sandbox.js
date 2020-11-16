@@ -358,9 +358,7 @@ console.log('Add Arguments Optional');
   // If either argument isn't a valid number, return undefined.
 
   function addTogether(){
-    let args = [...arguments];
-   return args.some(el => typeof el !== 'number') ?undefined :args.length >1 ? args.reduce((acc,val)=> acc + val,0) 
-   : n => n + args[0] ;
+    
   }
   
 
