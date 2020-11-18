@@ -1,10 +1,9 @@
 let n = 5;
-function addTwo(){
+const addTwo = function addTwo(){
 	const two = 2;
-	const one = 1;
 
-	function addOne(){
-		return 	one + two + n;
+  const addOne = 	function(){
+			return n + two 
 
 	}
 

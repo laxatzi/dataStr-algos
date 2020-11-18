@@ -447,6 +447,7 @@
   
   }//block
 
+  //FUNCTIONAL JS---------------------------------------------------
 
 //EXERCISE #16
 // Refactor Global Variables Out of FunctionsPassed
