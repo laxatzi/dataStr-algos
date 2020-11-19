@@ -1,75 +1,6 @@
-    
+//MATH ALGORITHMS
 
-
- // ##################################################################################################
-
-// Missing Letters
-    // Find the missing letter in the passed letter range and return it.
-    // If all letters are present in the range, return undefined.
-    // {
-    //   function fearNoLetter(str){
-    //    let current = str.charCodeAt(0); //97
-    //    let missing;
-    //    str.split('').map((el, index)=> {
-    //      if(str.charCodeAt(index) === current) ++current;
-    //      else missing = String.fromCharCode(current);
-    //    })
-    //    if(missing === undefined) return 'No letter is missing from the row!';
-    //     return missing; // d 
-    //   }
-    //   console.log(fearNoLetter('abce')); // "d" 
-    //   console.log(fearNoLetter('abcdefghijklmnopqrstuvwxyz')); // undefined
-    // }
-
-// algorithm 
-  
-  // store current
-  // store missing  (empty)
-  // make array
-  // map array
-  // compare index toLowerCase() charCode.split('').every(arr[0].)
-  // conditions : if equal ascend by one
-  // if not  ask for the string (fromCharCode) and store it in missing
-  // return missing
-
-{
-  function uniteUnique(arr){
-    let args = [...arguments];
-    return args.reduce((acc, cur)=> {
-      
-      return acc.concat(cur.filter(el=> acc.indexOf(el) === -1));
-    },[]);
-  }
-    
-  // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
-
-  }
-
-
-// Missing lettersPassed
-
-      // Find the missing letter in the passed letter range and return it.
-      
-      // If all letters are present in the range, return undefined.
-
-      {
-        function fearNoLetter(str){
-          let control = str.charCodeAt(0); // 97;
-          let missingLetter;
-          str.split('').map((el,index) => {
-            if(str.charCodeAt(index) === control)  ++control; 
-            else missingLetter = String.fromCharCode(control);
-          });
-          if(missingLetter === undefined) return "No letter is missing!";
-          return "The missing letter is "+ missingLetter;
-        }
-    
-        // console.log(fearNoLetter('abcde')); undefined
-        // console.log(fearNoLetter('abce')); // d
-      }
-
-
- // Sum All Odd Fibonacci Numbers
+// Sum All Odd Fibonacci Numbers
 
     // Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
     
@@ -105,6 +36,8 @@
       console.log(sumFibs(75025)); // 135721
     }
 
+
+  
 // Intermediate Algorithm Scripting: Sum All Primes
 
     // A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself. 
@@ -139,142 +72,8 @@
       console.log(sumPrimes(11)); // 28    
 
     }
-// second method
-{
-  function sumPrimes(num){
-    // generate a sequence of numbers based on parameter number (num)
-     let numArr = Array.from({length: num + 1}, (value, index) => index); //Since the array is initialized with `undefined` on each position,
-     // the value will be `undefined`
-    
-    // create a callback for boolean checking primality in the filtering process  
-      function isPrime (n){
-        if(n<2) return false;
-      let  squareRoot = Math.floor(Math.sqrt(n));
-      let i = 2;
-      while(i<=squareRoot){
-        if(n % i == 0) return false;
-        i++;
-      }
-      return true;    
-         
-   } // end isPrime function
-    
-    // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
-     return numArr.filter(el => isPrime(el)).reduce((a,b)=> a + b);
-  }
-  console.log('Second method');
-  console.log(sumPrimes(11)); // 28  
-}
-//#################################################################################
 
-// SORTED UNION
-
-  // Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
-
-  // In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
-
-  // The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
-
-  // Check the assertion tests for examples.
-console.log('Sorted Union below');
-
-{
-    function uniteUnique(arr){
-      let args = [...arguments];
-      return args.reduce((acc, cur) => {
-        return acc.concat(cur.filter(el => acc.indexOf(el) === -1));
-      },[]);
-  
-    }
-       console.log('unite unique!');
-       console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [1,3,2,5,4]
-
-}
-{
-    // Missing letters
-
-      // Find the missing letter in the passed letter range and return it.
-      
-      // If all letters are present in the range, return undefined.
-
-  function fearNotLetter(str) {
-    let control = str.charCodeAt(0); //97
-    let missingLetter;
-    str.split('').map((v,i)=> {
-      if(control == str.charCodeAt(i)) return ++control;
-      else missingLetter = String.fromCharCode(control);
-    });
-    if(missingLetter == undefined) return 'No letter is missing!';
-    return 'The missing letter is: ' + missingLetter + "!";
-  }
-  console.log('fearNot');
-  console.log(fearNotLetter('abcde')); undefined
-  console.log(fearNotLetter('abce')); // d
-}
-  // Sum All Odd Fibonacci Numbers
-
-    // Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
-    
-    // The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum 
-    // of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
-    
-    // For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
-
-{
-
-  function sumFibs(num) {
-    if(num <= 0) return 0;
-    let fibArr = [1, 1];
-    let i =0;
-
-    while((i = fibArr[0] + fibArr[1] )<= num){
-       fibArr.unshift(i);
-      
-    }
-    return fibArr.filter(el => el % 2 !== 0).reduce((a,b)=> a + b);
-    
-  }
-  console.log('fibonacci')
-  console.log(sumFibs( 10)); //10  1 1 2 3, 5, 8
-  console.log(sumFibs(75024)); // 60696
-  console.log(sumFibs(75025)); // 135721
-}
-
-
-
-
-// Intermediate Algorithm Scripting: Sum All Primes
-
-    // A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself. 
-    // For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
-
-    // Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num.
-{
-
-  function sumPrimes(num){
-    // generate a sequence of numbers based on parameter number (num)
-    let numSequence = Array.from({length: num +1}, (v,i)=>i);
-    // create callback checking primality 
-    function checkPrime(n){
-      let square = Math.floor(Math.sqrt(n));
-      if(n<2) return false;
-
-      let i = 2;
-      while(i <= square){
-        if(n % i == 0) return false;
-        i++;
-      }
-      return true;
-    }
-    // We filter the sequence by checking primality with the use of a callback and then we sum the remaining prime numbers with reduce method
-    return numSequence.filter(el => checkPrime(el)).reduce((a,b)=> a+b);
-  }
-  console.log("Check primality!");
-  console.log(sumPrimes(11)); // 28    
-
-}
-
-
+//LEAST COMMON
 {
 
   function leastCommon(arr) {
@@ -312,6 +111,7 @@ console.log('Sorted Union below');
 }
 
 
+// MISC
 
 console.log('Everything Be True');
 {
@@ -356,7 +156,7 @@ console.log('Add Arguments Optional');
   // sumTwoAnd(3) returns 5.
 
   // If either argument isn't a valid number, return undefined.
-
+{
   function addTogether(){
     
   }
@@ -365,3 +165,80 @@ console.log('Add Arguments Optional');
    console.log(addTogether(2,3)); // 5
   console.log(addTogether(5)(7)); // 12
    console.log(addTogether(2,'3')); // undefined
+
+
+
+  }//block
+
+
+// MAKE A PERSON
+  // Fill in the object constructor with the following methods below:
+
+/*
+getFirstName()
+getLastName()
+getFullName()
+setFirstName(first)
+setLastName(last)
+setFullName(firstAndLast)
+*/
+
+//Run the tests to see the expected output for each method.
+// The methods that take an argument must accept only one argument and it has to be a string. 
+//These methods must be the only available means of interacting with the object.
+
+{
+  var Person = function(firstAndLast) {
+    // Only change code below this line
+    // Complete the method below and implement the others similarly
+    this.getFullName = function() {
+      return "";
+    };
+    return firstAndLast;
+  };
+  
+  var bob = new Person('Bob Ross');
+  console.log(bob.getFullName()); // Bob Ross
+  //bob.getFullName() should return "Haskell Ross" after bob.setFirstName("Haskell").
+  console.log(bob.getFullName()); //"Haskell Ross"
+
+}// END BLOCK
+
+
+//Map the Debris -- Part of the Math section
+
+  //Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
+  //The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
+  //You can read about orbital periods on Wikipedia.
+  //The values should be rounded to the nearest whole number. The body being orbited is Earth.//
+  //The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km3s-2.
+  //Hint 1: The formula needed is: T=2p root(a^3/μ);
+  // Hint 2: Use Math.round() to round up to the next whole number as requested. Using Math.ceil() will let you pass the first test but fail the second one.
+  // Hint 3: Find out how to remove and add key to a JavaScript object.
+  
+  {
+    function orbitalPeriod(arr) {
+      var GM = 398600.4418;
+      var earthRadius = 6367.4447;
+      return arr;
+    }
+    
+    console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
+    
+
+  }//end block
+
+
+
+//EXERCISE #21
+// Partial Application
+  // Fill in the body of the add function so it uses currying to add parameters x, y, and z.
+
+  { 
+    function add(x){
+
+    }
+
+    console.log(add(10)(20)(30));// 60
+    
+}// end block
