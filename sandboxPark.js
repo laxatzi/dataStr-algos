@@ -8,7 +8,8 @@
 
 {
 	function filteredArray(arr, n) {
-		return arr.filter((el) => !el.includes(n));
+		// code here
+		return "code";
 	}
 
 	console.log(
@@ -51,9 +52,7 @@
 	};
 
 	function isEveryoneHere(obj) {
-		if ("Alan" in obj && "Jeff" in obj && "Sarah" in obj && "Ryan" in obj)
-			return true;
-		else return false;
+		return "code";
 	}
 
 	console.log(isEveryoneHere(users));
@@ -82,12 +81,12 @@
 	};
 
 	function countOnline(obj) {
-		let numberOfTruths = 0;
-		for (let property in obj) {
-			if (obj[property].online === true) numberOfTruths += 1;
+		let result = 0;
+		for (prop in obj) {
+			if (obj[prop].online === true) result += 1;
 		}
 
-		return numberOfTruths;
+		return result;
 	}
 
 	console.log(countOnline(usersObj));
