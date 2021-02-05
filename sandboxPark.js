@@ -81,14 +81,42 @@
 	};
 
 	function countOnline(obj) {
-		let result = 0;
-		for (prop in obj) {
-			if (obj[prop].online === true) result += 1;
-		}
-
-		return result;
+		return "code";
 	}
 
 	console.log(countOnline(usersObj));
 }
 // end block
+
+//EXERCISE #6
+//Generate an Array of All Object Keys with Object.keys()
+
+//Finish writing the getArrayOfUsers function so that it returns an array containing
+//all the properties in the object it receives as an argument.
+
+{
+	let users = {
+		Alan: {
+			age: 27,
+			online: false,
+		},
+		Jeff: {
+			age: 32,
+			online: true,
+		},
+		Sarah: {
+			age: 48,
+			online: false,
+		},
+		Ryan: {
+			age: 19,
+			online: true,
+		},
+	};
+
+	function getArrayOfUsers(obj) {
+		return obj;
+	}
+
+	console.log(getArrayOfUsers(users));
+} // end block
