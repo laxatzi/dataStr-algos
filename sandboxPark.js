@@ -9,7 +9,7 @@
 {
 	function filteredArray(arr, n) {
 		// code here
-		return "code";
+		return arr.filter((el) => !el.includes(n));
 	}
 
 	console.log(
@@ -24,6 +24,7 @@
 		)
 	); // should return [19, 5, 9]
 } //end block
+
 //EXERCISE #4
 //Check objects' property
 
@@ -52,7 +53,14 @@
 	};
 
 	function isEveryoneHere(obj) {
-		return "code";
+		if (
+			obj.hasOwnProperty("Alan") &&
+			obj.hasOwnProperty("Jeff") &&
+			obj.hasOwnProperty("Sarah") &&
+			obj.hasOwnProperty("Ryan")
+		)
+			return true;
+		else return false;
 	}
 
 	console.log(isEveryoneHere(users));
@@ -73,7 +81,7 @@
 			online: true,
 		},
 		Jeff: {
-			online: true,
+			online: false,
 		},
 		Sarah: {
 			online: true,
@@ -81,42 +89,48 @@
 	};
 
 	function countOnline(obj) {
-		return "code";
+		let result = 0;
+		for (let user in obj) {
+			if (obj[user].online === true) result++;
+		}
+
+		return result;
 	}
 
 	console.log(countOnline(usersObj));
 }
 // end block
+//EXERCISE #7
+// Modify an Array stored in an Object
 
-//EXERCISE #6
-//Generate an Array of All Object Keys with Object.keys()
-
-//Finish writing the getArrayOfUsers function so that it returns an array containing
-//all the properties in the object it receives as an argument.
+// Take a look at the object we've provided in the code editor.
+// The user object contains three keys. The data key contains five keys, one of which contains an array of friends.
+// From this, you can see how flexible objects are as data structures.
+// We've started writing a function addFriend.
+// Finish writing it so that it takes a user object and adds the name of the friend argument
+//to the array stored in user.data.friends and returns that array.
 
 {
-	let users = {
-		Alan: {
-			age: 27,
-			online: false,
-		},
-		Jeff: {
-			age: 32,
-			online: true,
-		},
-		Sarah: {
-			age: 48,
-			online: false,
-		},
-		Ryan: {
-			age: 19,
-			online: true,
+	let user = {
+		name: "Kenneth",
+		age: 28,
+		data: {
+			username: "kennethCodesAllDay",
+			joinDate: "March 26, 2016",
+			organization: "freeCodeCamp",
+			friends: ["Sam", "Kira", "Tomo"],
+			location: {
+				city: "San Francisco",
+				state: "CA",
+				country: "USA",
+			},
 		},
 	};
 
-	function getArrayOfUsers(obj) {
-		return obj;
+	function addFriend(userObj, friend) {
+		const arrayOfFriends = userObj.data.friends;
+		return arrayOfFriends.concat(friend);
 	}
 
-	console.log(getArrayOfUsers(users));
-} // end block
+	console.log(addFriend(user, "Pete"));
+}
