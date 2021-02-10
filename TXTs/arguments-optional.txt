@@ -1,0 +1,7 @@
+function addTogether() {
+ let args = [...arguments];
+ return args.some(el => typeof el !== 'number') ?undefined :args.length >1 ? 
+ args.reduce((a,b)=> a + b, 0): n => typeof n !== 'number' ?undefined: n + args[0];
+}
+
+addTogether(2,3);
