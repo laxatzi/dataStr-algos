@@ -140,6 +140,9 @@
    //.Your result must be a string.
    {
 	
+	function reverseString(str){
+		return 'code';
+	}
 		   console.log(reverseString("hello")); //oleh
 }//block
 
