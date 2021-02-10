@@ -9,7 +9,11 @@
 {
 	function filteredArray(arr, n) {
 		// code here
+<<<<<<< HEAD
 		return 'code';
+=======
+		return arr.filter((el) => !el.includes(n));
+>>>>>>> 6d728f06ab112bd8758d2b9b01b4d5fbda1c6e7b
 	}
 
 	console.log(
@@ -53,7 +57,18 @@
 	};
 
 	function isEveryoneHere(obj) {
+<<<<<<< HEAD
 		return 'code';
+=======
+		if (
+			obj.hasOwnProperty("Alan") &&
+			obj.hasOwnProperty("Jeff") &&
+			obj.hasOwnProperty("Sarah") &&
+			obj.hasOwnProperty("Ryan")
+		)
+			return true;
+		else return false;
+>>>>>>> 6d728f06ab112bd8758d2b9b01b4d5fbda1c6e7b
 	}
 
 	console.log(isEveryoneHere(users));
@@ -82,8 +97,17 @@
 	};
 
 	function countOnline(obj) {
+<<<<<<< HEAD
 		
 		return 'code';
+=======
+		let result = 0;
+		for (let user in obj) {
+			if (obj[user].online === true) result++;
+		}
+
+		return result;
+>>>>>>> 6d728f06ab112bd8758d2b9b01b4d5fbda1c6e7b
 	}
 
 	console.log(countOnline(usersObj));
@@ -116,12 +140,14 @@
 		},
 	};
 
+
 	function addFriend(obj,friend){
 		return 'code';
 	}
 
 	console.log(addFriend(user, "Pete"));
 }
+
 
 
 //EXERCISE #1
@@ -159,3 +185,4 @@ function factorialize(num) {
 
 console.log(factorialize(5)); // 120  
 }
+

@@ -2,5 +2,11 @@
    "workbench.editorAssociations": [
    
    ],
-   "editor.codeActionsOnSave": null
+   "editor.codeActionsOnSave": null,
+   "cSpell.ignoreWords": [
+      "arrays",
+      "primality",
+      "unnesting",
+      "unnesting arrays"
+   ]
 }

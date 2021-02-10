@@ -1,6 +1,8 @@
-//We have defined a function, 'quickCheck', that takes an array and an element as arguments. Modify the function using 'indexOf()' so that it return 'true' if the passed element exists in the array, and 'false' if not.
+//We have defined a function, 'quickCheck', that takes an array and an element as arguments.
+// Modify the function using 'indexOf()' so that 
+//it return 'true' if the passed element exists in the array, and 'false' if not.
 
-function quickCheck(arr, el){
+function quickElemCheck(arr, el){
    if(arr.indexOf(el) == -1){
       return false;
    }
@@ -8,4 +10,4 @@ function quickCheck(arr, el){
    
 }
 
-// console.log(quickCheck(['onions', 'leeks', 'lentils'], 'mushrooms'));
+// console.log(quickElemCheck(['onions', 'leeks', 'lentils'], 'mushrooms'));
