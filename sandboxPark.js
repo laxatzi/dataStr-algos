@@ -49,7 +49,7 @@ console.log(factorialize(0));//1
 
 {
 		function largestOfFour(arr) {
-			return arr;
+			return 'return an array consisting of the maximum number in each subarray';
 		}
 		console.log(
 			largestOfFour([
