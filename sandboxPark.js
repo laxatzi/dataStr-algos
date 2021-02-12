@@ -60,3 +60,47 @@ console.log(factorialize(0));//1
 			])
 		); //[27, 5, 39, 1001]
 } //block
+
+//EXERCISE #13
+// Confirm the Ending
+
+//.Check if a string (first argument, str) ends with the given target string (second argument, target).
+//.This challenge can be solved with the .endsWith() method, which was introduced in ES2015.
+//But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+{
+	function confirmEnding(str, target) {
+		return str.substr(-target.length) === target ? true : false;
+	}
+
+	console.log(confirmEnding("Bastian", "k"));
+} //block
+
+//EXERCISE #14
+//Repeat a String
+
+//. Repeat a given string str (first argument) for num times (second argument).
+// Return an empty string if num is not a positive number.
+
+{
+	function repeatStringNumTimes(str, num) {
+	  if(num<=0) return "";
+	  return str.concat(repeatStringNumTimes(str, num - 1));
+	}
+
+	console.log(repeatStringNumTimes("abc", 3)); //abcabcabc
+	console.log(repeatStringNumTimes('*', 8)); // ********
+} //block
+
+//EXERCISE #15
+//Truncate a String
+
+//.Truncate a string (first argument) if it is longer than the given maximum string length (second argument).
+//Return the truncated string with a ... ending.
+
+{
+	function truncateString(str, num) {
+		return 'truncate string';
+	}
+
+	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
+} //block
