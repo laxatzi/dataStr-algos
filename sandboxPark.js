@@ -69,7 +69,7 @@ console.log(factorialize(0));//1
 //But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
 {
 	function confirmEnding(str, target) {
-		return str.substr(-target.length) === target ? true : false;
+		return 'Does it end in target?';
 	}
 
 	console.log(confirmEnding("Bastian", "k"));
@@ -83,8 +83,7 @@ console.log(factorialize(0));//1
 
 {
 	function repeatStringNumTimes(str, num) {
-	  if(num<=0) return "";
-	  return str.concat(repeatStringNumTimes(str, num - 1));
+	  return 'repeat num of time without the build in repeat method';
 	}
 
 	console.log(repeatStringNumTimes("abc", 3)); //abcabcabc
@@ -99,7 +98,8 @@ console.log(factorialize(0));//1
 
 {
 	function truncateString(str, num) {
-		return 'truncate string';
+		if(str.length <= num) return str;
+		return str.slice(0,num).concat('...');
 	}
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
