@@ -25,56 +25,6 @@ console.log(factorialize(-3));//0
 console.log(factorialize(0));//1
 }
 
-//EXERCISE #11
-//Find the Longest Word in a String
-
-//.Return the length of the longest word in the provided sentence.
-//.Your response should be a number.
-{
-		function findLongestWordLength(str) {
-			return 'return the length of the lengthiest word in the sentence';
-		}
-
-		console.log(
-			findLongestWordLength("The quick brown fox jumped over the lazy dog")
-		); // 6
-} //block
-
-//EXERCISE #12
-// Return Largest Numbers in ArraysPassed
-
-//.Return an array consisting of the largest number from each provided sub-array.
-//For simplicity, the provided array will contain exactly 4 sub-arrays.
-//.Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
-
-{
-		function largestOfFour(arr) {
-			return 'return an array consisting of the maximum number in each subarray';
-		}
-		console.log(
-			largestOfFour([
-				[13, 27, 18, 26],
-				[4, 5, 1, 3],
-				[32, 35, 37, 39],
-				[1000, 1001, 857, 1],
-			])
-		); //[27, 5, 39, 1001]
-} //block
-
-//EXERCISE #13
-// Confirm the Ending
-
-//.Check if a string (first argument, str) ends with the given target string (second argument, target).
-//.This challenge can be solved with the .endsWith() method, which was introduced in ES2015.
-//But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
-{
-	function confirmEnding(str, target) {
-		return 'Does it end in target?';
-	}
-
-	console.log(confirmEnding("Bastian", "k"));
-} //block
-
 //EXERCISE #14
 //Repeat a String
 
@@ -83,7 +33,7 @@ console.log(factorialize(0));//1
 
 {
 	function repeatStringNumTimes(str, num) {
-	  return 'repeat num of time without the build in repeat method';
+	  return 'repeat string x number of times';
 	}
 
 	console.log(repeatStringNumTimes("abc", 3)); //abcabcabc
@@ -98,8 +48,7 @@ console.log(factorialize(0));//1
 
 {
 	function truncateString(str, num) {
-		if(str.length <= num) return str;
-		return str.slice(0,num).concat('...');
+		return str.length <= num ? str : str.substr(0,num).concat('...');
 	}
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
