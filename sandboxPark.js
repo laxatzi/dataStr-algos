@@ -1,5 +1,5 @@
 
-//EXERCISE #2
+//EXERCISE #1
    //.Reverse the provided string.You may need to turn the string into an array before you can reverse it.
    //.Your result must be a string.
    {
@@ -11,7 +11,7 @@
 }//block
 
 
-//EXERCISE #3
+//EXERCISE #2
  //.Return the factorial of the provided integer.
  //.If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
  //.Only integers greater than or equal to zero will be supplied to the function.
@@ -25,7 +25,7 @@ console.log(factorialize(-3));//0
 console.log(factorialize(0));//1
 }
 
-//EXERCISE #14
+//EXERCISE #3
 //Repeat a String
 
 //. Repeat a given string str (first argument) for num times (second argument).
@@ -40,7 +40,7 @@ console.log(factorialize(0));//1
 	console.log(repeatStringNumTimes('*', 8)); // ********
 } //block
 
-//EXERCISE #15
+//EXERCISE #4
 //Truncate a String
 
 //.Truncate a string (first argument) if it is longer than the given maximum string length (second argument).
@@ -48,8 +48,22 @@ console.log(factorialize(0));//1
 
 {
 	function truncateString(str, num) {
-		return str.length <= num ? str : str.substr(0,num).concat('...');
+		return "truncate a string if lengthier than a specific number";
 	}
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
+} //block
+
+
+//EXERCISE #16
+//Finders Keepers
+//.Create a function that looks through an array (first argument) and returns the first element in the array that passes
+//a truth test (second argument). If no element passes the test, return undefined
+
+{
+	function findElement(arr, func) {
+		return arr[arr.map(func).indexOf(true)];
+	}
+
+	console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //
 } //block
