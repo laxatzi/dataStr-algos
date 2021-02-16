@@ -48,7 +48,7 @@ console.log(factorialize(0));//1
 
 {
 	function truncateString(str, num) {
-		return "truncate a string if lengthier than a specific number";
+		return str.substr(0,num).concat('...');
 	}
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
@@ -62,8 +62,25 @@ console.log(factorialize(0));//1
 
 {
 	function findElement(arr, func) {
+	
 		return arr[arr.map(func).indexOf(true)];
 	}
 
 	console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //
 } //block
+
+
+//EXERCISE #17
+// Boo who
+
+//.Check if a value is classified as a boolean primitive. Return true or false.
+//. Boolean primitives are true and false.
+{
+	function booWho(bool) {
+		return "Is this data type a boolean?";
+	}
+
+	console.log(booWho(true)); // true
+	console.log(booWho("true"));// false.
+
+} // block

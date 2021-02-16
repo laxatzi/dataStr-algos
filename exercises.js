@@ -418,6 +418,7 @@ var watchList = [
 	}
 
 	console.log(booWho(false)); // true
+	console.log(booWho("true"));// false.
 } // block
 
 //EXERCISE #18
