@@ -84,3 +84,19 @@ console.log(factorialize(0));//1
 	console.log(booWho("true"));// false.
 
 } // block
+
+//EXERCISE #18
+//Title Case a Sentence
+
+//.Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+//.For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+
+{
+	function titleCase(str) {
+	 const convertedToArr = str.toLowerCase().split(' ');
+	 const capitalize = convertedToArr.map(el=> el.charAt(0).toUpperCase().concat(el.substr(1)));
+	 return capitalize.join(' ');
+	}
+
+	console.log(titleCase("sHoRt AnD sToUt")); // Short And Stout
+} // block
