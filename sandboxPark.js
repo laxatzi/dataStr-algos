@@ -5,7 +5,7 @@
    {
 	
 	function reverseString(str){
-	
+		return 'reverse string using recursion';
 	}
 		   console.log(reverseString("hello")); //olleh
 }//block
@@ -17,9 +17,7 @@
  //.Only integers greater than or equal to zero will be supplied to the function.
 {
 function factorialize(num) {
-	if(num<0) return false;
-	if(num === 0) return 1;
-	return num * factorialize(num - 1);
+	return 'classic factorial of a num';
 }
 
 console.log(factorialize(5)); // 120  
@@ -35,8 +33,8 @@ console.log(factorialize(0));//1
 
 {
 	function repeatStringNumTimes(str, num) {
-	  if(num <= 0) return "";
-	  return repeatStringNumTimes(str, num-1).concat(str);
+	  
+	  return 'create a new string by concatenate itself num number of times';
 	}
 
 	console.log(repeatStringNumTimes("abc", 3)); //abcabcabc
@@ -51,15 +49,15 @@ console.log(factorialize(0));//1
 
 {
 	function truncateString(str, num) {
-		if(str.length>num) return str.substr(0,num).concat('...');
-		return str;
+		
+		return 'truncate string lengthier than num';
 	}
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
 } //block
 
 
-//EXERCISE #16
+//EXERCISE #5
 //Finders Keepers
 //.Create a function that looks through an array (first argument) and returns the first element in the array that passes
 //a truth test (second argument). If no element passes the test, return undefined
@@ -67,14 +65,14 @@ console.log(factorialize(0));//1
 {
 	function findElement(arr, func) {
 	
-		return arr[arr.map(func).indexOf(true)];
+		return 'find the FIRST array element that fulfils the function conditions';
 	}
 
 	console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //8
 } //block
 
 
-//EXERCISE #18
+//EXERCISE #6
 //Title Case a Sentence
 
 //.Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
@@ -83,9 +81,8 @@ console.log(factorialize(0));//1
 {
 	function titleCase(str) {
 	
-	 const convertToArray = str.toLowerCase().split(' ');
-	 const capitalizeArrayEls = convertToArray.map(el=> el.charAt(0).toUpperCase().concat(el.substr(1)));
-	 return capitalizeArrayEls.join(' ');
+	 
+	 return 'capitalize words in string';
 	}
 
 	console.log(titleCase("sHoRt AnD sToUt")); // Short And Stout

@@ -9,6 +9,8 @@
 	}
 		   console.log(reverseString("hello")); //olleh
 }//block
+
+
 //EXERCISE #2
  //.Return the factorial of the provided integer.
  //.If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
@@ -25,7 +27,8 @@
     console.log(factorialize(0));//1
     }
 
-    //EXERCISE #3
+
+//EXERCISE #3
 //Repeat a String
 
 //. Repeat a given string str (first argument) for num times (second argument).
@@ -40,6 +43,8 @@
 	console.log(repeatStringNumTimes("abc", 3)); //abcabcabc
 	console.log(repeatStringNumTimes('*', 8)); // ********
 } //block
+
+
 //EXERCISE #4
 //Truncate a String
 
@@ -54,7 +59,9 @@
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
 } //block
-//EXERCISE #16
+
+
+//EXERCISE #5
 //Finders Keepers
 //.Create a function that looks through an array (first argument) and returns the first element in the array that passes
 //a truth test (second argument). If no element passes the test, return undefined
@@ -68,7 +75,8 @@
 	console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //8
 } //block
 
-//EXERCISE #18
+
+//EXERCISE #6
 //Title Case a Sentence
 
 //.Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
