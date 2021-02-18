@@ -88,7 +88,9 @@ console.log(factorialize(0));//1
 	console.log(titleCase("sHoRt AnD sToUt")); // Short And Stout
 } // block
 
-//EXERCISE #19
+
+
+//EXERCISE #7
 // Slice and SplicePassed
 
 //. You are given two arrays and an index.
@@ -104,16 +106,58 @@ console.log(factorialize(0));//1
 	console.log(frankenSplice([1, 2, 3], [4, 5], 1)); // [4, 1, 2, 3, 5]
 } // end block
 
+
 //EXERCISE #20
 //Falsy Bouncer
 
 //.Remove all falsy values from an array. Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 {
+
 	function bouncer(arr) {
-		return arr.filter(el => el);
+		return "remove falsy values from an array";
 	}
 
 	//test
 	console.log(bouncer([null, NaN, 1, 2, undefined])); // [1,2]
 } //block
 
+
+
+//EXERCISE #14
+// Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.
+// The returned value should be a number.
+
+//.For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+
+//.Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).
+{
+	function getIndexToIns(arr, num) {
+		const sortedArray = arr.concat(num).sort((a,b)=> a - b);
+		return sortedArray.indexOf(num);
+	}
+	console.log(getIndexToIns([10, 40, 5 ,20, 50], 30)); //3
+	console.log(getIndexToIns([2, 20, 10], 19)); // 2
+	
+} //block
+
+
+
+//EXERCISE #15
+// Chunky Monkey
+
+//.Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+//.Our goal for this Algorithm is to split arr (first argument) into smaller chunks of arrays with the length provided by size (second argument). There are 4 green checks (objectives) our code needs to pass in order to complete this Algorithm:
+//? bear in mind slice method
+//? bear in mind concat method
+
+{
+	function chunkArrayInGroups(arr, size) {
+		return "original";
+	}
+
+	//test
+	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)); //should return [[0, 1], [2, 3], [4, 5]].
+	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
+	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)); //should return [[0, 1, 2], [3, 4, 5], [6]].
+	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)); //should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
+} //block
