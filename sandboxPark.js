@@ -104,3 +104,16 @@ console.log(factorialize(0));//1
 	console.log(frankenSplice([1, 2, 3], [4, 5], 1)); // [4, 1, 2, 3, 5]
 } // end block
 
+//EXERCISE #20
+//Falsy Bouncer
+
+//.Remove all falsy values from an array. Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+{
+	function bouncer(arr) {
+		return 'remove all falsy values from an array';
+	}
+
+	//test
+	console.log(bouncer([null, NaN, 1, 2, undefined])); // [1,2]
+} //block
+

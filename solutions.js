@@ -113,4 +113,15 @@
 	}
 
 	console.log(frankenSplice([1, 2, 3], [4, 5], 1)); // [4, 1, 2, 3, 5]
-} // end bl
+} // end block
+
+//.Remove all falsy values from an array. Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+{
+	function bouncer(arr) {
+		return arr.filter(el => el);
+	}
+
+	//test
+	console.log(bouncer([null, NaN, 1, 2, undefined])); // [1,2]
+} //block
+
