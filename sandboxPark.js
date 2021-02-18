@@ -110,7 +110,7 @@ console.log(factorialize(0));//1
 //.Remove all falsy values from an array. Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 {
 	function bouncer(arr) {
-		return 'remove all falsy values from an array';
+		return arr.filter(el => el);
 	}
 
 	//test
