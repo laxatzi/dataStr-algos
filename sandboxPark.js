@@ -152,7 +152,7 @@ console.log(factorialize(0));//1
 {
 	function chunkArrayInGroups(arr, size) {
 		
-		return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size), size));
+		return 'chunky monkey algorithm';
 	}
 
 	//test
@@ -172,8 +172,8 @@ console.log(factorialize(0));//1
 {
 
 	function mutation(arr) {
-		
-		return "Mutations algorithm";
+		const letters = arr[1].toLowerCase().split('');
+		return letters.every(el=>arr[0].toLowerCase().split('').indexOf(el) !== -1);
 	  }
 	  
 	  console.log(mutation(["hello", "hey"])); // false

@@ -162,3 +162,14 @@
 	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)); //should return [[0, 1], [2, 3], [4, 5]].
 	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
 } //block
+
+{
+
+	function mutation(arr) {
+		
+		return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().split('').indexOf(el));
+	  }
+	  
+	  console.log(mutation(["hello", "hey"])); // false
+	  console.log(mutation(["Noel", "Ole"])); // true
+}
