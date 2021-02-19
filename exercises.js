@@ -465,7 +465,8 @@ var watchList = [
 } //block
 
 //EXERCISE #14
-//. Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+//. Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.
+// The returned value should be a number.
 
 //.For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
 
@@ -603,28 +604,8 @@ var watchList = [
 	console.log(add(10)(20)(30)); // 60
 } // end block
 
-//EXERCISE #22
-//.Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
 
-//.For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
-
-//.The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
-
-//.Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
-//. Θέλω τα γράμματα που υπάρχουν στο δεύτερο element να υπάρχουν και στο πρώτο. Οχι το αντιθετο.
-//? check JavaScript String.prototype.indexOf()
-//? 0 doesn't evaluate to true and -1 doesn't evaluate to false. Therefore, when checking if a specific string exists within another string, the correct way to check would be:'Blue Whale'.indexOf('Blue') !== -1  // true
-//? arr.every(callback(element[, index[, array]])[, thisArg])
-
-{
-	function mutation(arr) {
-		return arr;
-	}
-
-	//test
-	console.log(mutation(["voodoo", "no"])); //false
-	console.log(mutation(["Mary", "Army"])); //true
-} //block
+// INTERMEDIATE ALGORITHMS 
 
 //EXERCISE #23
 //. We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.
