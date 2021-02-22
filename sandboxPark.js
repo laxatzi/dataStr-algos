@@ -151,8 +151,9 @@ console.log(factorialize(0));//1
 
 {
 	function chunkArrayInGroups(arr, size) {
-		
-		return 'chunky monkey algorithm';
+	    if(arr.length === 0) return arr;
+		if(arr.length < size) return [arr];
+		return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size), size));
 	}
 
 	//test
@@ -172,14 +173,12 @@ console.log(factorialize(0));//1
 {
 
 	function mutation(arr) {
-		const letters = arr[1].toLowerCase().split('');
-		return letters.every(el=>arr[0].toLowerCase().split('').indexOf(el) !== -1);
+	    return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().split('').indexOf(el) !== -1);
 	  }
 	  
 	  console.log(mutation(["hello", "hey"])); // false
 	  console.log(mutation(["Noel", "Ole"])); // true
 }
-
 
 
 
