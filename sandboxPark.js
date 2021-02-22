@@ -1,3 +1,79 @@
+// watchList variable
+const watchList = [
+	{
+		Title: "Inception",
+		Year: "2010",
+		Rated: "PG-13",
+		Released: "16 Jul 2010",
+		Runtime: "148 min",
+		Genre: "Action, Adventure, Crime",
+		Director: "Christopher Nolan",
+		Writer: "Christopher Nolan",
+		Actors: "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
+		Plot:
+			"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+		Language: "English, Japanese, French",
+		Country: "USA, UK",
+		Awards: "Won 4 Oscars. Another 143 wins & 198 nominations.",
+		Poster:
+			"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+		Metascore: "74",
+		imdbRating: "8.8",
+		imdbVotes: "1,446,708",
+		imdbID: "tt1375666",
+		Type: "movie",
+		Response: "True",
+	},
+	{
+		Title: "Batman Begins",
+		Year: "2005",
+		Rated: "PG-13",
+		Released: "15 Jun 2005",
+		Runtime: "140 min",
+		Genre: "Action, Adventure",
+		Director: "Christopher Nolan",
+		Writer:
+			"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
+		Actors: "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
+		Plot:
+			"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+		Language: "English, Urdu, Mandarin",
+		Country: "USA, UK",
+		Awards: "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
+		Poster:
+			"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
+		Metascore: "70",
+		imdbRating: "8.4",
+		imdbVotes: "972,584",
+		imdbID: "tt0372784",
+		Type: "movie",
+		Response: "True",
+	},
+	{
+		Title: "Avatar",
+		Year: "2009",
+		Rated: "PG-13",
+		Released: "18 Dec 2009",
+		Runtime: "162 min",
+		Genre: "Action, Adventure, Fantasy",
+		Director: "James Cameron",
+		Writer: "James Cameron",
+		Actors: "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+		Plot:
+			"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+		Language: "English, Spanish",
+		Country: "USA, UK",
+		Awards: "Won 3 Oscars. Another 80 wins & 121 nominations.",
+		Poster:
+			"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+		Metascore: "83",
+		imdbRating: "7.9",
+		imdbVotes: "876,575",
+		imdbID: "tt0499549",
+		Type: "movie",
+		Response: "True",
+	},
+];
 
 //EXERCISE #1  !!
    //.Reverse the provided string.You may need to turn the string into an array before you can reverse it.
@@ -49,8 +125,7 @@ console.log(factorialize(0));//1
 
 {
 	function truncateString(str, num) {
-		if(str.length <= num) return str;
-		return str.slice(0,num).concat('...');
+		return "truncate a string";
 	}
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
@@ -151,9 +226,8 @@ console.log(factorialize(0));//1
 
 {
 	function chunkArrayInGroups(arr, size) {
-	    if(arr.length === 0) return arr;
-		if(arr.length < size) return [arr];
-		return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size), size));
+	    
+		return "chunky monkey algorithm";
 	}
 
 	//test
@@ -173,7 +247,7 @@ console.log(factorialize(0));//1
 {
 
 	function mutation(arr) {
-	    return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().split('').indexOf(el) !== -1);
+	    return "mutations algorithm";
 	  }
 	  
 	  console.log(mutation(["hello", "hey"])); // false
@@ -184,20 +258,7 @@ console.log(factorialize(0));//1
 
 //FUNCTIONAL JS---------------------------------------------------
 
-//EXERCISE #12
-//The variable watchList holds an array of objects with information on several movies.
-// Use a combination of filter and map on watchList to assign a new array of objects with only title and rating keys.
-//The new array should only include objects where imdbRating is greater than or equal to 8.0.
-// Note that the rating values are saved as strings in the object
-//and you may need to convert them into numbers to perform mathematical operations on them.
-
-// filteredList should equal [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"}];
-
-{
-	//code here
-} //end block
-
-//EXERCISE#13
+//EXERCISE#12
 // The variable watchList holds an array of objects with information on several movies.
 //Use reduce to find the average IMDB rating of the movies directed by Christopher Nolan.
 //Recall from prior challenges how to filter data and map over it to pull what you need.
@@ -206,16 +267,13 @@ console.log(factorialize(0));//1
 //and need to be converted into numbers before they are used in any mathematical operations.
 {
 	function getRating(watchList) {
-		// Only change code below this line
-		var averageRating;
-
-		// Only change code above this line
-		return averageRating;
+		
+		return "average rating";
 	}
-	//console.log(getRating(watchList));
+	console.log(getRating(watchList));
 } //end block
 
-//EXERCISE#14
+//EXERCISE#13
 //We have defined a function named squareList.
 //You need to complete the code for the squareList function using any combination of map(), filter(), and reduce()
 //so that it returns a new array containing only the square of only the positive integers (decimal numbers are not integers)
@@ -242,7 +300,7 @@ console.log(factorialize(0));//1
 //	console.log(squaredIntegers); //[9,100,49]
 } //end block
 
-//EXERCISE #15
+//EXERCISE #14
 //Convert Strings to URL Slugs
 //Fill in the urlSlug function so it converts a string title and returns the hyphenated version for the URL.
 //You can use any of the methods covered in this section, and don't use replace. Here are the requirements:
@@ -257,7 +315,7 @@ console.log(factorialize(0));//1
 //	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
 } //end block
 
-//EXERCISE #16
+//EXERCISE #15
 // Partial Application
 // Fill in the body of the add function so it uses currying to add parameters x, y, and z.
 

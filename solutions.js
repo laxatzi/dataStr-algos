@@ -163,6 +163,14 @@
 	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
 } //block
 
+
+// EXERCISE #11
+// Mutations
+
+// Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+// For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+// The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
+// Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
 {
 
 	function mutation(arr) {
@@ -173,3 +181,20 @@
 	  console.log(mutation(["hello", "hey"])); // false
 	  console.log(mutation(["Noel", "Ole"])); // true
 }
+
+//EXERCISE#13
+// The variable watchList holds an array of objects with information on several movies.
+//Use reduce to find the average IMDB rating of the movies directed by Christopher Nolan.
+//Recall from prior challenges how to filter data and map over it to pull what you need.
+// You may need to create other variables, and return the average rating from getRating function.
+// Note that the rating values are saved as strings in the object
+//and need to be converted into numbers before they are used in any mathematical operations.
+{
+	function getRating(watchList) {
+		
+		const totalRatings = watchList.filter(el => el.Director === 'Christopher Nolan').map(el=>Number(el.imdbRating));
+		const avgRating = totalRatings.reduce((acc,cur)=> acc + cur)/totalRatings.length;
+		return avgRating.toFixed(2);
+	}
+	console.log(getRating(watchList));
+} //end block
