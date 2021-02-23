@@ -315,11 +315,8 @@ console.log(factorialize(0));//1
 
 	
 	function sumAll(arr) {
-		const max = Math.max(...arr);
-		const min = Math.min(...arr);
-		const sorted = arr.sort((a,b)=> a - b);
-		if(max === min) return min;
-		return min + sumAll([min + 1, max]);
+		
+		return "return the sum of all elements between max and min values";
 	}
 
 	console.log("sum is: " + sumAll([5, 1])); // 15
@@ -329,7 +326,7 @@ console.log(factorialize(0));//1
 
 
 //EXERCISE #24
-//. Intermediate Algorithm Scripting: Diff Two Arrays (SYMETRIC DIFF)
+//. Intermediate Algorithm Scripting: Diff Two Arrays (SYMMETRIC DIFF)
 //. Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both.
 // In other words, return the symmetric difference of the two arrays.
 
@@ -338,7 +335,7 @@ console.log(factorialize(0));//1
 
 {
 	function diffArray(arr1, arr2) {
-		return arr1.filter(el => arr2.indexOf(el) === -1).concat(arr2.filter(el=> arr1.indexOf(el) === -1));
+		return "return the symmetric difference of two array if any";
 	}
 
 	console.log(

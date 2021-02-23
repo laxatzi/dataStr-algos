@@ -182,7 +182,8 @@
 	  console.log(mutation(["Noel", "Ole"])); // true
 }
 
-//EXERCISE#13
+
+//EXERCISE#12
 // The variable watchList holds an array of objects with information on several movies.
 //Use reduce to find the average IMDB rating of the movies directed by Christopher Nolan.
 //Recall from prior challenges how to filter data and map over it to pull what you need.
@@ -199,7 +200,8 @@
 	console.log(getAvgRating(watchList, 'Cristopher Nolan'));
 } //end block
 
-//EXERCISE #14
+
+//EXERCISE #13
 //Convert Strings to URL Slugs
 //Fill in the urlSlug function so it converts a string title and returns the hyphenated version for the URL.
 //You can use any of the methods covered in this section, and don't use replace. Here are the requirements:
@@ -217,7 +219,8 @@
 	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
 } //end block
 
-//EXERCISE #23
+
+//EXERCISE #14
 //. We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
 // The lowest number will not always come first.
 
@@ -237,3 +240,26 @@
 	console.log(sumAll([5, 10])); // should return 45.
 	console.log(sumAll([10, 5])); // should return 45.
 }
+
+
+//EXERCISE #15
+//. Intermediate Algorithm Scripting: Diff Two Arrays (SYMETRIC DIFF)
+//. Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both.
+// In other words, return the symmetric difference of the two arrays.
+
+//. Note
+//. You can return the array with its elements in any order.
+
+{
+	function diffArray(arr1, arr2) {
+		return arr1.filter(el => arr2.indexOf(el) === -1).concat(arr2.filter(el=> arr1.indexOf(el) === -1));
+	}
+
+	console.log(
+		diffArray(
+			["andesite", "grass", "dirt", "pink wool", "dead shrub"],
+			["diorite", "andesite", "grass", "dirt", "dead shrub"]
+		)
+	);
+	//. should return ["diorite", "pink wool"].
+} //end block
