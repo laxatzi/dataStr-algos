@@ -190,11 +190,29 @@
 // Note that the rating values are saved as strings in the object
 //and need to be converted into numbers before they are used in any mathematical operations.
 {
-	function getRating(watchList) {
+	function getAvgRating(arr, director) {
 		
-		const totalRatings = watchList.filter(el => el.Director === 'Christopher Nolan').map(el=>Number(el.imdbRating));
-		const avgRating = totalRatings.reduce((acc,cur)=> acc + cur)/totalRatings.length;
-		return avgRating.toFixed(2);
+		const ratings = arr.filter(el=> el.Director === director).map(el=>Number(el.imdbRating));
+		const ratingsSum = ratings.reduce((acc,cur)=> acc + cur).toFixed(2);
+		return ratingsSum/ratings.length;
 	}
-	console.log(getRating(watchList));
+	console.log(getAvgRating(watchList, 'Cristopher Nolan'));
+} //end block
+
+//EXERCISE #14
+//Convert Strings to URL Slugs
+//Fill in the urlSlug function so it converts a string title and returns the hyphenated version for the URL.
+//You can use any of the methods covered in this section, and don't use replace. Here are the requirements:
+//The input is a string with spaces and title-cased words.
+//The output is a string with the spaces between words replaced by a hyphen (-).
+//The output should be all lower-cased letters
+//The output should not have any spaces
+
+{
+	function urlSlug(title) {
+	const convertToArray = title.trim().toLowerCase().split(' ');
+	return convertToArray.filter(el => el.length>0).join('-');
+	}
+
+	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
 } //end block

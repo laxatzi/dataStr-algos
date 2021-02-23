@@ -247,7 +247,7 @@ console.log(factorialize(0));//1
 {
 
 	function mutation(arr) {
-	    return "mutations algorithm";
+	    return "solve mutation algorithm";
 	  }
 	  
 	  console.log(mutation(["hello", "hey"])); // false
@@ -266,39 +266,14 @@ console.log(factorialize(0));//1
 // Note that the rating values are saved as strings in the object
 //and need to be converted into numbers before they are used in any mathematical operations.
 {
-	function getRating(watchList) {
-		
-		return "average rating";
+	function getAvgRating(arr, director) {
+		return "Get average Rating!";
 	}
-	console.log(getRating(watchList));
+	console.log(getAvgRating(watchList));
 } //end block
 
-//EXERCISE#13
-//We have defined a function named squareList.
-//You need to complete the code for the squareList function using any combination of map(), filter(), and reduce()
-//so that it returns a new array containing only the square of only the positive integers (decimal numbers are not integers)
-// when an array of real numbers is passed to it. An example of an array containing only real numbers is [-3, 4.8, 5, 3, -3.2].
 
-{
-	const squareList = (arr) => {
-		// Only change code below this line
-		return arr;
-		// Only change code above this line
-	};
 
-	const squaredIntegers = squareList([
-		-3.7,
-		-5,
-		3,
-		10,
-		12.5,
-		7,
-		-4.5,
-		-17,
-		0.3,
-	]);
-//	console.log(squaredIntegers); //[9,100,49]
-} //end block
 
 //EXERCISE #14
 //Convert Strings to URL Slugs
@@ -310,10 +285,14 @@ console.log(factorialize(0));//1
 //The output should not have any spaces
 
 {
-	function urlSlug(title) {}
+	function urlSlug(title) {
+	const convertToArray = title.trim().toLowerCase().split(' ');
+	return convertToArray.filter(el => el.length>0).join('-');
+	}
 
-//	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
+	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
 } //end block
+
 
 //EXERCISE #15
 // Partial Application
