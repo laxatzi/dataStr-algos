@@ -286,8 +286,7 @@ console.log(factorialize(0));//1
 
 {
 	function urlSlug(title) {
-	const convertToArray = title.trim().toLowerCase().split(' ');
-	return convertToArray.filter(el => el.length>0).join('-');
+	return "convert title to url slug";
 	}
 
 	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
@@ -299,7 +298,54 @@ console.log(factorialize(0));//1
 // Fill in the body of the add function so it uses currying to add parameters x, y, and z.
 
 {
-	function add(x) {}
+	function add(x) {
+		return "partial application";
+
+	}
 
 	//console.log(add(10)(20)(30)); // 60
 } // end block
+
+//EXERCISE #23
+//. We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
+// The lowest number will not always come first.
+
+//. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+{
+
+	
+	function sumAll(arr) {
+		const max = Math.max(...arr);
+		const min = Math.min(...arr);
+		const sorted = arr.sort((a,b)=> a - b);
+		if(max === min) return min;
+		return min + sumAll([min + 1, max]);
+	}
+
+	console.log("sum is: " + sumAll([5, 1])); // 15
+	console.log(sumAll([5, 10])); // should return 45.
+	console.log(sumAll([10, 5])); // should return 45.
+}
+
+
+//EXERCISE #24
+//. Intermediate Algorithm Scripting: Diff Two Arrays (SYMETRIC DIFF)
+//. Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both.
+// In other words, return the symmetric difference of the two arrays.
+
+//. Note
+//. You can return the array with its elements in any order.
+
+{
+	function diffArray(arr1, arr2) {
+		return arr1.filter(el => arr2.indexOf(el) === -1).concat(arr2.filter(el=> arr1.indexOf(el) === -1));
+	}
+
+	console.log(
+		diffArray(
+			["andesite", "grass", "dirt", "pink wool", "dead shrub"],
+			["diorite", "andesite", "grass", "dirt", "dead shrub"]
+		)
+	);
+	//. should return ["diorite", "pink wool"].
+} //end block

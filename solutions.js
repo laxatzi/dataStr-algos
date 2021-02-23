@@ -216,3 +216,24 @@
 
 	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
 } //end block
+
+//EXERCISE #23
+//. We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
+// The lowest number will not always come first.
+
+//. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+{
+
+	
+	function sumAll(arr) {
+		const max = Math.max(...arr);
+		const min = Math.min(...arr);
+		const sorted = arr.sort((a,b)=> a - b);
+		if(max === min) return min;
+		return min + sumAll([min + 1, max]);
+	}
+
+	console.log("sum is: " + sumAll([5, 1])); // 15
+	console.log(sumAll([5, 10])); // should return 45.
+	console.log(sumAll([10, 5])); // should return 45.
+}
