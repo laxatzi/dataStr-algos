@@ -286,7 +286,7 @@ console.log(factorialize(0));//1
 
 {
 	function urlSlug(title) {
-	return title.toLowerCase().trim().split(' ').filter(el=>el.length>0).join('-');
+	return "convert string to url slug";
 	}
 
 	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
@@ -315,11 +315,7 @@ console.log(factorialize(0));//1
 
 	
 	function sumAll(arr) {
-		const max = Math.max(...arr);
-		const min = Math.min(...arr);
-		const sorted = arr.sort((a,b)=>a-b);
-		if(min === max) return min;
-		return min + sumAll([min+1, max]);
+		return "sum of all elements between the two";
 	}
 
 	console.log("sum is: " + sumAll([5, 1])); // 15
@@ -338,7 +334,7 @@ console.log(factorialize(0));//1
 
 {
 	function diffArray(arr1, arr2) {
-		return arr1.filter(el => arr2.indexOf(el) === -1).concat(arr2.filter(el=> arr1.indexOf(el) === -1));
+		return "symmetric diff of two arrays";
 	}
 
 	console.log(
@@ -353,15 +349,19 @@ console.log(factorialize(0));//1
 
 //EXERCISE #25
 // Intermediate Algorithm Scripting: Seek and Destroy
-// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments.
+// Remove all elements from the initial array that are of the same value as these arguments.
 
 // Note
 // You have to use the arguments object.
 
 {
 	function destroyer(arr) {
-		return something;
+		const args = [...arguments];
+		return args[0].filter(el => args.indexOf(el) === -1 );
 	}
 
-	//console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
+	console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
+	console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], 
+	                       "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")); // [12,92,65]
 } //end block
