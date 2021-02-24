@@ -286,7 +286,7 @@ console.log(factorialize(0));//1
 
 {
 	function urlSlug(title) {
-	return "convert title to url slug";
+	return title.toLowerCase().trim().split(' ').filter(el=>el.length>0).join('-');
 	}
 
 	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
@@ -335,7 +335,7 @@ console.log(factorialize(0));//1
 
 {
 	function diffArray(arr1, arr2) {
-		return "return the symmetric difference of two array if any";
+		return "return the symmetric difference of two arrays if any";
 	}
 
 	console.log(
@@ -345,4 +345,20 @@ console.log(factorialize(0));//1
 		)
 	);
 	//. should return ["diorite", "pink wool"].
+} //end block
+
+
+//EXERCISE #25
+// Intermediate Algorithm Scripting: Seek and Destroy
+// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+// Note
+// You have to use the arguments object.
+
+{
+	function destroyer(arr) {
+		return something;
+	}
+
+	//console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
 } //end block
