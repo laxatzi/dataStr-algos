@@ -315,8 +315,11 @@ console.log(factorialize(0));//1
 
 	
 	function sumAll(arr) {
-		
-		return "return the sum of all elements between max and min values";
+		const max = Math.max(...arr);
+		const min = Math.min(...arr);
+		const sorted = arr.sort((a,b)=>a-b);
+		if(min === max) return min;
+		return min + sumAll([min+1, max]);
 	}
 
 	console.log("sum is: " + sumAll([5, 1])); // 15
@@ -335,7 +338,7 @@ console.log(factorialize(0));//1
 
 {
 	function diffArray(arr1, arr2) {
-		return "return the symmetric difference of two arrays if any";
+		return arr1.filter(el => arr2.indexOf(el) === -1).concat(arr2.filter(el=> arr1.indexOf(el) === -1));
 	}
 
 	console.log(
