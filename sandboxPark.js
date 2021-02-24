@@ -356,8 +356,8 @@ console.log(factorialize(0));//1
 // You have to use the arguments object.
 
 {
-	function destroyer(arr) {
-		const args = [...arguments];
+	function destroyer(...args) {
+		
 		return args[0].filter(el => args.indexOf(el) === -1 );
 	}
 
