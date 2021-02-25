@@ -330,7 +330,11 @@ console.log(factorialize(0));//1
 
 	
 	function sumAll(arr) {
-		return "sum of all elements between the two";
+		const max = Math.max(...arr);
+		const min = Math.min(...arr);
+		const sort = arr.sort((a,b)=>a-b);
+		if(min === max) return min;
+		return min + sumAll([min+1, max]);
 	}
 
 	console.log("sum is: " + sumAll([5, 1])); // 15
@@ -349,7 +353,7 @@ console.log(factorialize(0));//1
 
 {
 	function diffArray(arr1, arr2) {
-		return "symmetric diff of two arrays";
+		return arr1.filter(el=> arr2.indexOf(el)===-1).concat(arr2.filter(el=> arr1.indexOf(el) === -1));
 	}
 
 	console.log(
@@ -371,9 +375,9 @@ console.log(factorialize(0));//1
 // You have to use the arguments object.
 
 {
-	function destroyer(...args) {
-		
-		return "solve the 'seek and destroy' algorithm";
+	function destroyer(arr) {
+		const args = [...arguments];
+		return args[0].filter(el => args.indexOf(el) === -1);
 	}
 
 	console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
