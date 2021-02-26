@@ -330,11 +330,7 @@ console.log(factorialize(0));//1
 
 	
 	function sumAll(arr) {
-		const max = Math.max(...arr);
-		const min = Math.min(...arr);
-		const sort = arr.sort((a,b)=>a-b);
-		if(min === max) return min;
-		return min + sumAll([min+1, max]);
+		return "return sum of numbers between";
 	}
 
 	console.log("sum is: " + sumAll([5, 1])); // 15
@@ -353,7 +349,7 @@ console.log(factorialize(0));//1
 
 {
 	function diffArray(arr1, arr2) {
-		return arr1.filter(el=> arr2.indexOf(el)===-1).concat(arr2.filter(el=> arr1.indexOf(el) === -1));
+		return "symmetric diff algorithm";
 	}
 
 	console.log(
@@ -376,8 +372,7 @@ console.log(factorialize(0));//1
 
 {
 	function destroyer(arr) {
-		const args = [...arguments];
-		return args[0].filter(el => args.indexOf(el) === -1);
+		return "solve seek and destroy algorithm";
 	}
 
 	console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
@@ -399,7 +394,7 @@ console.log(factorialize(0));//1
 
 {
 	function whatIsInAName(collection, source) {
-		return 'wherefore art thou';
+		return "What is in a name algorithm";
 	}
 
 	console.log(
@@ -414,3 +409,41 @@ console.log(factorialize(0));//1
 		)
 	); // should return [{ first: "Tybalt", last: "Capulet" }].
 } //end block
+
+
+//EXERCISE #27
+//Spinal Tap Case
+//Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+{
+	function spinalCase(str) {
+		const reg1 = /([a-z])([A-Z])/g;
+		const reg2 = /\s|_/g;
+		return str.replace(reg1,'$1 $2').replace(reg2, '-').toLowerCase();
+	}
+
+	console.log(spinalCase("This Is Spinal Tap"));
+	console.log(spinalCase("ThisIsSpinalTap"));
+
+} //end block
+
+
+//EXERCISE #28
+//// Pig Latin
+// Pig Latin is a way of altering English Words. The rules are as follows:
+
+// - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+
+// - If a word begins with a vowel, just add "way" at the end.
+// Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
+{
+	function pigLatin(str) {
+
+		return 'pig latin algorithm';
+	}
+
+	// test here
+	// console.log(translatePigLatin("consonant"));
+	// console.log(pigLatin("grreen"));
+	// console.log(pigLatin("aubergine"));
+} // end block

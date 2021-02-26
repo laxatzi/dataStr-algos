@@ -348,3 +348,21 @@
 		)
 	); // should return [{ first: "Tybalt", last: "Capulet" }].
 } //end block
+
+
+//EXERCISE #27
+//Spinal Tap Case
+//Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+{
+	function spinalCase(str) {
+		const reg1 = /([a-z])([A-Z])/g;
+		const reg2 = /\s|_/g;
+		return str.replace(reg1,'$1 $2').replace(reg2, '-').toLowerCase();
+	}
+
+	console.log(spinalCase("This Is Spinal Tap"));
+	console.log(spinalCase("ThisIsSpinalTap"));
+
+} //end block
+
