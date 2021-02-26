@@ -438,12 +438,15 @@ console.log(factorialize(0));//1
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 {
 	function pigLatin(str) {
-
-		return 'pig latin algorithm';
+		const consonantCluster = str.match(/^[^aeiou]+/);
+			
+		if(str[0].match(/[aeiou]/gi)) return str.concat("way");
+		return str.replace(consonantCluster,'').concat(consonantCluster).concat("ay");
 	}
 
-	// test here
-	// console.log(translatePigLatin("consonant"));
-	// console.log(pigLatin("grreen"));
-	// console.log(pigLatin("aubergine"));
+
+	//test here
+	console.log(pigLatin("california")); // should return aliforniacay;
+	console.log(pigLatin("paragraphs")); // should return "aragraphspay"
+	console.log(pigLatin("algorithm")); // algorithmway
 } // end block
