@@ -378,10 +378,10 @@
 {
 	function pigLatin(str) {
 		//^aeiou => starts with vowel, ^[^aeiou] DO NOT starts with vowel
-		const consonantCluster = str.match(/^[^aeiou]+/); 
-			
-		if(str[0].match(/[aeiou]/)) return str.concat("way");
-		return str.replace(consonantCluster,'').concat(consonantCluster).concat("ay");
+		const vowel = /[aeiou]/;
+		const consonantCluster = /^[^aeiou]+/g;
+		if(str[0].match(vowel)) return str + "way";
+		return str.replace(consonantCluster, '').concat(str.match(consonantCluster),"ay");
 	}
 
 

@@ -411,6 +411,7 @@ console.log(factorialize(0));//1
 	); // should return [{ first: "Tybalt", last: "Capulet" }].
 } //end block
 
+
 //EXERCISE #20
 //// Pig Latin
 // Pig Latin is a way of altering English Words. The rules are as follows:
@@ -421,7 +422,10 @@ console.log(factorialize(0));//1
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 {
 	function pigLatin(str) {
-		return 'pig latin algo';
+		const vowel = /[aeiou]/;
+		const consonantCluster = /^[^aeiou]+/g;
+		if(str[0].match(vowel)) return str + "way";
+		return str.replace(consonantCluster, '').concat(str.match(consonantCluster),"ay");
 	}
 
 
