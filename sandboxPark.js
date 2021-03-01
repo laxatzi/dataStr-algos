@@ -261,8 +261,9 @@ console.log(factorialize(0));//1
 
 {
 	function spinalCase(str) {
-	
-		return 'spinal case';
+	    const regex = /([a-z])([A-Z])/g;
+		const reg = /\s+|_/g;
+		return str.replace(regex,"$1 $2").replace(reg, '-').toLowerCase();
 	}
 
 	console.log(spinalCase("This  Is Spinal Tap")); //"this-is-spinal-tap"
@@ -394,7 +395,10 @@ console.log(factorialize(0));//1
 
 {
 	function whatIsInAName(collection, source) {
-		return "What is in a name algorithm";
+		const objKeys = Object.keys(source);
+		return collection.filter((obj) => {
+			return objKeys.map((key) => obj.hasOwnProperty(key) &&  (obj[key]===source[key])).reduce((a,b) => a && b)
+		});
 	}
 
 	console.log(
@@ -410,25 +414,7 @@ console.log(factorialize(0));//1
 	); // should return [{ first: "Tybalt", last: "Capulet" }].
 } //end block
 
-
-//EXERCISE #27
-//Spinal Tap Case
-//Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
-
-{
-	function spinalCase(str) {
-		const reg1 = /([a-z])([A-Z])/g;
-		const reg2 = /\s|_/g;
-		return str.replace(reg1,'$1 $2').replace(reg2, '-').toLowerCase();
-	}
-
-	console.log(spinalCase("This Is Spinal Tap"));
-	console.log(spinalCase("ThisIsSpinalTap"));
-
-} //end block
-
-
-//EXERCISE #28
+//EXERCISE #20
 //// Pig Latin
 // Pig Latin is a way of altering English Words. The rules are as follows:
 
@@ -438,10 +424,7 @@ console.log(factorialize(0));//1
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 {
 	function pigLatin(str) {
-		const consonantCluster = str.match(/^[^aeiou]+/);
-			
-		if(str[0].match(/[aeiou]/gi)) return str.concat("way");
-		return str.replace(consonantCluster,'').concat(consonantCluster).concat("ay");
+		return 'pig latin algo';
 	}
 
 

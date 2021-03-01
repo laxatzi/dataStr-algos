@@ -366,3 +366,27 @@
 
 } //end block
 
+
+//EXERCISE #28
+//// Pig Latin
+// Pig Latin is a way of altering English Words. The rules are as follows:
+
+// - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+
+// - If a word begins with a vowel, just add "way" at the end.
+// Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
+{
+	function pigLatin(str) {
+		//^aeiou => starts with vowel, ^[^aeiou] DO NOT starts with vowel
+		const consonantCluster = str.match(/^[^aeiou]+/); 
+			
+		if(str[0].match(/[aeiou]/)) return str.concat("way");
+		return str.replace(consonantCluster,'').concat(consonantCluster).concat("ay");
+	}
+
+
+	//test here
+	console.log(pigLatin("california")); // should return aliforniacay;
+	console.log(pigLatin("paragraphs")); // should return "aragraphspay"
+	console.log(pigLatin("algorithm")); // algorithmway
+} // end block
