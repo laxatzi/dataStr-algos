@@ -261,9 +261,7 @@ console.log(factorialize(0));//1
 
 {
 	function spinalCase(str) {
-	    const regex = /([a-z])([A-Z])/g;
-		const reg = /\s+|_/g;
-		return str.replace(regex,"$1 $2").replace(reg, '-').toLowerCase();
+	    return 'spinal case algorithm';
 	}
 
 	console.log(spinalCase("This  Is Spinal Tap")); //"this-is-spinal-tap"
@@ -302,7 +300,8 @@ console.log(factorialize(0));//1
 
 {
 	function urlSlug(title) {
-	return "convert string to url slug";
+		return "string to URL slug converter";
+		
 	}
 
 	console.log(urlSlug(" Winter Is  Coming")); // winter-is-coming
@@ -329,9 +328,9 @@ console.log(factorialize(0));//1
 //. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
 {
 
-	
 	function sumAll(arr) {
-		return "return sum of numbers between";
+		
+		return 'Sum of all numbers between array elements';
 	}
 
 	console.log("sum is: " + sumAll([5, 1])); // 15
@@ -350,7 +349,7 @@ console.log(factorialize(0));//1
 
 {
 	function diffArray(arr1, arr2) {
-		return "symmetric diff algorithm";
+		return "return symmetric diff!";
 	}
 
 	console.log(
@@ -373,7 +372,8 @@ console.log(factorialize(0));//1
 
 {
 	function destroyer(arr) {
-		return "solve seek and destroy algorithm";
+		let args = [...arguments];
+		return arr.filter((el) => args.indexOf(el) === -1);
 	}
 
 	console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
@@ -395,10 +395,7 @@ console.log(factorialize(0));//1
 
 {
 	function whatIsInAName(collection, source) {
-		const objKeys = Object.keys(source);
-		return collection.filter((obj) => {
-			return objKeys.map((key) => obj.hasOwnProperty(key) &&  (obj[key]===source[key])).reduce((a,b) => a && b)
-		});
+			return "What is in a name";
 	}
 
 	console.log(
