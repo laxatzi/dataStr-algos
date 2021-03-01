@@ -444,14 +444,9 @@ console.log(factorialize(0));//1
 
 {
 	function myReplace(str, before, after) {
-	  if (before[0].match(/[A-Z]/g)){
-		  after = after.replace(after[0], after[0].toUpperCase());
-		  return str.replace(before, after);
-	  }
-		  after = after.replace(after[0], after[0].toLowerCase());
-		  return str.replace(before, after);
 	  
-	 
+		  return "Search and replace algorithm";
+	  
 	}
 
 	console.log( myReplace("He is Sleeping on the couch", "Sleeping", "sitting")); //"He is Sitting on the couch"
