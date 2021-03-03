@@ -422,7 +422,7 @@ console.log(factorialize(0));//1
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 {
 	function pigLatin(str) {
-		return "pig latin algorithm";
+		return 'pig latin algorithm';
 	}
 
 
@@ -431,6 +431,7 @@ console.log(factorialize(0));//1
 	console.log(pigLatin("paragraphs")); // should return "aragraphspay"
 	console.log(pigLatin("algorithm")); // algorithmway
 } // end block
+
 
 //EXERCISE #29
 // Search and ReplacePassed
@@ -444,11 +445,29 @@ console.log(factorialize(0));//1
 
 {
 	function myReplace(str, before, after) {
-	  
-		  return "Search and replace algorithm";
+	  return "Solve 'search and replace' algorithm";
 	  
 	}
 
 	console.log( myReplace("He is Sleeping on the couch", "Sleeping", "sitting")); //"He is Sitting on the couch"
 	console.log(myReplace("I think we should look up there", "up", "Down")); // "I think we should look down there"
 } //end block
+
+//EXERCISE #23
+//. Q: Find the second largest number in a given array.
+//. Params: We are given an array of whole, positive integers (no negative numbers or floats). 
+//We are to write //. a function and return the second largest integer.
+{
+	function secondLargest(arr) {
+		const sorted = arr.sort((a,b) => a - b);
+		const max = Math.max(...sorted);
+		const largestRemoved = sorted.splice(0,sorted.length-1);
+		return largestRemoved.reduce((acc, cur) => {
+			return acc > cur ? acc : cur;
+		});
+
+		return 'second largest number in a given array'
+	}
+
+  console.log(secondLargest([1,2,3,4,10])); // 4
+} // end block;
