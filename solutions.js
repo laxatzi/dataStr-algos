@@ -417,7 +417,7 @@
 	console.log(myReplace("I think we should look up there", "up", "Down")); // "I think we should look down there"
 } //end block
 
-//EXERCISE #23
+//EXERCISE #24
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). 
 //We are to write //. a function and return the second largest integer.
@@ -435,3 +435,26 @@
 
   console.log(secondLargest([1,2,3,4,10])); // 4
 } // end block;
+
+// EXERCISE #23
+//. Q: Remove Duplicate Elements from an Array
+{
+	let cities = [
+		"Comotini",
+		"Athens",
+		"Athens",
+		"Thessaloniki",
+		"Iraklion",
+		"Drama",
+		"Thessaloniki",
+	];
+
+	//Remove Dups from an Array
+
+	function removeDups(arr) {
+		const unique = [...new Set(arr)];
+		return unique;
+	
+	}
+	console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+} // end block

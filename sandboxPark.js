@@ -433,7 +433,7 @@ console.log(factorialize(0));//1
 } // end block
 
 
-//EXERCISE #29
+//EXERCISE #21
 // Search and ReplacePassed
 // Perform a search and replace on the sentence using the arguments provided and return the new sentence.
 //First argument is the sentence to perform the search and replace on.
@@ -453,21 +453,46 @@ console.log(factorialize(0));//1
 	console.log(myReplace("I think we should look up there", "up", "Down")); // "I think we should look down there"
 } //end block
 
-//EXERCISE #23
+
+//EXERCISE #22
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). 
 //We are to write //. a function and return the second largest integer.
 {
 	function secondLargest(arr) {
 		const sorted = arr.sort((a,b) => a - b);
-		const max = Math.max(...sorted);
-		const largestRemoved = sorted.splice(0,sorted.length-1);
-		return largestRemoved.reduce((acc, cur) => {
-			return acc > cur ? acc : cur;
-		});
-
+		const reduced = sorted.slice(0, sorted.length - 1);
+		const max = Math.max(...reduced);
+		return max;
 		return 'second largest number in a given array'
 	}
 
   console.log(secondLargest([1,2,3,4,10])); // 4
 } // end block;
+
+
+// EXERCISE #24
+//. Q: Remove Duplicate Elements from an Array
+{
+	let cities = [
+		"Comotini",
+		"Athens",
+		"Athens",
+		"Thessaloniki",
+		"Iraklion",
+		"Drama",
+		"Thessaloniki",
+	];
+
+	//Remove Dups from an Array
+
+	function removeDups(arr) {
+	 const unique = arr.slice().sort();
+	 return unique.reduce((acc, cur) => {
+		 if (acc[0] !== cur) acc.unshift(cur);
+		 return acc;
+	 }, []);
+	
+	}
+	console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+} // end block
