@@ -467,7 +467,7 @@ console.log(factorialize(0));//1
 } // end block;
 
 
-// EXERCISE #24
+// EXERCISE #23
 //. Q: Remove Duplicate Elements from an Array
 {
 	let cities = [
@@ -483,18 +483,31 @@ console.log(factorialize(0));//1
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-	const sorted = arr.sort((a,b) => b > a);
-	 return sorted.reduce((acc, cur) => {
-		if (acc[0] !== cur) acc.unshift(cur);
-		return acc;
-	 }, []);
+		return "remove dups";
 	}
-	console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
-
-	function removeDuplicates(arr) {
-		return	arr.filter((el, idx, thisArray) => {
-				return thisArray.indexOf(el) === idx;
-			}).sort((a,b) => a > b);
-	   }
-	   console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
+
+// EXERCISE #24
+// DNA Pairing
+// The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+// Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+// Return the provided character as the first element in each array.
+// For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
+// The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+
+{
+	const dnaPairs = {
+		A: "T",
+		G: "C",
+		T: "A",
+		C: "G",
+	};
+
+	function pairElement(str) {
+		const array =  str.split('');
+		 
+		return array.map((el) => el = [el, dnaPairs[el]]);
+	}
+	console.log(pairElement("CTCTA")); //[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
+} //block
