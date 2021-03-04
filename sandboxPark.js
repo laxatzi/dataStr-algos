@@ -460,10 +460,6 @@ console.log(factorialize(0));//1
 //We are to write //. a function and return the second largest integer.
 {
 	function secondLargest(arr) {
-		const sorted = arr.sort((a,b) => a - b);
-		const reduced = sorted.slice(0, sorted.length - 1);
-		const max = Math.max(...reduced);
-		return max;
 		return 'second largest number in a given array'
 	}
 
@@ -487,12 +483,18 @@ console.log(factorialize(0));//1
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-	 const unique = arr.slice().sort();
-	 return unique.reduce((acc, cur) => {
-		 if (acc[0] !== cur) acc.unshift(cur);
-		 return acc;
+	const sorted = arr.sort((a,b) => b > a);
+	 return sorted.reduce((acc, cur) => {
+		if (acc[0] !== cur) acc.unshift(cur);
+		return acc;
 	 }, []);
-	
 	}
 	console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+
+	function removeDuplicates(arr) {
+		return	arr.filter((el, idx, thisArray) => {
+				return thisArray.indexOf(el) === idx;
+			}).sort((a,b) => a > b);
+	   }
+	   console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
