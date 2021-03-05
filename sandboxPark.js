@@ -483,7 +483,11 @@ console.log(factorialize(0));//1
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-		return "remove dups";
+		const sorted = arr.sort((a,b) => a > b);
+		return sorted.reduce((acc, cur) => {
+			if (acc.indexOf(cur) == -1) acc.unshift(cur);
+			return acc;
+		},[]);
 	}
 	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
@@ -505,9 +509,9 @@ console.log(factorialize(0));//1
 	};
 
 	function pairElement(str) {
-		const array =  str.split('');
+		
 		 
-		return array.map((el) => el = [el, dnaPairs[el]]);
+		return "dna pairing";
 	}
 	console.log(pairElement("CTCTA")); //[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
 } //block

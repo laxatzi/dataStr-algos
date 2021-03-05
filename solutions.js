@@ -457,4 +457,20 @@
 	
 	}
 	console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+
+	function removeTheDups(arr) {
+		const sorted = arr.sort((a,b) => b > a);
+		 return sorted.reduce((acc, cur) => {
+			if (acc[0] !== cur) acc.unshift(cur);
+			return acc;
+		 }, []);
+		}
+		console.log(removeTheDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
+	
+		function removeDuplicates(arr) {
+			return	arr.filter((el, idx, thisArray) => {
+					return thisArray.indexOf(el) === idx;
+				}).sort((a,b) => a > b);
+		   }
+		   console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
