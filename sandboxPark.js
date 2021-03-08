@@ -454,13 +454,14 @@ console.log(factorialize(0));//1
 } //end block
 
 
+
 //EXERCISE #22
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). 
 //We are to write //. a function and return the second largest integer.
 {
 	function secondLargest(arr) {
-		return 'second largest number in a given array'
+		return "return second largest";
 	}
 
   console.log(secondLargest([1,2,3,4,10])); // 4
@@ -483,11 +484,7 @@ console.log(factorialize(0));//1
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-		const sorted = arr.sort((a,b) => a > b);
-		return sorted.reduce((acc, cur) => {
-			if (acc.indexOf(cur) == -1) acc.unshift(cur);
-			return acc;
-		},[]);
+		return "remove duplicates";
 	}
 	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
@@ -509,9 +506,44 @@ console.log(factorialize(0));//1
 	};
 
 	function pairElement(str) {
-		
-		 
-		return "dna pairing";
+	return "return pairElement";
 	}
 	console.log(pairElement("CTCTA")); //[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
 } //block
+
+
+// EXERCISE #33
+//Missing letters
+// Find the missing letter in the passed letter range and return it.
+// If all letters are present in the range, return undefined.
+
+{
+	function fearNotLetter(str) {
+		return "Fear no letter";
+	}
+
+	console.log(fearNotLetter("abce"));
+} //end block
+
+
+//. EXERCISE #34
+// Sorted Union
+// Write a function that takes two or more arrays and returns a new array of unique values in the order of
+//the original provided arrays.
+// In other words, all values present from all arrays should be included
+//in their original order, but with no duplicates in the final array.
+// The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+// Check the assertion tests for examples.
+
+{
+	function uniteUnique(arr) {
+		const args = [...arguments];
+		return args.reduce((acc, cur) => {
+			return acc.concat(cur);
+		},[]).filter((el, idx, thisArray) => {
+			return thisArray.indexOf(el) === idx;
+		});
+	}
+
+	console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
+} //end block

@@ -474,3 +474,39 @@
 		   }
 		   console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
+
+// EXERCISE #33
+//Missing letters
+// Find the missing letter in the passed letter range and return it.
+// If all letters are present in the range, return undefined.
+
+{
+	function fearNotLetter(str) {
+		return 'return the missing letter in a string';
+	}
+
+	console.log(fearNotLetter("abce"));
+} //end block
+
+
+//. EXERCISE #34
+// Sorted Union
+// Write a function that takes two or more arrays and returns a new array of unique values in the order of
+//the original provided arrays.
+// In other words, all values present from all arrays should be included
+//in their original order, but with no duplicates in the final array.
+// The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+// Check the assertion tests for examples.
+
+{
+	function uniteUnique(arr) {
+		const args = [...arguments];
+		return args.reduce((acc, cur) => {
+			return acc.concat(cur);
+		},[]).filter((el, idx, thisArray) => {
+			return thisArray.indexOf(el) === idx;
+		});
+	}
+
+	console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
+} //end block
