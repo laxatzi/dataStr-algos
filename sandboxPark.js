@@ -519,13 +519,27 @@ console.log(factorialize(0));//1
 
 {
 	function fearNotLetter(str) {
-		return "Fear no letter";
-	}
+	 // find ascii character of the first letter in the string 
+	 // We are going to use it a compare base 
+	 let baseLetter = str.charCodeAt(0); // 97
+	 let missingLetter;
+		str.split('').map((el, idx) => {
+		if (str.charCodeAt(idx) === baseLetter) {
+			++baseLetter;
+		}else{
+			missingLetter = String.fromCharCode(baseLetter);
+		}
+		});
+
+	
+	return missingLetter;
+	
+	}	
 
 	console.log(fearNotLetter("abce"));
-} //end block
+//end block
 
-
+}
 //. EXERCISE #34
 // Sorted Union
 // Write a function that takes two or more arrays and returns a new array of unique values in the order of
@@ -537,12 +551,7 @@ console.log(factorialize(0));//1
 
 {
 	function uniteUnique(arr) {
-		const args = [...arguments];
-		return args.reduce((acc, cur) => {
-			return acc.concat(cur);
-		},[]).filter((el, idx, thisArray) => {
-			return thisArray.indexOf(el) === idx;
-		});
+		return 'concat unique values in order';
 	}
 
 	console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
