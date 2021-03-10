@@ -520,19 +520,8 @@ console.log(factorialize(0));//1
 {
 	function fearNotLetter(str) {
 	 // find ascii character of the first letter in the string 
-	 // We are going to use it a compare base 
-	let compareBase = str.charCodeAt(0);
-	let missingLetter;
-	str.split('').map((el, idx, thisArr)=> {
-		if (str.charCodeAt(idx) === compareBase) {
-			compareBase++;
-		} else 
-		{
-			missingLetter = String.fromCharCode(compareBase);
-		}
-	});
-	if (!missingLetter) return "No letter is missing!";
-	return `The missing letter is ${missingLetter}`;
+	 // We are going to use it as compare base 
+	return "Find missing letter in range";
 	
 	}	
 
@@ -551,7 +540,13 @@ console.log(factorialize(0));//1
 
 {
 	function uniteUnique(arr) {
-		return 'concat unique values in order';
+		let args = [...arguments];
+		return args.reduce((acc, cur) => {
+			return acc.concat(cur);
+		}).filter((el, idx, thisArr) => {
+			return thisArr.indexOf(el) === idx;
+		});
+
 	}
 
 	console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
