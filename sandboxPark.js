@@ -521,18 +521,18 @@ console.log(factorialize(0));//1
 	function fearNotLetter(str) {
 	 // find ascii character of the first letter in the string 
 	 // We are going to use it a compare base 
-	 let baseLetter = str.charCodeAt(0); // 97
-	 let missingLetter;
-		str.split('').map((el, idx) => {
-		if (str.charCodeAt(idx) === baseLetter) {
-			++baseLetter;
-		}else{
-			missingLetter = String.fromCharCode(baseLetter);
+	let compareBase = str.charCodeAt(0);
+	let missingLetter;
+	str.split('').map((el, idx, thisArr)=> {
+		if (str.charCodeAt(idx) === compareBase) {
+			compareBase++;
+		} else 
+		{
+			missingLetter = String.fromCharCode(compareBase);
 		}
-		});
-
-	
-	return missingLetter;
+	});
+	if (!missingLetter) return "No letter is missing!";
+	return `The missing letter is ${missingLetter}`;
 	
 	}	
 
