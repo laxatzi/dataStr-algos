@@ -81,8 +81,7 @@ const watchList = [
    {
 	
 	function reverseString(str){
-		if (str.length === 0) return '';
-		return reverseString(str.substr(1)).concat(str.substr(0,1));
+		return "revers string with use of recursion";
 	}
 		   console.log(reverseString("hello")); //olleh
 }//block
@@ -95,9 +94,8 @@ const watchList = [
 
 {
 	function factorialize(num) {
-		if (num < 0) return null;
-		if (num === 0) return 1;
-		return num * factorialize(num - 1);
+		
+		return 'factorialize';
 	}
 
 	console.log(factorialize(5)); // 120  
@@ -113,8 +111,7 @@ const watchList = [
 
 {
 	function repeatStringNumTimes(str, num) {
-	  if (num <= 0) return "";
-	  return str.concat(repeatStringNumTimes(str, num - 1));
+	 
 	  return 'create a new string by concatenate itself num number of times';
 	}
 
@@ -130,8 +127,7 @@ const watchList = [
 
 {
 	function truncateString(str, num) {
-		if (str.length <= num) return str;
-		return str.slice(0,num).concat('...');
+		
 		return "truncate a string";
 	}
 
@@ -146,14 +142,12 @@ const watchList = [
 
 {
 	function findElement(arr, func) {
-		if (!func) return undefined;
-		const truthArr = arr.filter((el) => func(el));
-		return truthArr[0];
+	
 	   return "return first el in arr that passes a truth test";
 	}
 
 	console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //8
-	console.log(findElement([1,3,5]));
+	console.log(findElement([1,3,5], (num) => num % 2 === 0) );
 } //block
 
 
@@ -166,7 +160,6 @@ const watchList = [
 {
 	function titleCase(str) {
 	
-	 
 	 return 'capitalize words in string';
 	}
 
@@ -185,7 +178,13 @@ const watchList = [
 
 {
 	function frankenSplice(arr1, arr2, n) {
-		return "franken splice";
+		
+		const arr2Copy = arr2.slice();
+
+		arr2Copy.splice(n, 0, arr1);
+		return arr2Copy.reduce((acc,cur) => {
+			return acc.concat(cur);
+		}, []);
 	}
 
 	console.log(frankenSplice([1, 2, 3], [4, 5], 1)); // [4, 1, 2, 3, 5]
