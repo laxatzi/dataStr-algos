@@ -178,7 +178,9 @@
 
 	function mutation(arr) {
 		
-		return arr[1].toLowerCase().split('').every(el => arr[0].toLowerCase().split('').indexOf(el));
+		const secondStr = arr[1].toLowerCase().split('');
+		const firstStr = arr[0].toLowerCase().split('');
+		return secondStr.every((el) => firstStr.indexOf(el));
 	  }
 	  
 	  console.log(mutation(["hello", "hey"])); // false

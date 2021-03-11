@@ -179,12 +179,7 @@ const watchList = [
 {
 	function frankenSplice(arr1, arr2, n) {
 		
-		const arr2Copy = arr2.slice();
-
-		arr2Copy.splice(n, 0, arr1);
-		return arr2Copy.reduce((acc,cur) => {
-			return acc.concat(cur);
-		}, []);
+		return 'franken splice';
 	}
 
 	console.log(frankenSplice([1, 2, 3], [4, 5], 1)); // [4, 1, 2, 3, 5]
@@ -198,6 +193,7 @@ const watchList = [
 {
 
 	function bouncer(arr) {
+		
 		return 'remove false values';
 	}
 
@@ -216,7 +212,6 @@ const watchList = [
 //.Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).
 {
 	function getIndexToIns(arr, num) {
-		
 		return "Where do i belong algorithm";
 	}
 	console.log(getIndexToIns([10, 40, 5 ,20, 50], 30)); //3
@@ -236,13 +231,14 @@ const watchList = [
 
 {
 	function chunkArrayInGroups(arr, size) {
-	    
+		
 		return "chunky monkey algorithm";
 	}
 
 	//test
 	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)); //should return [[0, 1], [2, 3], [4, 5]].
 	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
+	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)) // [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
 
 } //block
 
@@ -257,6 +253,7 @@ const watchList = [
 {
 
 	function mutation(arr) {
+
 	    return "solve mutation algorithm";
 	  }
 	  
@@ -271,6 +268,7 @@ const watchList = [
 
 {
 	function spinalCase(str) {
+		return str.replace(/([a-z])([A-Z])/g,'$1 $2').replace(/\s+|_/g, '-').toLowerCase();
 	    return 'spinal case algorithm';
 	}
 
@@ -382,8 +380,7 @@ const watchList = [
 
 {
 	function destroyer(arr) {
-		let args = [...arguments];
-		return arr.filter((el) => args.indexOf(el) === -1);
+		return 'destroyer algo';
 	}
 
 	console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // should return ["hamburger"]
