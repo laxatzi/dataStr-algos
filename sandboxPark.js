@@ -268,7 +268,7 @@ const watchList = [
 
 {
 	function spinalCase(str) {
-		return str.replace(/([a-z])([A-Z])/g,'$1 $2').replace(/\s+|_/g, '-').toLowerCase();
+		
 	    return 'spinal case algorithm';
 	}
 
@@ -308,6 +308,7 @@ const watchList = [
 
 {
 	function urlSlug(title) {
+	
 		return "string to URL slug converter";
 		
 	}
