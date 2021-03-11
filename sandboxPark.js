@@ -81,7 +81,8 @@ const watchList = [
    {
 	
 	function reverseString(str){
-		return 'reverse string using recursion'
+		if (str.length === 0) return '';
+		return reverseString(str.substr(1)).concat(str.substr(0,1));
 	}
 		   console.log(reverseString("hello")); //olleh
 }//block
@@ -91,14 +92,17 @@ const watchList = [
  //.Return the factorial of the provided integer.
  //.If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
  //.Only integers greater than or equal to zero will be supplied to the function.
-{
-function factorialize(num) {
-	return 'factorial of num';
-}
 
-console.log(factorialize(5)); // 120  
-console.log(factorialize(-3));//0
-console.log(factorialize(0));//1
+{
+	function factorialize(num) {
+		if (num < 0) return null;
+		if (num === 0) return 1;
+		return num * factorialize(num - 1);
+	}
+
+	console.log(factorialize(5)); // 120  
+	console.log(factorialize(-3)); // 0
+	console.log(factorialize(0)); // 1
 }
 
 //EXERCISE #3
@@ -109,7 +113,8 @@ console.log(factorialize(0));//1
 
 {
 	function repeatStringNumTimes(str, num) {
-	  
+	  if (num <= 0) return "";
+	  return str.concat(repeatStringNumTimes(str, num - 1));
 	  return 'create a new string by concatenate itself num number of times';
 	}
 
@@ -125,6 +130,8 @@ console.log(factorialize(0));//1
 
 {
 	function truncateString(str, num) {
+		if (str.length <= num) return str;
+		return str.slice(0,num).concat('...');
 		return "truncate a string";
 	}
 
@@ -139,10 +146,14 @@ console.log(factorialize(0));//1
 
 {
 	function findElement(arr, func) {
+		if (!func) return undefined;
+		const truthArr = arr.filter((el) => func(el));
+		return truthArr[0];
 	   return "return first el in arr that passes a truth test";
 	}
 
 	console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //8
+	console.log(findElement([1,3,5]));
 } //block
 
 
@@ -489,6 +500,7 @@ console.log(factorialize(0));//1
 	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
 
+
 // EXERCISE #24
 // DNA Pairing
 // The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
@@ -512,7 +524,7 @@ console.log(factorialize(0));//1
 } //block
 
 
-// EXERCISE #33
+// EXERCISE #25
 //Missing letters
 // Find the missing letter in the passed letter range and return it.
 // If all letters are present in the range, return undefined.
@@ -529,7 +541,9 @@ console.log(factorialize(0));//1
 //end block
 
 }
-//. EXERCISE #34
+
+
+//. EXERCISE #26
 // Sorted Union
 // Write a function that takes two or more arrays and returns a new array of unique values in the order of
 //the original provided arrays.
@@ -540,14 +554,23 @@ console.log(factorialize(0));//1
 
 {
 	function uniteUnique(arr) {
-		let args = [...arguments];
-		return args.reduce((acc, cur) => {
-			return acc.concat(cur);
-		}).filter((el, idx, thisArr) => {
-			return thisArr.indexOf(el) === idx;
-		});
+		return "sorted union algorithm";
 
 	}
 
 	console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
 } //end block
+
+
+//. EXERCISE #27
+//Convert HTML Entities
+//Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+{
+
+	function convertHTML(str) {
+
+  return 'convert html entities';
+}
+	console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
+} //end block	

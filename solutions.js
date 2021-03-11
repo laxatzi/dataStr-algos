@@ -417,7 +417,8 @@
 	console.log(myReplace("I think we should look up there", "up", "Down")); // "I think we should look down there"
 } //end block
 
-//EXERCISE #24
+
+//EXERCISE #23
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). 
 //We are to write //. a function and return the second largest integer.
@@ -436,7 +437,8 @@
   console.log(secondLargest([1,2,3,4,10])); // 4
 } // end block;
 
-// EXERCISE #23
+
+// EXERCISE #24
 //. Q: Remove Duplicate Elements from an Array
 {
 	let cities = [
@@ -475,14 +477,15 @@
 		   console.log(removeDuplicates(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
 } // end block
 
-// EXERCISE #33
+
+// EXERCISE #25
 //Missing letters
 // Find the missing letter in the passed letter range and return it.
 // If all letters are present in the range, return undefined.
 
 {
 	function fearNotLetter(str) {
-		
+
 	let compareBase = str.charCodeAt(0);
 	let missingLetter;
 
@@ -504,7 +507,7 @@
 } //end block
 
 
-//. EXERCISE #34
+//. EXERCISE #26
 // Sorted Union
 // Write a function that takes two or more arrays and returns a new array of unique values in the order of
 //the original provided arrays.
@@ -525,3 +528,27 @@
 
 	console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //[1, 3, 2, 5, 4]
 } //end block
+
+
+//. EXERCISE #27
+//Convert HTML Entities
+//Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+{
+
+	function convertHTML(str) {
+
+  const htmlEntities = {
+		'&' : '&amp;',
+		'<' : '&lt;',
+		'>' : '&gt;',
+		'"' : '&quot;',
+		'\'': '&apos;',
+	}
+
+	const regex = /([&<>'"])/g;
+	return str.replace(regex, key => htmlEntities[key]);
+}
+	console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
+} //end block	
+
