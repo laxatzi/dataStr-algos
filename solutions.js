@@ -429,12 +429,9 @@
 //We are to write //. a function and return the second largest integer.
 {
 	function secondLargest(arr) {
-		const sorted = arr.sort((a,b) => a - b);
-		const max = Math.max(...sorted);
-		const largestRemoved = sorted.splice(0,sorted.length-1);
-		return largestRemoved.reduce((acc, cur) => {
-			return acc > cur ? acc : cur;
-		});
+		const maxRemoved = arr.sort((a,b) => a < b);
+		maxRemoved.shift();
+		return Math.max(...maxRemoved);
 
 		return 'second largest number in a given array'
 	}

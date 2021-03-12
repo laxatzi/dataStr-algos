@@ -290,7 +290,6 @@ const watchList = [
 // Note that the rating values are saved as strings in the object
 //and need to be converted into numbers before they are used in any mathematical operations.
 {
-console.log('AVERAGE RATING');
 	function getAvgRating(arr, director) {
         
 		return "Get average Rating!";
@@ -326,18 +325,13 @@ console.log('AVERAGE RATING');
 // Fill in the body of the add function so it uses currying to add parameters x, y, and z.
 
 {
-	console.log('PARTIAL APPLICATION');
 	function add(x) {
-		return function(y){
-			return function(z){
-				return x + y + z;
-			}
-		}
+	
 		return "partial application";
 
 	}
 
-	console.log(add(10)(20)(1)); // 31
+	//console.log(add(10)(20)(1)); // 31
 } // end block
 
 //EXERCISE #16
@@ -390,6 +384,7 @@ console.log('AVERAGE RATING');
 
 {
 	function destroyer(arr) {
+		
 		return 'destroyer algo';
 	}
 
@@ -412,7 +407,10 @@ console.log('AVERAGE RATING');
 
 {
 	function whatIsInAName(collection, source) {
-			return "What is in a name";
+
+
+		
+		return "What is in a name";
 	}
 
 	console.log(
@@ -439,6 +437,7 @@ console.log('AVERAGE RATING');
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 {
 	function pigLatin(str) {
+    
 		return 'pig latin algorithm';
 	}
 
@@ -462,6 +461,7 @@ console.log('AVERAGE RATING');
 
 {
 	function myReplace(str, before, after) {
+		
 	  return "Solve 'search and replace' algorithm";
 	  
 	}
@@ -478,6 +478,7 @@ console.log('AVERAGE RATING');
 //We are to write //. a function and return the second largest integer.
 {
 	function secondLargest(arr) {
+		
 		return "return second largest";
 	}
 
@@ -488,6 +489,8 @@ console.log('AVERAGE RATING');
 // EXERCISE #23
 //. Q: Remove Duplicate Elements from an Array
 {
+	console.log('REMOVE DUPS');
+
 	let cities = [
 		"Comotini",
 		"Athens",
@@ -501,6 +504,8 @@ console.log('AVERAGE RATING');
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
+		const uniqueArgs = [...new Set(arr)];
+		return uniqueArgs.sort();
 		return "remove duplicates";
 	}
 	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
