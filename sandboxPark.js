@@ -290,7 +290,9 @@ const watchList = [
 // Note that the rating values are saved as strings in the object
 //and need to be converted into numbers before they are used in any mathematical operations.
 {
+console.log('AVERAGE RATING');
 	function getAvgRating(arr, director) {
+        
 		return "Get average Rating!";
 	}
 	console.log(getAvgRating(watchList));
@@ -309,7 +311,6 @@ const watchList = [
 //The output should not have any spaces
 
 {
-	console.log('URL SLUG');
 	function urlSlug(title) {
 	    
 		return "string to URL slug converter";
@@ -325,12 +326,18 @@ const watchList = [
 // Fill in the body of the add function so it uses currying to add parameters x, y, and z.
 
 {
+	console.log('PARTIAL APPLICATION');
 	function add(x) {
+		return function(y){
+			return function(z){
+				return x + y + z;
+			}
+		}
 		return "partial application";
 
 	}
 
-	//console.log(add(10)(20)(30)); // 60
+	console.log(add(10)(20)(1)); // 31
 } // end block
 
 //EXERCISE #16
@@ -339,13 +346,8 @@ const watchList = [
 
 //. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
 {
-console.log('RETURN SUM OF ALL ELEMENTS');
 	function sumAll(arr) {
-		let min = Math.min(...arr);
-		let max = Math.max(...arr)
 	
-		if (min === max) return min;
-		return min + sumAll([min + 1, max]);
 		return 'Sum of all numbers between array elements';
 	}
 
@@ -365,7 +367,7 @@ console.log('RETURN SUM OF ALL ELEMENTS');
 
 {
 	function diffArray(arr1, arr2) {
-		return "return symmetric diff!";
+				return "return symmetric diff!";
 	}
 
 	console.log(
