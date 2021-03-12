@@ -489,7 +489,6 @@ const watchList = [
 // EXERCISE #23
 //. Q: Remove Duplicate Elements from an Array
 {
-	console.log('REMOVE DUPS');
 
 	let cities = [
 		"Comotini",
@@ -504,8 +503,7 @@ const watchList = [
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-		const uniqueArgs = [...new Set(arr)];
-		return uniqueArgs.sort();
+	
 		return "remove duplicates";
 	}
 	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
@@ -529,6 +527,7 @@ const watchList = [
 	};
 
 	function pairElement(str) {
+		
 	return "return pairElement";
 	}
 	console.log(pairElement("CTCTA")); //[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
@@ -541,9 +540,28 @@ const watchList = [
 // If all letters are present in the range, return undefined.
 
 {
+	console.log('FEAR NO LETTER');
+
 	function fearNotLetter(str) {
 	 // find ascii character of the first letter in the string 
 	 // We are going to use it as compare base 
+	 let compareLetter = str.charCodeAt(0); //97
+	 let missingLetter;
+	 const localArr = str.split('');
+	 
+	 localArr.map((el,index) => {
+		 if (str.charCodeAt(index) === compareLetter){
+			  compareLetter++;
+		 }
+		 else {
+			 missingLetter = String.fromCharCode(compareLetter);
+		 }
+		});
+	
+		 if (!missingLetter) return "No missing letter in the range!";
+		 return `The missing letter is ${missingLetter}!`;
+	 
+	
 	return "Find missing letter in range";
 	
 	}	
