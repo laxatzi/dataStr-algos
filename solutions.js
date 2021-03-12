@@ -265,10 +265,9 @@
 
 	
 	function sumAll(arr) {
-		const max = Math.max(...arr);
 		const min = Math.min(...arr);
-		const sorted = arr.sort((a,b)=> a - b);
-		if(max === min) return min;
+		const max = Math.max(...arr);
+		if (min === max) return max;
 		return min + sumAll([min + 1, max]);
 	}
 

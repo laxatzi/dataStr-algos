@@ -142,13 +142,14 @@ const watchList = [
 //a truth test (second argument). If no element passes the test, return undefined
 
 {
-	function findElement(arr, func) {
+	{
+		function findElement(arr, func) {
+		
+			return 'Finders Keepers';
+		}
 	
-	   return "return first el in arr that passes a truth test";
-	}
-
-	console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //8
-	console.log(findElement([1,3,5], (num) => num % 2 === 0) );
+		console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0)); //8
+	} //block
 } //block
 
 
@@ -178,11 +179,8 @@ const watchList = [
 //The input arrays should remain the same after the function runs.
 
 {
-	console.log('FRANKEN SPLICE');
 	function frankenSplice(arr1, arr2, n) {
-		const localArray = arr2.slice();
-		localArray.splice(n, 0, ...arr1);
-		return localArray;
+		
 		return 'franken splice';
 	}
 
@@ -311,8 +309,9 @@ const watchList = [
 //The output should not have any spaces
 
 {
+	console.log('URL SLUG');
 	function urlSlug(title) {
-	
+	    
 		return "string to URL slug converter";
 		
 	}
@@ -340,9 +339,13 @@ const watchList = [
 
 //. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
 {
-
+console.log('RETURN SUM OF ALL ELEMENTS');
 	function sumAll(arr) {
-		
+		let min = Math.min(...arr);
+		let max = Math.max(...arr)
+	
+		if (min === max) return min;
+		return min + sumAll([min + 1, max]);
 		return 'Sum of all numbers between array elements';
 	}
 
