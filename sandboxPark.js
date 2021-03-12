@@ -540,28 +540,10 @@ const watchList = [
 // If all letters are present in the range, return undefined.
 
 {
-	console.log('FEAR NO LETTER');
 
 	function fearNotLetter(str) {
 	 // find ascii character of the first letter in the string 
 	 // We are going to use it as compare base 
-	 let compareLetter = str.charCodeAt(0); //97
-	 let missingLetter;
-	 const localArr = str.split('');
-	 
-	 localArr.map((el,index) => {
-		 if (str.charCodeAt(index) === compareLetter){
-			  compareLetter++;
-		 }
-		 else {
-			 missingLetter = String.fromCharCode(compareLetter);
-		 }
-		});
-	
-		 if (!missingLetter) return "No missing letter in the range!";
-		 return `The missing letter is ${missingLetter}!`;
-	 
-	
 	return "Find missing letter in range";
 	
 	}	
@@ -582,7 +564,9 @@ const watchList = [
 // Check the assertion tests for examples.
 
 {
+
 	function uniteUnique(arr) {
+		
 		return "sorted union algorithm";
 
 	}
@@ -596,10 +580,18 @@ const watchList = [
 //Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
 
 {
-
+	console.log('CONVERT HTML');
+	const htmlEntities = {
+		'&' : '&amp;',
+		'<' : '&lt;',
+		'>' : '&gt;',
+		'"' : '&quot;',
+		"'": '&apos;',
+	}
 	function convertHTML(str) {
+		return str.replace(/[&<>"']/g, key => htmlEntities[key]);
+		return 'convert html entities';
+	}
 
-  return 'convert html entities';
-}
 	console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
 } //end block	
