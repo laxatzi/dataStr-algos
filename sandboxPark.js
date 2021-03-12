@@ -81,6 +81,7 @@ const watchList = [
    {
 	
 	function reverseString(str){
+		
 		return "revers string with use of recursion";
 	}
 		   console.log(reverseString("hello")); //olleh
@@ -177,8 +178,11 @@ const watchList = [
 //The input arrays should remain the same after the function runs.
 
 {
+	console.log('FRANKEN SPLICE');
 	function frankenSplice(arr1, arr2, n) {
-		
+		const localArray = arr2.slice();
+		localArray.splice(n, 0, ...arr1);
+		return localArray;
 		return 'franken splice';
 	}
 
@@ -229,18 +233,18 @@ const watchList = [
 //.Our goal for this Algorithm is to split arr (first argument) into smaller chunks of arrays with the length provided by size (second argument). There are 4 green checks (objectives) our code needs to pass in order to complete this Algorithm:
 
 
+
 {
 	function chunkArrayInGroups(arr, size) {
-		
-		return "chunky monkey algorithm";
-	}
-
+			return "chunky monkey algorithm"
+		}
+	
 	//test
-	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)); //should return [[0, 1], [2, 3], [4, 5]].
-	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
-	console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)) // [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
-
+		console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)); //should return [[0, 1], [2, 3], [4, 5]].
+		console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)); //should return [[0, 1, 2, 3], [4, 5]].
 } //block
+
+
 
 
 // EXERCISE #11
