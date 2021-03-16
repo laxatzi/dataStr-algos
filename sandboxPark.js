@@ -408,15 +408,9 @@ const watchList = [
 //that was passed on as the second argument.
 
 {
-	console.log('NOW CODING!');
 
 	function whatIsInAName(collection, source) {
-		const sourceKey = Object.keys(source);
-		return collection.filter((obj) => {
-			return sourceKey.every((key)=> {
-				return obj.hasOwnProperty(key) && obj[key] === source[key];
-			});
-		})
+		
 		return "What is in a name";
 	}
 
@@ -443,8 +437,12 @@ const watchList = [
 // - If a word begins with a vowel, just add "way" at the end.
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 {
+	console.log('NOW CODING!');
+
 	function pigLatin(str) {
-    
+        const consonantCluster = /^[^aeiou]+/g;
+		if (str[0].match(/[aeiou]/g)) return str.concat('way');
+		if (str[0].match(consonantCluster)) return str.replace(str.match(consonantCluster), '').concat(str.match(consonantCluster), 'ay');
 		return 'pig latin algorithm';
 	}
 
