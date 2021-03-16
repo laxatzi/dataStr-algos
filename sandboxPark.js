@@ -437,12 +437,8 @@ const watchList = [
 // - If a word begins with a vowel, just add "way" at the end.
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 {
-	console.log('NOW CODING!');
 
 	function pigLatin(str) {
-        const consonantCluster = /^[^aeiou]+/g;
-		if (str[0].match(/[aeiou]/g)) return str.concat('way');
-		if (str[0].match(consonantCluster)) return str.replace(str.match(consonantCluster), '').concat(str.match(consonantCluster), 'ay');
 		return 'pig latin algorithm';
 	}
 
@@ -545,15 +541,30 @@ const watchList = [
 // If all letters are present in the range, return undefined.
 
 {
+	console.log('NOW CODING!');
 
 	function fearNotLetter(str) {
 	 // find ascii character of the first letter in the string 
 	 // We are going to use it as compare base 
+	let baseLetter = str.charCodeAt(0);
+	let missingLetter;
+	str.split('').map((el,index) => {
+		if (str.charCodeAt(index) === baseLetter) {
+			baseLetter++;
+		} else {
+			missingLetter = String.fromCharCode(baseLetter);
+		}
+	});
+
+	if (!missingLetter) return 'No letter is missing!';
+	return `The missing letter is: '${missingLetter}'!`;
 	return "Find missing letter in range";
 	
 	}	
 
 	console.log(fearNotLetter("abce"));
+	console.log(fearNotLetter("abcde"));
+
 //end block
 
 }
