@@ -289,9 +289,11 @@ const watchList = [
 // You may need to create other variables, and return the average rating from getRating function.
 // Note that the rating values are saved as strings in the object
 //and need to be converted into numbers before they are used in any mathematical operations.
+//imdbRating, Director
 {
+
 	function getAvgRating(arr, director) {
-        
+      
 		return "Get average Rating!";
 	}
 	console.log(getAvgRating(watchList));
@@ -339,9 +341,9 @@ const watchList = [
 // The lowest number will not always come first.
 
 //. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
-{
+{ 
 	function sumAll(arr) {
-	
+	    
 		return 'Sum of all numbers between array elements';
 	}
 
@@ -406,10 +408,15 @@ const watchList = [
 //that was passed on as the second argument.
 
 {
+	console.log('NOW CODING!');
+
 	function whatIsInAName(collection, source) {
-
-
-		
+		const sourceKey = Object.keys(source);
+		return collection.filter((obj) => {
+			return sourceKey.every((key)=> {
+				return obj.hasOwnProperty(key) && obj[key] === source[key];
+			});
+		})
 		return "What is in a name";
 	}
 
@@ -580,7 +587,6 @@ const watchList = [
 //Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
 
 {
-	console.log('CONVERT HTML');
 	const htmlEntities = {
 		'&' : '&amp;',
 		'<' : '&lt;',
@@ -589,7 +595,6 @@ const watchList = [
 		"'": '&apos;',
 	}
 	function convertHTML(str) {
-		return str.replace(/[&<>"']/g, key => htmlEntities[key]);
 		return 'convert html entities';
 	}
 
