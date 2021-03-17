@@ -541,23 +541,10 @@ const watchList = [
 // If all letters are present in the range, return undefined.
 
 {
-	console.log('NOW CODING!');
 
 	function fearNotLetter(str) {
 	 // find ascii character of the first letter in the string 
 	 // We are going to use it as compare base 
-	let baseLetter = str.charCodeAt(0);
-	let missingLetter;
-	str.split('').map((el,index) => {
-		if (str.charCodeAt(index) === baseLetter) {
-			baseLetter++;
-		} else {
-			missingLetter = String.fromCharCode(baseLetter);
-		}
-	});
-
-	if (!missingLetter) return 'No letter is missing!';
-	return `The missing letter is: '${missingLetter}'!`;
 	return "Find missing letter in range";
 	
 	}	
@@ -609,3 +596,33 @@ const watchList = [
 
 	console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
 } //end block	
+
+
+// EXERCISE #28
+// Sum All Odd Fibonacci NumbersPassed
+
+	// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+	// The first two numbers in the Fibonacci sequence are 1 and 1. 
+	//Every additional number in the sequence is the sum of the two previous numbers. 
+	//The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+	// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+
+	{
+
+        function sumFibs(num) {
+			if (num <= 0) return null;
+			
+			const fibArray = [1,1];
+			let sum;
+
+			while((sum = fibArray[0] + fibArray[1]) <= num){
+				fibArray.unshift(sum);
+			}
+          return fibArray.filter((el) => el%2 !== 0).reduce((a,b) => a + b );
+        }
+  
+        console.log(sumFibs(10)); //10
+        console.log(sumFibs(100)); // 188
+        console.log(sumFibs(75024)); // 60696
+       
+ } // end block
