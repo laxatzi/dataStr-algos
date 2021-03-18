@@ -599,7 +599,7 @@ const watchList = [
 
 
 // EXERCISE #28
-// Sum All Odd Fibonacci NumbersPassed
+// Sum All Odd Fibonacci Numbers
 
 	// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
 	// The first two numbers in the Fibonacci sequence are 1 and 1. 
@@ -608,17 +608,16 @@ const watchList = [
 	// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 
 	{
-
+		
         function sumFibs(num) {
 			if (num <= 0) return null;
-			
-			const fibArray = [1,1];
-			let sum;
-
-			while((sum = fibArray[0] + fibArray[1]) <= num){
-				fibArray.unshift(sum);
+		// first find all fib numbers that are <= num 
+		    const fibs = [1,1];
+			let i;
+			while ((i = fibs[0] + fibs[1]) <= num){
+				fibs.unshift(i);
 			}
-          return fibArray.filter((el) => el%2 !== 0).reduce((a,b) => a + b );
+			return fibs.filter((el) => el % 2 !== 0).reduce((a,b) => a + b);
         }
   
         console.log(sumFibs(10)); //10

@@ -574,6 +574,9 @@
         // represent  fibonacci sequence in our code
             let fibSequence = [1,1];
             let i;
+		//While loops have the advantage over for loops WHEN looking at an external condition. (like the above... we would have 
+		 // difficulty trying to use a for loop here )
+
             while((i = fibonacciSequence[0] + fibonacciSequence[1]) <= num){ // fibonacci axiom
                 fibonacciSequence.unshift(i);
             }
@@ -589,3 +592,22 @@
         console.log(sumFibs(75024)); // 60696
        
  } // end block
+
+
+// EXERCISE 29
+//  Sum All Primes
+
+// A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself. 
+// For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 
+// 4 is not prime since it is divisible by 1, 2 and 4.
+
+// Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num.
+
+{
+
+	function sumPrimes(num) {
+		return num;
+	  }
+}
+console.log(sumPrimes(10));  // 17.
+console.log(umPrimes(977)); // 73156.
