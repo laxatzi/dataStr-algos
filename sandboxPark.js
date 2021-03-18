@@ -610,14 +610,7 @@ const watchList = [
 	{
 		
         function sumFibs(num) {
-			if (num <= 0) return null;
-		// first find all fib numbers that are <= num 
-		    const fibs = [1,1];
-			let i;
-			while ((i = fibs[0] + fibs[1]) <= num){
-				fibs.unshift(i);
-			}
-			return fibs.filter((el) => el % 2 !== 0).reduce((a,b) => a + b);
+			return 'Sum of odd fibonacci numbers';
         }
   
         console.log(sumFibs(10)); //10
@@ -625,3 +618,45 @@ const watchList = [
         console.log(sumFibs(75024)); // 60696
        
  } // end block
+
+
+// EXERCISE 29
+//  Sum All Primes
+
+	// A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself. 
+	// For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 
+	// 4 is not prime since it is divisible by 1, 2 and 4.
+
+	// Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num.
+
+{
+
+	function sumPrimes(num) {
+      
+	  const primes = [];
+
+	  function isPrime (n){
+		if(n<2) return false;
+	  let  squareRoot = Math.floor(Math.sqrt(n));
+	  let i = 2;
+	  while(i<=squareRoot){
+		if(n % i == 0) return false;
+		i++;
+	  }
+	  return true; 
+	} 
+
+	for (let j=2; j<=num; j++){
+		if (isPrime(j)){
+			primes.unshift(j);
+		}
+	}
+
+	return primes.reduce((a,b) => a + b);
+	  
+}
+
+	  console.log(sumPrimes(10));  // 17.
+      console.log(sumPrimes(977)); // 73156.
+
+}//end block
