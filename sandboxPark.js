@@ -608,17 +608,9 @@ const watchList = [
 	// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 
 	{
-		console.log('START HERE!');
-        function sumFibs(num) {
-			if (num <= 0) return null;
-			const fibs = [1,1];
-			let i;
-			while((i = fibs[0] + fibs[1]) <= num){
-				fibs.unshift(i);
-			}
-			return fibs.filter((el) => (el % 2) !== 0).reduce((a,b) => a + b);	
+        function sumFibs(num){
 			return 'Sum of odd fibonacci numbers';
-        }
+    }
   
         console.log(sumFibs(10)); //10
         console.log(sumFibs(100)); // 188
@@ -640,37 +632,7 @@ const watchList = [
 
 	function sumPrimes(num) {
 
-	 // exception
-      if (num <= 1) return false;
-
-      // primes array
-	  const localArray = [2, num];
-
-	  // range creator
-	  function rangeOfNumbers(arr) {
-		// Range between arr elements
-		  let min = Math.min(...arr);
-		  let max = Math.max(...arr);
-			let range = Array(max-min+1).fill().map((v, i) => i + min);
-			return range;
-	   }
-
-	  // prime checker
-		function isPrime (n){
-		  if(n<2) return false;
-		    let  squareRoot = Math.floor(Math.sqrt(n));
-		    let i = 2;
-		  while(i<=squareRoot){
-			if(n % i == 0) return false;
-			i++;
-		  }
-		  return true; 
-		} 
-	  
-	  // create range 
-	  const range = rangeOfNumbers(localArray);
-
-	return range.filter((el) => isPrime(el)).reduce((a,b) => a + b);
+	
 	return 'Find sum of all primes less or equal to num';
 	  
 }
@@ -679,3 +641,50 @@ const watchList = [
       console.log(sumPrimes(977)); // 73156.
 
 }//end block
+
+// EXERCISE #30
+// Smallest Common Multiple
+
+    // Find the smallest common multiple of the provided parameters that can be evenly divided by both, 
+	//as well as by all sequential numbers in the range between these parameters.
+    // The range will be an array of two numbers that will not necessarily be in numerical order.
+    // For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers 
+	//between 1 and 3. The answer here would be 6.
+
+	{
+
+		function smallestCommons(arr) {
+			return "smallest common multiple";
+		  }
+
+		console.log(smallestCommons([1, 5])); // 60
+		console.log(smallestCommons([5, 1])); // 60
+		console.log(smallestCommons([23, 18])); //6056820
+	}//end block
+
+	console.log('START HERE!');
+
+	//EXERCISE #31
+// Drop it
+
+	// Given the array arr, iterate through and remove each element starting from the first element (the 0 index) 
+	// until the function func returns true when the iterated element is passed through it.
+
+	// Then return the rest of the array once the condition is satisfied, otherwise... 
+	// arr should be returned as an empty array.
+
+{
+	function dropElements(arr, func) {
+		// first truthy
+		const firstTruthy =  arr.find((el) => func(el));
+		if (firstTruthy === undefined) return [];
+		const truthyIdx = arr.indexOf(firstTruthy);
+		return arr.slice(truthyIdx);
+		return "Drop Elements";
+	  }
+ 
+	//test
+	console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;})); // should return [1, 0, 1]
+	console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})); // should return [7, 4]
+	console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;})); //  should return []
+}

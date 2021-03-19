@@ -642,3 +642,27 @@
   console.log(umPrimes(977)); // 73156.
 
 }
+
+
+//EXERCISE #31
+// Drop it
+
+	// Given the array arr, iterate through and remove each element starting from the first element (the 0 index) 
+	// until the function func returns true when the iterated element is passed through it.
+
+	// Then return the rest of the array once the condition is satisfied, otherwise, 
+	// arr should be returned as an empty array.
+
+{
+	function dropElements(arr, func) {
+		const firstTruthy =  arr.find((el) => func(el));
+		if (firstTruthy === undefined) return [];
+		const firstTruthyIdx = arr.indexOf(firstTruthy);
+		return arr.slice(firstTruthyIdx);
+	  }
+ 
+	//test
+	console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;})); // should return [1, 0, 1]
+	console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})); // should return [7, 4]
+	console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;})); //  should return []
+}
