@@ -608,8 +608,15 @@ const watchList = [
 	// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 
 	{
-		
+		console.log('START HERE!');
         function sumFibs(num) {
+			if (num <= 0) return null;
+			const fibs = [1,1];
+			let i;
+			while((i = fibs[0] + fibs[1]) <= num){
+				fibs.unshift(i);
+			}
+			return fibs.filter((el) => (el % 2) !== 0).reduce((a,b) => a + b);	
 			return 'Sum of odd fibonacci numbers';
         }
   
@@ -632,27 +639,39 @@ const watchList = [
 {
 
 	function sumPrimes(num) {
-      
-	  const primes = [];
 
-	  function isPrime (n){
-		if(n<2) return false;
-	  let  squareRoot = Math.floor(Math.sqrt(n));
-	  let i = 2;
-	  while(i<=squareRoot){
-		if(n % i == 0) return false;
-		i++;
-	  }
-	  return true; 
-	} 
+	 // exception
+      if (num <= 1) return false;
 
-	for (let j=2; j<=num; j++){
-		if (isPrime(j)){
-			primes.unshift(j);
-		}
-	}
+      // primes array
+	  const localArray = [2, num];
 
-	return primes.reduce((a,b) => a + b);
+	  // range creator
+	  function rangeOfNumbers(arr) {
+		// Range between arr elements
+		  let min = Math.min(...arr);
+		  let max = Math.max(...arr);
+			let range = Array(max-min+1).fill().map((v, i) => i + min);
+			return range;
+	   }
+
+	  // prime checker
+		function isPrime (n){
+		  if(n<2) return false;
+		    let  squareRoot = Math.floor(Math.sqrt(n));
+		    let i = 2;
+		  while(i<=squareRoot){
+			if(n % i == 0) return false;
+			i++;
+		  }
+		  return true; 
+		} 
+	  
+	  // create range 
+	  const range = rangeOfNumbers(localArray);
+
+	return range.filter((el) => isPrime(el)).reduce((a,b) => a + b);
+	return 'Find sum of all primes less or equal to num';
 	  
 }
 

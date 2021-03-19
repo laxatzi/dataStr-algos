@@ -606,8 +606,39 @@
 {
 
 	function sumPrimes(num) {
-		return num;
-	  }
+	  // exception
+      if (num <= 1) return false;
+
+      // primes array
+	  const localArray = [2, num];
+
+	  // range creator
+	  function rangeOfNumbers(arr) {
+		// Range between arr elements
+		  let min = Math.min(...arr);
+		  let max = Math.max(...arr);
+			let range = Array(max-min+1).fill().map((v, i) => i + min);
+			return range;
+	   }
+
+	  // prime checker
+		function isPrime (n){
+		  if(n<2) return false;
+		    let  squareRoot = Math.floor(Math.sqrt(n));
+		    let i = 2;
+		  while(i<=squareRoot){
+			if(n % i == 0) return false;
+			i++;
+		  }
+		  return true; 
+		} 
+	  
+	  // create range 
+	  const range = rangeOfNumbers(localArray);
+
+	return range.filter((el) => isPrime(el)).reduce((a,b) => a + b);
+  }
+  console.log(sumPrimes(10));  // 17.
+  console.log(umPrimes(977)); // 73156.
+
 }
-console.log(sumPrimes(10));  // 17.
-console.log(umPrimes(977)); // 73156.
