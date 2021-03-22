@@ -706,13 +706,12 @@ const watchList = [
 
   {
 	function binaryAgent(str){
-		const localArray = str.split(' ');
-		const decimals = localArray.map((el) => parseInt(el, 2));
-		const joinedLetters = decimals.map((el) => String.fromCharCode(el)).join('');
-		return joinedLetters;
+	
 		return str;
 	}
 	// bellow str should return -I love FreeCodeCamp! - '
 	console.log(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')); 
 
 }// block
+
+
