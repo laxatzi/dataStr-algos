@@ -676,11 +676,7 @@ const watchList = [
 {
 	function dropElements(arr, func) {
 		// first truthy
-		const firstTruthy =  arr.find((el) => func(el));
-		if (firstTruthy === undefined) return [];
-		const truthyIdx = arr.indexOf(firstTruthy);
-		return arr.slice(truthyIdx);
-		return "Drop Elements";
+		return 'drop';
 	  }
  
 	//test
@@ -688,3 +684,18 @@ const watchList = [
 	console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})); // should return [7, 4]
 	console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;})); //  should return []
 }
+
+
+//EXERCISE #32
+//Steamroller
+  // Flatten a nested array. You must account for varying levels of nesting.
+{
+	function steamrollArray(arr) {
+		return arr.reduce((acc, cur) => {
+			return acc.concat(Array.isArray(cur) ? steamrollArray(cur) : cur);
+		}, []);
+	  }
+
+	  console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1, 2, 3, 4]
+	  console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4]
+}// end block
