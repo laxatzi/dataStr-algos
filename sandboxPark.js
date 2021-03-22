@@ -691,11 +691,28 @@ const watchList = [
   // Flatten a nested array. You must account for varying levels of nesting.
 {
 	function steamrollArray(arr) {
-		return arr.reduce((acc, cur) => {
-			return acc.concat(Array.isArray(cur) ? steamrollArray(cur) : cur);
-		}, []);
-	  }
-
+			return "Flatten deep array";
+	}
 	  console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1, 2, 3, 4]
 	  console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4]
 }// end block
+
+
+
+//EXERCISE #33
+// binaryAgents
+  // Return an English translated sentence of the passed binary string.
+  // The binary string will be space separated.
+
+  {
+	function binaryAgent(str){
+		const localArray = str.split(' ');
+		const decimals = localArray.map((el) => parseInt(el, 2));
+		const joinedLetters = decimals.map((el) => String.fromCharCode(el)).join('');
+		return joinedLetters;
+		return str;
+	}
+	// bellow str should return -I love FreeCodeCamp! - '
+	console.log(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')); 
+
+}// block
