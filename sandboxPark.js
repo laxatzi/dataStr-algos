@@ -687,14 +687,10 @@ const watchList = [
 
 	// Then return the rest of the array once the condition is satisfied, otherwise... 
 	// arr should be returned as an empty array.
-	console.log('START HERE!');
 
 {
 	function dropElements(arr, func) {
-		const firstTrue = arr.find((el) => func(el));
-		const firstTrueIdx = arr.indexOf(firstTrue);
-		if (firstTrueIdx === -1) return [];
-	    return arr.slice(firstTrueIdx);	
+		
 		return 'drop';
 	  }
  
@@ -704,19 +700,25 @@ const watchList = [
 	console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;})); //  should return []
 }
 
-
 //EXERCISE #32
 //Steamroller
   // Flatten a nested array. You must account for varying levels of nesting.
 {
 	function steamrollArray(arr) {
+	
+		    return arr.reduce((acc, cur) => {
+			
+				return acc.concat(Array.isArray(cur) ? steamrollArray(cur) : cur);	
+			}, []);
 			return "Flatten deep array";
 	}
+	  console.log(steamrollArray([1,[2]])); // [1,2];
 	  console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1, 2, 3, 4]
 	  console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4]
 }// end block
 
 
+console.log('START HERE!');
 
 //EXERCISE #33
 // binaryAgents
@@ -725,8 +727,8 @@ const watchList = [
 
   {
 	function binaryAgent(str){
-	
-		return str;
+	    const localArray = str.split(' ');
+		return localArray.map((el) => String.fromCharCode(Number.parseInt(el, 2))).join('');
 	}
 	// bellow str should return -I love FreeCodeCamp! - '
 	console.log(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')); 
