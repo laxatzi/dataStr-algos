@@ -618,7 +618,6 @@ const watchList = [
        
  } // end block
 
-
 // EXERCISE 29
 //  Sum All Primes
 
@@ -631,11 +630,12 @@ const watchList = [
 {
 
 	function sumPrimes(num) {
-
-	
+		
 	return 'Find sum of all primes less or equal to num';
-	  
+
 }
+		
+
 
 	  console.log(sumPrimes(10));  // 17.
       console.log(sumPrimes(977)); // 73156.
@@ -654,15 +654,30 @@ const watchList = [
 	{
 
 		function smallestCommons(arr) {
+		// sort
+			const sorted = arr.sort((a,b) => a - b);
+		// range function
+			function rangeOfNumbers(arr) {
+				// Range between arr elements
+				  let min = Math.min(...arr);
+				  let max = Math.max(...arr);
+					let range = Array(max-min+1).fill().map((v, i) => i + min);
+					return range;
+			   }
+			  
+		// range
+			const range = rangeOfNumbers(sorted);
+			return range;
+			// checker
 			return "smallest common multiple";
-		  }
+	}
 
 		console.log(smallestCommons([1, 5])); // 60
 		console.log(smallestCommons([5, 1])); // 60
 		console.log(smallestCommons([23, 18])); //6056820
 	}//end block
 
-	console.log('START HERE!');
+	
 
 	//EXERCISE #31
 // Drop it
@@ -672,10 +687,14 @@ const watchList = [
 
 	// Then return the rest of the array once the condition is satisfied, otherwise... 
 	// arr should be returned as an empty array.
+	console.log('START HERE!');
 
 {
 	function dropElements(arr, func) {
-		// first truthy
+		const firstTrue = arr.find((el) => func(el));
+		const firstTrueIdx = arr.indexOf(firstTrue);
+		if (firstTrueIdx === -1) return [];
+	    return arr.slice(firstTrueIdx);	
 		return 'drop';
 	  }
  
