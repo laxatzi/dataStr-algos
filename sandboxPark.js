@@ -545,9 +545,9 @@ const watchList = [
 	function fearNotLetter(str) {
 	 // find ascii character of the first letter in the string 
 	 // We are going to use it as compare base 
-	return "Find missing letter in range";
 	
-	}	
+		 return `The missing letter is ?'!`
+}	
 
 	console.log(fearNotLetter("abce"));
 	console.log(fearNotLetter("abcde"));
@@ -565,11 +565,16 @@ const watchList = [
 //in their original order, but with no duplicates in the final array.
 // The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
 // Check the assertion tests for examples.
+console.log('START HERE!');
 
 {
 
 	function uniteUnique(arr) {
-		
+		const args = [...arguments];
+		const localArray = args.reduce((acc, cur)=> acc.concat(cur), []);
+		return localArray.filter((el, idx, thisarray) => {
+			return thisarray.indexOf(el) === idx;
+		})
 		return "sorted union algorithm";
 
 	}
@@ -609,6 +614,7 @@ const watchList = [
 
 	{
         function sumFibs(num){
+
 			return 'Sum of odd fibonacci numbers';
     }
   
@@ -706,10 +712,6 @@ const watchList = [
 {
 	function steamrollArray(arr) {
 	
-		    return arr.reduce((acc, cur) => {
-			
-				return acc.concat(Array.isArray(cur) ? steamrollArray(cur) : cur);	
-			}, []);
 			return "Flatten deep array";
 	}
 	  console.log(steamrollArray([1,[2]])); // [1,2];
@@ -718,7 +720,6 @@ const watchList = [
 }// end block
 
 
-console.log('START HERE!');
 
 //EXERCISE #33
 // binaryAgents
@@ -727,8 +728,8 @@ console.log('START HERE!');
 
   {
 	function binaryAgent(str){
-	    const localArray = str.split(' ');
-		return localArray.map((el) => String.fromCharCode(Number.parseInt(el, 2))).join('');
+	   
+		return "binary Agent";
 	}
 	// bellow str should return -I love FreeCodeCamp! - '
 	console.log(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')); 
