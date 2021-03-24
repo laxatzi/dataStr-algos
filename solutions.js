@@ -491,17 +491,12 @@
 	let compareBase = str.charCodeAt(0);
 	let missingLetter;
 
-	str.split('').map((el, idx, thisArr)=> {
-		if (str.charCodeAt(idx) === compareBase) {
-			compareBase++;
-		} else 
-		{
-			missingLetter = String.fromCharCode(compareBase);
-		}
-	});
-
-	if (!missingLetter) return "No letter is missing!";
-	return `The missing letter is ${missingLetter}`;
+	str.split('').map((el, idx)=> {
+		(str.charCodeAt(idx) === curLetter) ? (curLetter++) : (missingLetter = String.fromCharCode(curLetter));
+	  });
+ 
+	  if (!missingLetter) return 'No letter is missing!';
+	  return `The missing letter is '${missingLetter}'!`;
 
 }
 

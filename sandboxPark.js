@@ -539,12 +539,21 @@ const watchList = [
 //Missing letters
 // Find the missing letter in the passed letter range and return it.
 // If all letters are present in the range, return undefined.
-
+console.log('START HERE!');
 {
 
 	function fearNotLetter(str) {
-	 // find ascii character of the first letter in the string 
-	 // We are going to use it as compare base 
+	 let  curLetter = str.charCodeAt(0);
+	 let missingLetter;
+
+	 str.split('').map((el, idx)=> {
+	
+		(str.charCodeAt(idx) === curLetter) ? (curLetter++) : (missingLetter = String.fromCharCode(curLetter));
+
+	 });
+
+	 if (!missingLetter) return 'No letter is missing!';
+	 return `The missing letter is '${missingLetter}'!`;
 	
 		 return `The missing letter is ?'!`
 }	
@@ -565,16 +574,11 @@ const watchList = [
 //in their original order, but with no duplicates in the final array.
 // The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
 // Check the assertion tests for examples.
-console.log('START HERE!');
 
 {
 
 	function uniteUnique(arr) {
-		const args = [...arguments];
-		const localArray = args.reduce((acc, cur)=> acc.concat(cur), []);
-		return localArray.filter((el, idx, thisarray) => {
-			return thisarray.indexOf(el) === idx;
-		})
+		
 		return "sorted union algorithm";
 
 	}
@@ -596,6 +600,7 @@ console.log('START HERE!');
 		"'": '&apos;',
 	}
 	function convertHTML(str) {
+		
 		return 'convert html entities';
 	}
 
@@ -612,17 +617,18 @@ console.log('START HERE!');
 	//The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
 	// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 
-	{
-        function sumFibs(num){
 
-			return 'Sum of odd fibonacci numbers';
-    }
-  
+{
+    function sumFibs(num) {
+     return 'Sum of odd fibonacci numbers';
+    
+  }
         console.log(sumFibs(10)); //10
         console.log(sumFibs(100)); // 188
         console.log(sumFibs(75024)); // 60696
        
- } // end block
+} // end block
+
 
 // EXERCISE 29
 //  Sum All Primes
@@ -640,13 +646,11 @@ console.log('START HERE!');
 	return 'Find sum of all primes less or equal to num';
 
 }
-		
-
-
 	  console.log(sumPrimes(10));  // 17.
       console.log(sumPrimes(977)); // 73156.
 
 }//end block
+
 
 // EXERCISE #30
 // Smallest Common Multiple
@@ -660,21 +664,7 @@ console.log('START HERE!');
 	{
 
 		function smallestCommons(arr) {
-		// sort
-			const sorted = arr.sort((a,b) => a - b);
-		// range function
-			function rangeOfNumbers(arr) {
-				// Range between arr elements
-				  let min = Math.min(...arr);
-				  let max = Math.max(...arr);
-					let range = Array(max-min+1).fill().map((v, i) => i + min);
-					return range;
-			   }
-			  
-		// range
-			const range = rangeOfNumbers(sorted);
-			return range;
-			// checker
+		
 			return "smallest common multiple";
 	}
 
@@ -711,7 +701,6 @@ console.log('START HERE!');
   // Flatten a nested array. You must account for varying levels of nesting.
 {
 	function steamrollArray(arr) {
-	
 			return "Flatten deep array";
 	}
 	  console.log(steamrollArray([1,[2]])); // [1,2];
