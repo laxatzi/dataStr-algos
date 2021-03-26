@@ -74,15 +74,14 @@ const watchList = [
 		Response: "True",
 	},
 ];
-
+console.log('YOU ARE HERE!');
 //EXERCISE #1  !!
    //.Reverse the provided string.You may need to turn the string into an array before you can reverse it.
    //.Your result must be a string.
    {
 	
 	function reverseString(str){
-		
-		return "revers string with use of recursion";
+		return 'reversestring';
 	}
 		   console.log(reverseString("hello")); //olleh
 }//block
@@ -731,24 +730,10 @@ console.log('YOU ARE HERE!');
    // It has to check if any of the numbers are actual numbers, otherwise return undefined and stop the program right there.
    // It has to check if it has one or two arguments passed. More are ignored.
    // If it has only one argument then it has to return a function that uses that number and expects another one, to then add it.
-console.log('YOU ARE HERE!');
+
 {
 	function addTogether() {
-	 // we want two arguments. Ignore the rest
-	   const [arg1, arg2, ] = arguments;
-	 // we look for integers, so we create an int checker
-	   const isInt =  (n) => Number.isInteger(n);
-
-	// set conditions
-	  if (isInt(arg1)) {
-		if (isInt(arg2)) {
-			return arg1 + arg2;
-		}
-		if (!arg2){
-			return (arg2) => arg1 + arg2;
-		}
-		
-	  }
+	 
 	 
 	}
 

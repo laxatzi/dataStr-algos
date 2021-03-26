@@ -715,27 +715,24 @@
    // It has to check if any of the numbers are actual numbers, otherwise return undefined and stop the program right there.
    // It has to check if it has one or two arguments passed. More are ignored.
    // If it has only one argument then it has to return a function that uses that number and expects another one, to then add it.
-   console.log('YOU ARE HERE!');
+ 
    {
 	   function addTogether() {
+			// we want two arguments. Ignore the rest
 			const [arg1, arg2, ] = arguments;
-			const isInt = (num) => Number.isInteger(num);
-			if (isInt(arg1)) {
+			// we look for integers, so we create an int checker
+			  const isInt =  (n) => Number.isInteger(n);
+	   
+		   // set conditions
+			 if (isInt(arg1)) {
+			   if (isInt(arg2)) {
+				   return arg1 + arg2;
+			   }
+			   if (!arg2){
+				   return (arg2) => arg1 + arg2;
+			   }
 			   
-				if (isInt(arg2)){
-					return arg1 + arg2;
-				}
-				else if (!arg2){
-					
-					return function(arg2){
-						if (isInt(arg2)){
-						return arg1 + arg2;
-						}
-					   return undefined;
-					}
-				}
-			}
-			return undefined;
+			 }
 	   }
    
 	   console.log(addTogether(2,3)); // 5
