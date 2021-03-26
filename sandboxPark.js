@@ -436,9 +436,11 @@ const watchList = [
 
 // - If a word begins with a vowel, just add "way" at the end.
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
+console.log('YOU ARE HERE!');
 {
 
 	function pigLatin(str) {
+	  
 		return 'pig latin algorithm';
 	}
 
@@ -462,7 +464,6 @@ const watchList = [
 
 {
 	function myReplace(str, before, after) {
-		
 	  return "Solve 'search and replace' algorithm";
 	  
 	}
@@ -504,7 +505,9 @@ const watchList = [
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-	
+	   return arr.filter((el, idx, thisarray) => {
+		   return thisarray.indexOf(el) === idx;
+	   })
 		return "remove duplicates";
 	}
 	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
@@ -518,7 +521,6 @@ const watchList = [
 // Return the provided character as the first element in each array.
 // For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
 // The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
-
 {
 	const dnaPairs = {
 		A: "T",
@@ -528,7 +530,7 @@ const watchList = [
 	};
 
 	function pairElement(str) {
-		
+	
 	return "return pairElement";
 	}
 	console.log(pairElement("CTCTA")); //[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
@@ -539,23 +541,10 @@ const watchList = [
 //Missing letters
 // Find the missing letter in the passed letter range and return it.
 // If all letters are present in the range, return undefined.
-console.log('START HERE!');
 {
 
 	function fearNotLetter(str) {
-	 let  curLetter = str.charCodeAt(0);
-	 let missingLetter;
-
-	 str.split('').map((el, idx)=> {
-	
-		(str.charCodeAt(idx) === curLetter) ? (curLetter++) : (missingLetter = String.fromCharCode(curLetter));
-
-	 });
-
-	 if (!missingLetter) return 'No letter is missing!';
-	 return `The missing letter is '${missingLetter}'!`;
-	
-		 return `The missing letter is ?'!`
+	return `The missing letter is ?'!`
 }	
 
 	console.log(fearNotLetter("abce"));
@@ -599,12 +588,10 @@ console.log('START HERE!');
 		'"' : '&quot;',
 		"'": '&apos;',
 	}
-	function convertHTML(str) {
-		
-		return 'convert html entities';
-	}
+	
+	
 
-	console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
+	//console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
 } //end block	
 
 
@@ -725,4 +712,51 @@ console.log('START HERE!');
 
 }// block
 
+
+// EXERCISE #34
+//Arguments OptionalPassed
+
+   // Create a function that sums two arguments together. If only one argument is provided, then return a function that expects 
+   // one argument and returns the sum.
+   // For example, addTogether(2, 3) should return 5, and addTogether(2) should return a function.
+   // Calling this returned function with a single argument will then return the sum:
+   // var sumTwoAnd = addTogether(2);
+   // sumTwoAnd(3) returns 5.
+   // If either argument isn't a valid number, return undefined.
+   // It can be quite complicated to understand what needs to be done. 
+   // There are always many ways to do something when coding but regardless of the algorithm used, 
+   // we have to create a program that does the following:
+
+   // It has to add two numbers passed as parameters and return the sum.
+   // It has to check if any of the numbers are actual numbers, otherwise return undefined and stop the program right there.
+   // It has to check if it has one or two arguments passed. More are ignored.
+   // If it has only one argument then it has to return a function that uses that number and expects another one, to then add it.
+console.log('YOU ARE HERE!');
+{
+	function addTogether() {
+	 // we want two arguments. Ignore the rest
+	   const [arg1, arg2, ] = arguments;
+	 // we look for integers, so we create an int checker
+	   const isInt =  (n) => Number.isInteger(n);
+
+	// set conditions
+	  if (isInt(arg1)) {
+		if (isInt(arg2)) {
+			return arg1 + arg2;
+		}
+		if (!arg2){
+			return (arg2) => arg1 + arg2;
+		}
+		
+	  }
+	 
+	}
+
+	console.log(addTogether(2,3)); // 5
+	console.log(addTogether(5)(2)); // 7
+	console.log(addTogether(2,'3')); // undefined
+    console.log(addTogether(2,3,4)); // 5
+}//block
+
+// const curried = x => y => x + y curried(1)(2)
 
