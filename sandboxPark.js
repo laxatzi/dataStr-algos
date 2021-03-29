@@ -81,7 +81,7 @@ console.log('YOU ARE HERE!');
    {
 	
 	function reverseString(str){
-		return 'reversestring';
+		return 'reverse a string with recursion';
 	}
 		   console.log(reverseString("hello")); //olleh
 }//block
@@ -94,7 +94,6 @@ console.log('YOU ARE HERE!');
 
 {
 	function factorialize(num) {
-		
 		return 'factorialize';
 	}
 
@@ -733,14 +732,30 @@ console.log('YOU ARE HERE!');
 
 {
 	function addTogether() {
+	 const [arg1, arg2, ] = arguments;
+	 const isInt = (arg) => Number.isInteger(arg);
+
+	 if (isInt(arg1)) {
+		if (isInt(arg2)) {
+			return arg1 + arg2;
+		} 
+		if (!arg2) {
+			
+			return (arg2) => {
+				if (isInt(arg2)) {
+					return arg2 + arg1;
+				}
+			}
+		}
+	 }
 	 
-	 
-	}
+}// end addTogether
 
 	console.log(addTogether(2,3)); // 5
 	console.log(addTogether(5)(2)); // 7
 	console.log(addTogether(2,'3')); // undefined
     console.log(addTogether(2,3,4)); // 5
+	console.log(addTogether(2)([3]));
 }//block
 
 // const curried = x => y => x + y curried(1)(2)
