@@ -74,7 +74,6 @@ const watchList = [
 		Response: "True",
 	},
 ];
-console.log('YOU ARE HERE!');
 //EXERCISE #1  !!
    //.Reverse the provided string.You may need to turn the string into an array before you can reverse it.
    //.Your result must be a string.
@@ -107,10 +106,12 @@ console.log('YOU ARE HERE!');
 
 //. Repeat a given string str (first argument) for num times (second argument).
 // Return an empty string if num is not a positive number.
+console.log('YOU ARE HERE!');
 
 {
 	function repeatStringNumTimes(str, num) {
-	 
+	  if (num <= 0) return '';
+	  return str.concat(repeatStringNumTimes(str, num - 1 ));
 	  return 'create a new string by concatenate itself num number of times';
 	}
 
@@ -732,24 +733,26 @@ console.log('YOU ARE HERE!');
 
 {
 	function addTogether() {
-	 const [arg1, arg2, ] = arguments;
-	 const isInt = (arg) => Number.isInteger(arg);
-
-	 if (isInt(arg1)) {
-		if (isInt(arg2)) {
-			return arg1 + arg2;
-		} 
-		if (!arg2) {
-			
-			return (arg2) => {
-				if (isInt(arg2)) {
-					return arg2 + arg1;
+		// ignore more than two arguments (if any)
+		const [arg1, arg2, ] = arguments;
+		// check if arg is integer 
+		const isInt = function isInt(n){
+			return Number.isInteger(n);
+		}
+		if (isInt(arg1)) {
+			if (isInt(arg2)) {
+				return arg1 + arg2;
+			}
+			if (!arg2) {
+				return (arg2) => {
+					if (isInt(arg2)) {
+						return arg2 + arg1;
+					}
 				}
 			}
 		}
-	 }
-	 
-}// end addTogether
+
+    }// end addTogether
 
 	console.log(addTogether(2,3)); // 5
 	console.log(addTogether(5)(2)); // 7
@@ -758,5 +761,4 @@ console.log('YOU ARE HERE!');
 	console.log(addTogether(2)([3]));
 }//block
 
-// const curried = x => y => x + y curried(1)(2)
 
