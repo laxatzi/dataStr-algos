@@ -106,12 +106,10 @@ const watchList = [
 
 //. Repeat a given string str (first argument) for num times (second argument).
 // Return an empty string if num is not a positive number.
-console.log('YOU ARE HERE!');
 
 {
 	function repeatStringNumTimes(str, num) {
-	  if (num <= 0) return '';
-	  return str.concat(repeatStringNumTimes(str, num - 1 ));
+	 
 	  return 'create a new string by concatenate itself num number of times';
 	}
 
@@ -119,6 +117,8 @@ console.log('YOU ARE HERE!');
 	console.log(repeatStringNumTimes('*', 8)); // ********
 } //block
 
+
+console.log('YOU ARE HERE!');
 //EXERCISE #4
 //Truncate a String
 
@@ -127,11 +127,13 @@ console.log('YOU ARE HERE!');
 
 {
 	function truncateString(str, num) {
-		
+	  if (str.length <= num) return str;
+	   return str.substr(0,num).concat('...');
 		return "truncate a string";
 	}
 
 	console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)); //"A-tisket..."
+	console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length+1));
 } //block
 
 
@@ -733,26 +735,14 @@ console.log('YOU ARE HERE!');
 
 {
 	function addTogether() {
-	// we check only the first two args, ignoring all the rest
-	 const [arg1, arg2, ] = arguments;
-	// create a number checker
-	 const isInt = function isInt(el){
-		 return Number.isInteger(el);
-	 }
-    // check condition with the number checker (undefined is )
-	  if (isInt(arg1)) {
-		if (!arg2) return (arg2) => {
-				if (isInt(arg2)) return arg2 + arg1;
-			}
-		if (isInt(arg2)) return arg1 + arg2;
-	}
+	return 'add together';
 }// end addTogether
 
 	console.log(addTogether(2,3)); // 5
-    console.log(addTogether(5)(2)); // 7
+   //console.log(addTogether(5)(2)); // 7
 	console.log(addTogether(2,'3')); // undefined
     console.log(addTogether(2,3,4)); // 5
-    console.log(addTogether(2)([3]));
+   // console.log(addTogether(2)([3]));
 }//block
 
 //const curried = x => y => x + y
