@@ -717,26 +717,31 @@
    // If it has only one argument then it has to return a function that uses that number and expects another one, to then add it.
  
    {
-	   function addTogether() {
-			// we want two arguments. Ignore the rest
-			const [arg1, arg2, ] = arguments;
-			// we look for integers, so we create an int checker
-			  const isInt =  (n) => Number.isInteger(n);
-	   
-		   // set conditions
-			 if (isInt(arg1)) {
-			   if (isInt(arg2)) {
-				   return arg1 + arg2;
-			   }
-			   if (!arg2){
-				   return (arg2) => arg1 + arg2;
-			   }
-			   
-			 }
-	   }
-   
-	   console.log(addTogether(2,3)); // 5
-	   console.log(addTogether(5)(2)); // 7
-	   console.log(addTogether(2,'3')); // undefined
-	   console.log(addTogether(2,3,4)); // 5
-   }//block
+	function addTogether() {
+	// we check only the first two args, ignoring all the rest
+	 const [arg1, arg2, ] = arguments;
+	// create a number checker
+	 const isInt = function isInt(el){
+		 return Number.isInteger(el);
+	 }
+    // check condition with the number checker (undefined is )
+	  if (isInt(arg1)) {
+		if (!arg2){
+			return (arg2) => {
+				if (isInt(arg2)){
+					return arg2 + arg1;
+				}
+			}
+		}
+		if (isInt(arg2)){
+			return arg1 + arg2;
+		}
+	  }
+    }// end addTogether
+
+	console.log(addTogether(2,3)); // 5
+    console.log(addTogether(5)(2)); // 7
+	console.log(addTogether(2,'3')); // undefined
+    console.log(addTogether(2,3,4)); // 5
+    console.log(addTogether(2)([3]));
+}//block

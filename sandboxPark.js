@@ -713,7 +713,7 @@ console.log('YOU ARE HERE!');
 
 
 // EXERCISE #34
-//Arguments OptionalPassed
+//Arguments Optional
 
    // Create a function that sums two arguments together. If only one argument is provided, then return a function that expects 
    // one argument and returns the sum.
@@ -733,32 +733,26 @@ console.log('YOU ARE HERE!');
 
 {
 	function addTogether() {
-		// ignore more than two arguments (if any)
-		const [arg1, arg2, ] = arguments;
-		// check if arg is integer 
-		const isInt = function isInt(n){
-			return Number.isInteger(n);
-		}
-		if (isInt(arg1)) {
-			if (isInt(arg2)) {
-				return arg1 + arg2;
+	// we check only the first two args, ignoring all the rest
+	 const [arg1, arg2, ] = arguments;
+	// create a number checker
+	 const isInt = function isInt(el){
+		 return Number.isInteger(el);
+	 }
+    // check condition with the number checker (undefined is )
+	  if (isInt(arg1)) {
+		if (!arg2) return (arg2) => {
+				if (isInt(arg2)) return arg2 + arg1;
 			}
-			if (!arg2) {
-				return (arg2) => {
-					if (isInt(arg2)) {
-						return arg2 + arg1;
-					}
-				}
-			}
-		}
-
-    }// end addTogether
+		if (isInt(arg2)) return arg1 + arg2;
+	}
+}// end addTogether
 
 	console.log(addTogether(2,3)); // 5
-	console.log(addTogether(5)(2)); // 7
+    console.log(addTogether(5)(2)); // 7
 	console.log(addTogether(2,'3')); // undefined
     console.log(addTogether(2,3,4)); // 5
-	console.log(addTogether(2)([3]));
+    console.log(addTogether(2)([3]));
 }//block
 
-
+//const curried = x => y => x + y
