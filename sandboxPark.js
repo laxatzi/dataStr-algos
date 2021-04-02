@@ -118,7 +118,6 @@ const watchList = [
 } //block
 
 
-console.log('YOU ARE HERE!');
 //EXERCISE #4
 //Truncate a String
 
@@ -127,8 +126,7 @@ console.log('YOU ARE HERE!');
 
 {
 	function truncateString(str, num) {
-	  if (str.length <= num) return str;
-	   return str.substr(0,num).concat('...');
+	
 		return "truncate a string";
 	}
 
@@ -145,7 +143,6 @@ console.log('YOU ARE HERE!');
 {
 	{
 		function findElement(arr, func) {
-		
 			return 'Finders Keepers';
 		}
 	
@@ -153,6 +150,7 @@ console.log('YOU ARE HERE!');
 	} //block
 } //block
 
+console.log('YOU ARE HERE!');
 
 //EXERCISE #6
 //Title Case a Sentence
@@ -162,7 +160,11 @@ console.log('YOU ARE HERE!');
 
 {
 	function titleCase(str) {
+	 const localArray = str.toLowerCase().split(' ').map((el) => {
+		return el[0].toUpperCase().concat(el.slice(1));
+	});
 	
+	 return localArray.join(' ');
 	 return 'capitalize words in string';
 	}
 
@@ -735,6 +737,7 @@ console.log('YOU ARE HERE!');
 
 {
 	function addTogether() {
+
 	return 'add together';
 }// end addTogether
 
