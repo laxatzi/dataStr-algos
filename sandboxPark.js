@@ -150,7 +150,7 @@ const watchList = [
 	} //block
 } //block
 
-console.log('YOU ARE HERE!');
+
 
 //EXERCISE #6
 //Title Case a Sentence
@@ -160,17 +160,12 @@ console.log('YOU ARE HERE!');
 
 {
 	function titleCase(str) {
-	 const localArray = str.toLowerCase().split(' ').map((el) => {
-		return el[0].toUpperCase().concat(el.slice(1));
-	});
-	
-	 return localArray.join(' ');
+	 
 	 return 'capitalize words in string';
 	}
 
 	console.log(titleCase("sHoRt AnD sToUt")); // Short And Stout
 } // block
-
 
 
 //EXERCISE #7
@@ -183,7 +178,6 @@ console.log('YOU ARE HERE!');
 
 {
 	function frankenSplice(arr1, arr2, n) {
-		
 		return 'franken splice';
 	}
 
@@ -198,7 +192,6 @@ console.log('YOU ARE HERE!');
 {
 
 	function bouncer(arr) {
-		
 		return 'remove false values';
 	}
 
@@ -207,8 +200,10 @@ console.log('YOU ARE HERE!');
 } //block
 
 
+console.log('YOU ARE HERE!');
 
 //EXERCISE #9
+// Where do I belong
 // Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.
 // The returned value should be a number.
 
@@ -439,7 +434,7 @@ console.log('YOU ARE HERE!');
 
 // - If a word begins with a vowel, just add "way" at the end.
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
-console.log('YOU ARE HERE!');
+
 {
 
 	function pigLatin(str) {
