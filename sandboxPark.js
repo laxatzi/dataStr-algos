@@ -200,7 +200,6 @@ const watchList = [
 } //block
 
 
-console.log('YOU ARE HERE!');
 
 //EXERCISE #9
 // Where do I belong
@@ -220,6 +219,7 @@ console.log('YOU ARE HERE!');
 } //block
 
 
+console.log('YOU ARE HERE!');
 
 //EXERCISE #10
 // Chunky Monkey
@@ -253,7 +253,10 @@ console.log('YOU ARE HERE!');
 {
 
 	function mutation(arr) {
-
+		const secondElem = arr[1].toLowerCase();
+		const firstElem = arr[0].toLowerCase();
+		
+     return secondElem.split('').every((el) => firstElem.indexOf(el) !== -1);
 	    return "solve mutation algorithm";
 	  }
 	  
