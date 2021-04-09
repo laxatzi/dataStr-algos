@@ -219,7 +219,6 @@ const watchList = [
 } //block
 
 
-console.log('YOU ARE HERE!');
 
 //EXERCISE #10
 // Chunky Monkey
@@ -267,7 +266,6 @@ console.log('YOU ARE HERE!');
 
 {
 	function spinalCase(str) {
-		
 	    return 'spinal case algorithm';
 	}
 
@@ -287,10 +285,10 @@ console.log('YOU ARE HERE!');
 // Note that the rating values are saved as strings in the object
 //and need to be converted into numbers before they are used in any mathematical operations.
 //imdbRating, Director
+console.log('YOU ARE HERE!');
 {
 
 	function getAvgRating(arr, director) {
-      
 		return "Get average Rating!";
 	}
 	console.log(getAvgRating(watchList));
@@ -310,7 +308,7 @@ console.log('YOU ARE HERE!');
 
 {
 	function urlSlug(title) {
-	    
+	  
 		return "string to URL slug converter";
 		
 	}
@@ -325,7 +323,7 @@ console.log('YOU ARE HERE!');
 
 {
 	function add(x) {
-	
+	  
 		return "partial application";
 
 	}
@@ -340,7 +338,10 @@ console.log('YOU ARE HERE!');
 //. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
 { 
 	function sumAll(arr) {
-	    
+	    const max = Math.max(...arr);
+		const min = Math.min(...arr);
+		if (min === max)	return min;
+		return min + sumAll([min+1, max]);
 		return 'Sum of all numbers between array elements';
 	}
 
@@ -733,25 +734,7 @@ console.log('YOU ARE HERE!');
 
 {
 	function addTogether() {
-    // ignore more than two args
-	const [arg1, arg2, ] = arguments;
-	// check number type
-	const isInt = function isInt(n) {
-		return Number.isInteger(n);
-	}
-	if (isInt(arg1)) {
-		if (!arg2){
-			return function(arg2) {
-				if (isInt(arg2)){
-					return arg2 + arg1;
-				}
-			}
-		} 
-		if (isInt(arg2)){
-			return arg1 + arg2;
-		}
-	}
-	//return 'add together';
+    return 'add together';
 }// end addTogether
 
 	console.log(addTogether(2,3)); // 5
