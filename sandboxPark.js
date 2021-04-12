@@ -285,7 +285,6 @@ const watchList = [
 // Note that the rating values are saved as strings in the object
 //and need to be converted into numbers before they are used in any mathematical operations.
 //imdbRating, Director
-console.log('YOU ARE HERE!');
 {
 
 	function getAvgRating(arr, director) {
@@ -338,10 +337,6 @@ console.log('YOU ARE HERE!');
 //. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
 { 
 	function sumAll(arr) {
-	    const max = Math.max(...arr);
-		const min = Math.min(...arr);
-		if (min === max)	return min;
-		return min + sumAll([min+1, max]);
 		return 'Sum of all numbers between array elements';
 	}
 
@@ -373,18 +368,19 @@ console.log('YOU ARE HERE!');
 	//. should return ["diorite", "pink wool"].
 } //end block
 
+console.log('YOU ARE HERE!');
 
 //EXERCISE #18
 // Intermediate Algorithm Scripting: Seek and Destroy
-// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments.
+// You will be provided with an initial array (the first argument in the destroyer function), 
+// followed by one or more arguments.
 // Remove all elements from the initial array that are of the same value as these arguments.
 
-// Note
-// You have to use the arguments object.
 
 {
 	function destroyer(arr) {
-		
+		const args = [...arguments];
+		return arr.filter((el) => args.indexOf(el) === -1);
 		return 'destroyer algo';
 	}
 
@@ -734,14 +730,15 @@ console.log('YOU ARE HERE!');
 
 {
 	function addTogether() {
+		
     return 'add together';
 }// end addTogether
 
 	console.log(addTogether(2,3)); // 5
-    console.log(addTogether(5)(2)); // 7
+  //  console.log(addTogether(5)(2)); // 7
 	console.log(addTogether(2,'3')); // undefined
     console.log(addTogether(2,3,4)); // 5
-    console.log(addTogether(2)([3]));
+  //  console.log(addTogether(2)([3])); // undefined
 }//block
 
 //const curried = x => y => x + y
