@@ -404,12 +404,7 @@ console.log('YOU ARE HERE!');
 {
 
 	function whatIsInAName(collection, source) {
-	   const sourceKeys = Object.keys(source);
-	   return collection.filter((obj) => {
-		   return sourceKeys.map((key) => {
-			   return obj.hasOwnProperty(key) && obj[key] === source[key];
-		   }).reduce((a,b) => a && b);
-	   });
+	  return 'what is in a name';
 	}
 
 	console.log(
@@ -430,7 +425,8 @@ console.log('YOU ARE HERE!');
 //// Pig Latin
 // Pig Latin is a way of altering English Words. The rules are as follows:
 
-// - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+// - If a word begins with a consonant, take the first consonant or consonant cluster, 
+// move it to the end of the word, and add "ay" to it.
 
 // - If a word begins with a vowel, just add "way" at the end.
 // Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
@@ -438,7 +434,7 @@ console.log('YOU ARE HERE!');
 {
 
 	function pigLatin(str) {
-	  
+		
 		return 'pig latin algorithm';
 	}
 
@@ -462,7 +458,12 @@ console.log('YOU ARE HERE!');
 
 {
 	function myReplace(str, before, after) {
-	  return "Solve 'search and replace' algorithm";
+	    const capitals = /[A-Z]/g;
+		const lowCase = /[a-z]/g;
+		if (before[0].match(capitals)) after[0].toUpperCase();
+		if (before[0].match(lowCase)) after[0].toLowerCase();
+		return str.replace(before, after);
+		return "Solve 'search and replace' algorithm";
 	  
 	}
 
