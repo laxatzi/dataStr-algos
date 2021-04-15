@@ -399,12 +399,12 @@ const watchList = [
 //{ first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], and the second argument is { last: "Capulet" }, 
 //then you must return the third object from the array (the first argument), because it contains the name and its value, 
 //that was passed on as the second argument.
-console.log('YOU ARE HERE!');
 
 {
 
 	function whatIsInAName(collection, source) {
-	  return 'what is in a name';
+	 
+		return 'what is in a name';
 	}
 
 	console.log(
@@ -458,11 +458,7 @@ console.log('YOU ARE HERE!');
 
 {
 	function myReplace(str, before, after) {
-	    const capitals = /[A-Z]/g;
-		const lowCase = /[a-z]/g;
-		if (before[0].match(capitals)) after[0].toUpperCase();
-		if (before[0].match(lowCase)) after[0].toLowerCase();
-		return str.replace(before, after);
+	   
 		return "Solve 'search and replace' algorithm";
 	  
 	}
@@ -472,14 +468,14 @@ console.log('YOU ARE HERE!');
 } //end block
 
 
-
+console.log('YOU ARE HERE');
 //EXERCISE #22
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). 
 //We are to write //. a function and return the second largest integer.
 {
 	function secondLargest(arr) {
-		
+	
 		return "return second largest";
 	}
 
@@ -504,9 +500,10 @@ console.log('YOU ARE HERE!');
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-	   return arr.filter((el, idx, thisarray) => {
-		   return thisarray.indexOf(el) === idx;
-	   })
+	  return arr.filter((el, idx, thisarray) => {
+		return thisarray.indexOf(el) === idx;
+	  });
+	
 		return "remove duplicates";
 	}
 	   console.log(removeDups(cities)); // ["Athens", "Drama", "Iraklion", "Thessaloniki"]
