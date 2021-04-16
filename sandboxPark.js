@@ -500,9 +500,6 @@ console.log('YOU ARE HERE');
 	//Remove Dups from an Array
 
 	function removeDups(arr) {
-	  return arr.filter((el, idx, thisarray) => {
-		return thisarray.indexOf(el) === idx;
-	  });
 	
 		return "remove duplicates";
 	}
@@ -512,7 +509,8 @@ console.log('YOU ARE HERE');
 
 // EXERCISE #24
 // DNA Pairing
-// The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+// The DNA strand is missing the pairing element. Take each character, get its pair, and return the results 
+// as a 2d array.
 // Base pairs are a pair of AT and CG. Match the missing element to the provided character.
 // Return the provided character as the first element in each array.
 // For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
@@ -526,9 +524,9 @@ console.log('YOU ARE HERE');
 	};
 
 	function pairElement(str) {
-	
-	return "return pairElement";
+	  return "return pairElement";
 	}
+
 	console.log(pairElement("CTCTA")); //[["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
 } //block
 
@@ -538,9 +536,20 @@ console.log('YOU ARE HERE');
 // Find the missing letter in the passed letter range and return it.
 // If all letters are present in the range, return undefined.
 {
-
 	function fearNotLetter(str) {
-	return `The missing letter is ?'!`
+		let missingLetter;
+		let controlLetter = str.charCodeAt(0);
+		
+		str.split('').map((el, idx) => {
+			if (str.charCodeAt(idx) === controlLetter){
+				controlLetter++;
+			}
+			else {
+				missingLetter = String.fromCharCode(controlLetter);
+			}
+		});
+		if (!missingLetter) return "No letter is missing!";
+		return `The missing letter is ${missingLetter}'!`
 }	
 
 	console.log(fearNotLetter("abce"));
