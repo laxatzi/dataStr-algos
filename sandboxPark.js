@@ -468,7 +468,6 @@ const watchList = [
 } //end block
 
 
-console.log('YOU ARE HERE');
 //EXERCISE #22
 //. Q: Find the second largest number in a given array.
 //. Params: We are given an array of whole, positive integers (no negative numbers or floats). 
@@ -537,19 +536,7 @@ console.log('YOU ARE HERE');
 // If all letters are present in the range, return undefined.
 {
 	function fearNotLetter(str) {
-		let missingLetter;
-		let controlLetter = str.charCodeAt(0);
-		
-		str.split('').map((el, idx) => {
-			if (str.charCodeAt(idx) === controlLetter){
-				controlLetter++;
-			}
-			else {
-				missingLetter = String.fromCharCode(controlLetter);
-			}
-		});
-		if (!missingLetter) return "No letter is missing!";
-		return `The missing letter is ${missingLetter}'!`
+	return 'fear no letter algo';
 }	
 
 	console.log(fearNotLetter("abce"));
@@ -558,6 +545,8 @@ console.log('YOU ARE HERE');
 //end block
 
 }
+console.log('YOU ARE HERE');
+console.log('YOU ARE HERE');
 
 
 //. EXERCISE #26
@@ -583,7 +572,8 @@ console.log('YOU ARE HERE');
 
 //. EXERCISE #27
 //Convert HTML Entities
-//Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+//Convert the characters &, <, >, " (double quote), and ' (apostrophe), 
+// in a string to their corresponding HTML entities.
 
 {
 	const htmlEntities = {
@@ -593,10 +583,12 @@ console.log('YOU ARE HERE');
 		'"' : '&quot;',
 		"'": '&apos;',
 	}
-	
-	
+	const htmlEntitiesRegex = /[&<>'"]/g;
+	function convertHTML(str){
+		return 'replace keys with values';
+	}
 
-	//console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
+	console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
 } //end block	
 
 
@@ -612,6 +604,17 @@ console.log('YOU ARE HERE');
 
 {
     function sumFibs(num) {
+     if (num <= 0) return false;
+	 // represent  fibonacci sequence in our code
+            let fibonacciSequence = [1,1];
+            let i;
+            while((i = fibonacciSequence[0] + fibonacciSequence[1]) <= num){ // fibonacci axiom
+                fibonacciSequence.unshift(i);
+            }
+
+        
+
+	 return fibonacciSequence.filter((el) => el % 2 !== 0).reduce((a,b) => a + b);
      return 'Sum of odd fibonacci numbers';
     
   }
@@ -656,7 +659,7 @@ console.log('YOU ARE HERE');
 	{
 
 		function smallestCommons(arr) {
-		
+		    
 			return "smallest common multiple";
 	}
 
