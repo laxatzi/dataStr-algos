@@ -583,8 +583,10 @@ console.log('YOU ARE HERE');
 		'"' : '&quot;',
 		"'": '&apos;',
 	}
-	const htmlEntitiesRegex = /[&<>'"]/g;
+	
+	const regex = /[&"'<>]/g;
 	function convertHTML(str){
+		return str.replace(regex, (key) => htmlEntities(key));
 		return 'replace keys with values';
 	}
 
@@ -604,18 +606,7 @@ console.log('YOU ARE HERE');
 
 {
     function sumFibs(num) {
-     if (num <= 0) return false;
-	 // represent  fibonacci sequence in our code
-            let fibonacciSequence = [1,1];
-            let i;
-            while((i = fibonacciSequence[0] + fibonacciSequence[1]) <= num){ // fibonacci axiom
-                fibonacciSequence.unshift(i);
-            }
-
-        
-
-	 return fibonacciSequence.filter((el) => el % 2 !== 0).reduce((a,b) => a + b);
-     return 'Sum of odd fibonacci numbers';
+          return 'Sum of odd fibonacci numbers';
     
   }
         console.log(sumFibs(10)); //10
