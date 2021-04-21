@@ -584,9 +584,7 @@ console.log('YOU ARE HERE');
 		"'": '&apos;',
 	}
 	
-	const regex = /[&"'<>]/g;
 	function convertHTML(str){
-		return str.replace(regex, (key) => htmlEntities(key));
 		return 'replace keys with values';
 	}
 
@@ -628,7 +626,23 @@ console.log('YOU ARE HERE');
 {
 
 	function sumPrimes(num) {
+		const multiplies = (number) => {
+			return Array.apply(null, {length: number}).map((_,i) => i+1); 
 		
+	}
+
+	const isPrime = (n) => {
+		if(n<2) return false;
+	  let  squareRoot = Math.floor(Math.sqrt(n));
+	  let i = 2;
+	  while(i<=squareRoot){
+		if(n % i == 0) return false;
+		i++;
+	  }
+	  return true; 
+	} 
+
+	return multiplies(num).filter((el) => isPrime(el)).reduce((a,b) => a + b);
 	return 'Find sum of all primes less or equal to num';
 
 }
