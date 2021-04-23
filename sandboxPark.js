@@ -634,8 +634,7 @@ const watchList = [
 
 }//end block
 
-console.log('YOU ARE HERE');
-console.log('YOU ARE HERE');
+
 // EXERCISE #30
 // Smallest Common Multiple
 
@@ -655,17 +654,7 @@ console.log('YOU ARE HERE');
 	{
 
 		function smallestCommons(arr) {
-		    const [min, max] = arr.sort((a,b) => a > b);
-			const range = Array(max-min+1).fill().map((v, i) => i + min);
-
-			const gcd = function(a, b) {
-				  return (b === 0) ? a : gcd(b, a % b)
-				};
-			const lcm = function(a, b) {
-				return a * b / gcd(a, b);
-			}
-
-			return range.reduce((acc, cur) => lcm(acc, cur));
+		    
 			return "smallest common multiple";
 	}
 
@@ -687,6 +676,10 @@ console.log('YOU ARE HERE');
 
 {
 	function dropElements(arr, func) {
+		const truthyElem = arr.find((func));
+		const truthyElemIdx = arr.indexOf(truthyElem);
+		if (truthyElem === undefined) return [];
+		return arr.slice(truthyElemIdx);
 		return 'drop';
 	  }
  
@@ -696,17 +689,22 @@ console.log('YOU ARE HERE');
 	console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;})); //  should return []
 }
 
+console.log('YOU ARE HERE');
+console.log('YOU ARE HERE');
+
 //EXERCISE #32
 //Steamroller
   // Flatten a nested array. You must account for varying levels of nesting.
 {
 	function steamrollArray(arr) {
-	
+	  return arr.reduce((acc, cur)=>{
+		return acc.concat(!Array.isArray(cur) ? cur : steamrollArray(cur) );
+	  }, []);
 		
 	}
-	  console.log(steamrollArray([1,[2]])); // [1,2];
+	 console.log(steamrollArray([1,[2]])); // [1,2];
 	 console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1, 2, 3, 4]
-	 //  console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4]
+	 console.log(steamrollArray([1, {}, [3, [[[[[[[[[4]]]]]]]]]]])); // [1, {}, 3, 4]
 }// end block
 
 
