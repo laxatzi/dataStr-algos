@@ -638,6 +638,40 @@
 
 }
 
+// EXERCISE
+// Smallest Common MultiplePassed
+
+	// Find the smallest common multiple of the provided parameters that can be evenly divided by both, 
+	// as well as by all sequential numbers in the range between these parameters.
+	// The range will be an array of two numbers that will not necessarily be in numerical order.
+	// For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 
+	// that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
+
+
+function smallestCommons(arr) {
+	// Setup
+	const [min, max] = arr.sort((a, b) => a - b);
+	const range = Array(max - min + 1)
+	  .fill(0)
+	  .map((_, i) => i + min);
+	// GCD of two numbers
+	// https://en.wikipedia.org/wiki/Greatest_common_divisor#Euclid's_algorithm
+	const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+	// LCM of two numbers
+	// https://en.wikipedia.org/wiki/Least_common_multiple#Using_the_greatest_common_divisor
+	const lcm = (a, b) => a * b / gcd(a, b);
+	// LCM of multiple numbers
+	// https://en.wikipedia.org/wiki/Least_common_multiple#Other
+	return range.reduce((multiple, curr) => lcm(multiple, curr));
+  }
+  
+  smallestCommons([1, 5]);
+
+// TEST
+// console.log(smallestCommons([1, 5])) // should return 60.
+// console.log(smallestCommons([5, 1])) // should return 60.
+// console.log(smallestCommons([2, 10])) // should return 2520.
+
 
 //EXERCISE #31
 // Drop it
@@ -650,9 +684,9 @@
 
 {
 	function dropElements(arr, func) {
-		const firstTruthy =  arr.find((el) => func(el));
-		if (firstTruthy === undefined) return [];
-		const firstTruthyIdx = arr.indexOf(firstTruthy);
+		const firstTruthyElem =  arr.find(func);
+		if (firstTruthyElem === undefined) return [];
+		const firstTruthyIdx = arr.indexOf(firstTruthyElem);
 		return arr.slice(firstTruthyIdx);
 	  }
  
@@ -745,3 +779,88 @@
     console.log(addTogether(2,3,4)); // 5
     console.log(addTogether(2)([3]));
 }//block
+
+
+// EXERCISE #35
+// Make a Person
+
+// Fill in the object constructor with the following methods below:
+
+var Person = function(firstAndLast) {
+	// Only change code below this line
+	// Complete the method below and implement the others similarly
+	var fullName = firstAndLast;
+  
+	this.getFirstName = function() {
+	  return fullName.split(' ')[0];
+	}
+	this.getLastName = function(){
+	  return fullName.split(' ')[1];
+	}
+  
+	this.getFullName = function() {
+	  return fullName;
+	};
+  
+	this.setFirstName = function(name){
+	   fullName = name +" "+ fullName.split(' ')[1];
+	}
+  
+	this.setLastName = function(name){
+	  fullName =  fullName.split(' ')[0] +" "+ name;
+	}
+	this.setFullName = function(name){
+	   fullName = name;
+	}
+	
+  };
+  
+  var bob = new Person('Bob Ross');
+  bob.getFullName(); // Bob Ross
+
+// getFirstName()
+// getLastName()
+// getFullName()
+// setFirstName(first)
+// setLastName(last)
+// setFullName(firstAndLast)
+
+// Run the tests to see the expected output for each method. The methods that take an argument
+// must accept only one argument and it has to be a string. 
+
+// TEST!
+// console.log(Object.keys(bob).length) // 6.
+// console.log(bob.getLastName()) // Ross
+// bob.setFirstName("Haskell") 
+// NOW 
+// console.log(bob.getFullName()) // Haskell
+
+{
+	var Person = function(firstAndLast) {
+		var fullName = firstAndLast;
+	  
+		this.getFirstName = function() {
+		  return fullName.split(" ")[0];
+		};
+	  
+		this.getLastName = function() {
+		  return fullName.split(" ")[1];
+		};
+	  
+		this.getFullName = function() {
+		  return fullName;
+		};
+	  
+		this.setFirstName = function(name) {
+		  fullName = name + " " + fullName.split(" ")[1];
+		};
+	  
+		this.setLastName = function(name) {
+		  fullName = fullName.split(" ")[0] + " " + name;
+		};
+	  
+		this.setFullName = function(name) {
+		  fullName = name;
+		};
+	  };
+}

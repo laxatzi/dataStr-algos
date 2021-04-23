@@ -545,8 +545,7 @@ const watchList = [
 //end block
 
 }
-console.log('YOU ARE HERE');
-console.log('YOU ARE HERE');
+
 
 
 //. EXERCISE #26
@@ -626,23 +625,7 @@ console.log('YOU ARE HERE');
 {
 
 	function sumPrimes(num) {
-		const multiplies = (number) => {
-			return Array.apply(null, {length: number}).map((_,i) => i+1); 
-		
-	}
-
-	const isPrime = (n) => {
-		if(n<2) return false;
-	  let  squareRoot = Math.floor(Math.sqrt(n));
-	  let i = 2;
-	  while(i<=squareRoot){
-		if(n % i == 0) return false;
-		i++;
-	  }
-	  return true; 
-	} 
-
-	return multiplies(num).filter((el) => isPrime(el)).reduce((a,b) => a + b);
+	
 	return 'Find sum of all primes less or equal to num';
 
 }
@@ -651,7 +634,8 @@ console.log('YOU ARE HERE');
 
 }//end block
 
-
+console.log('YOU ARE HERE');
+console.log('YOU ARE HERE');
 // EXERCISE #30
 // Smallest Common Multiple
 
@@ -659,12 +643,29 @@ console.log('YOU ARE HERE');
 	//as well as by all sequential numbers in the range between these parameters.
     // The range will be an array of two numbers that will not necessarily be in numerical order.
     // For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers 
-	//between 1 and 3. The answer here would be 6.
+	// between 1 and 3. The answer here would be 6.
+    
 
+	// // GCD of two numbers
+	// https://en.wikipedia.org/wiki/Greatest_common_divisor#Euclid's_algorithm
+	  // const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+	// LCM of two numbers
+	// https://en.wikipedia.org/wiki/Least_common_multiple#Using_the_greatest_common_divisor
+	  // const lcm = (a, b) => a * b / gcd(a, b);
 	{
 
 		function smallestCommons(arr) {
-		    
+		    const [min, max] = arr.sort((a,b) => a > b);
+			const range = Array(max-min+1).fill().map((v, i) => i + min);
+
+			const gcd = function(a, b) {
+				  return (b === 0) ? a : gcd(b, a % b)
+				};
+			const lcm = function(a, b) {
+				return a * b / gcd(a, b);
+			}
+
+			return range.reduce((acc, cur) => lcm(acc, cur));
 			return "smallest common multiple";
 	}
 
@@ -686,7 +687,6 @@ console.log('YOU ARE HERE');
 
 {
 	function dropElements(arr, func) {
-		
 		return 'drop';
 	  }
  
@@ -701,11 +701,12 @@ console.log('YOU ARE HERE');
   // Flatten a nested array. You must account for varying levels of nesting.
 {
 	function steamrollArray(arr) {
-			return "Flatten deep array";
+	
+		
 	}
 	  console.log(steamrollArray([1,[2]])); // [1,2];
-	  console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1, 2, 3, 4]
-	  console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4]
+	 console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1, 2, 3, 4]
+	 //  console.log(steamrollArray([1, {}, [3, [[4]]]])); // [1, {}, 3, 4]
 }// end block
 
 
@@ -761,3 +762,20 @@ console.log('YOU ARE HERE');
 }//block
 
 //const curried = x => y => x + y
+
+
+// EXERCISE #35
+// Make a Person
+
+// Fill in the object constructor with the following methods below:
+
+// getFirstName()
+// getLastName()
+// getFullName()
+// setFirstName(first)
+// setLastName(last)
+// setFullName(firstAndLast)
+
+// Run the tests to see the expected output for each method. The methods that take an argument
+// must accept only one argument and it has to be a string. 
+// These methods must be the only available means of interacting with the object.
