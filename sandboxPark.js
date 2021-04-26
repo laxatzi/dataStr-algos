@@ -634,7 +634,8 @@ const watchList = [
 
 }//end block
 
-
+console.log('YOU ARE HERE');
+console.log('YOU ARE HERE');
 // EXERCISE #30
 // Smallest Common Multiple
 
@@ -654,9 +655,17 @@ const watchList = [
 	{
 
 		function smallestCommons(arr) {
-		    
+		    const sorted = arr.sort((a,b) => a > b);
+            const min = Math.min(...sorted);
+            const max = Math.max(...sorted);
+            const range = Array(max-min+1).fill().map((v, i) => i + min);
+
+			const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+			const lcm = (a, b) => a * b / gcd(a, b);
+
+			return range.reduce((a, b) => lcm(a,b));
 			return "smallest common multiple";
-	}
+	    }
 
 		console.log(smallestCommons([1, 5])); // 60
 		console.log(smallestCommons([5, 1])); // 60
@@ -676,10 +685,7 @@ const watchList = [
 
 {
 	function dropElements(arr, func) {
-		const firstTruthyElem = arr.find(func);
-		if (firstTruthyElem === undefined) return [];
-		const firstTruthyElemIdx = arr.indexOf(firstTruthyElem);
-		return arr.slice(firstTruthyElemIdx);
+		
 		return 'drop';
 	  }
  
@@ -689,8 +695,7 @@ const watchList = [
 	console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;})); //  should return []
 }
 
-console.log('YOU ARE HERE');
-console.log('YOU ARE HERE');
+
 
 //EXERCISE #32
 //Steamroller
